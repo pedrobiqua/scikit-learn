@@ -90,7 +90,7 @@ tests = [
 maintenance = ["conda-lock==2.5.6"]
 
 [build-system]
-build-backend = "mesonpy"
+# build-backend = "mesonpy"
 # Minimum requirements for the build system to execute.
 requires = [
     "meson-python>=0.15.0",
