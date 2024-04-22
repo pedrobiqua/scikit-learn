@@ -93,6 +93,7 @@ else:
         "covariance",
         "cross_decomposition",
         "datasets",
+        "dissimilarity",
         "decomposition",
         "dummy",
         "ensemble",
