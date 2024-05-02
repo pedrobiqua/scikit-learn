@@ -1,5 +1,5 @@
 # Author: Pedro Bianchini de Quadros <quadros.pedro@pucpr.edu.br>
-#         Gabriel Antônio Gomes de Farias <gomes.farias@pucpr.edu.br>
+#         Gabriel Antonio Gomes de Farias <gomes.farias@pucpr.edu.br>
 # License: BSD 3 clause
 
 import warnings
@@ -36,6 +36,7 @@ class DissimilarityRNGClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimato
     . . .
 
     TODO: Lembrar de colocar os parametros corretos
+    
     Parameters
     ----------
     random_state : int, RandomState instance or None, default=None
@@ -96,8 +97,10 @@ class DissimilarityRNGClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimato
         result_diff = 0
         list_indexes = []
 
-        n = int(len(X)/2)
+        # N = Quantidade de classes que serão usadas por cada classe
+        n = len(np.unique(y)) * 3
 
+        # TODO: Rever o código usado
         if(n > n_classes):
             n_instances = int(n / n_classes)
 
@@ -147,6 +150,7 @@ class DissimilarityRNGClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimato
             raise ValueError("R instances not set.")
         
         # Montando uma matriz de dissimilaridade usando o conjunto de testes
+        # TODO: A matriz atual não consegue suportar um conjunto de R muito grande.
         dissim_matrix_returned = np.zeros((X.shape[0], self.instances_X_r.shape[0]))
         for i, instances_t in enumerate(X):
             for j, instance_r in enumerate(self.instances_X_r):
@@ -184,7 +188,7 @@ class DissimilarityRNGClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimato
         # De acordo com a seleção de R fazer tal ação
         """
         self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
-        self._strategy = self.strategy
+        self._strategy = self.strategy # Não sei se ainda vou utilizar isso
 
         # Classes do problema
         self.classes_ = np.unique(y)
