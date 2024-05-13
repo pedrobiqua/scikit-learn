@@ -98,16 +98,19 @@ class DissimilarityRNGClassifier(MultiOutputMixin, ClassifierMixin, BaseEstimato
         list_indexes = []
 
         # N = Quantidade de classes que serão usadas por cada classe
-        n = len(np.unique(y)) * 3
+        n = len(np.unique(y)) * 3 # Três de cada classe
 
         # TODO: Rever o código usado
         if(n > n_classes):
             n_instances = int(n / n_classes)
 
         for i, c in enumerate(self.classes_):
+            # Separa os indices de uma classe y
             indexes = np.where(c == y)[0]
             quantidade_instancias = len(indexes)
 
+            # Re-montar isso, pois essa lógica era quando eu passava o número de instâncias T que eu queria, 
+            # dai essa parte validava se o tamanho batia com as quantidades de instâncias de cada classe
             if(quantidade_instancias < (n_instances + result_diff)):
                 choices = random_state.choice(quantidade_instancias, quantidade_instancias, replace=False)
                 result_diff += n_instances - quantidade_instancias
