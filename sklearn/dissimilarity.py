@@ -32,7 +32,7 @@ from .neighbors import KNeighborsClassifier
 
 class _BaseDissimilarity(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
     """ Abstract base class for Dissimilarity based estimators"""
-
+    
     def _calc_dist_euclidean(self, p_t, p_r):
         """
         Calculates the Euclidean distance between T and R sets, and thus returning the dissimilarity factor.
@@ -195,17 +195,14 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
     """
 
 
-    """
-    . . .
-
-    
+    """    
     Parameters
     ----------
     random_state : int, RandomState instance or None, default=None
         Controls the randomness to generate the R values.
         Pass an int for reproducible output across multiple function calls.
         See :term:`Glossary <random_state>`.
-    . . . (Pegar exemplo do dummy)
+ 
 
     Attributes
     ----------
