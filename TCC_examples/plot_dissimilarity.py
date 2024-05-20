@@ -1,10 +1,3 @@
-###### LIB ARFF_CONVERT ######
-import numpy as np
-import sys
-sys.path.insert(0, '/home/pedro/projects/dataset_arff_covert')
-from arffconvert import load_SEAGenerator # Carrega a base de dados que está no formato arff para numpy X e Y
-##############################
-
 # SELEÇÃO DO MODELO
 from sklearn import model_selection
 # CLASSIFICADORES
