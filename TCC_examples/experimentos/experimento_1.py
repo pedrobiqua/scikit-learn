@@ -31,8 +31,7 @@ X, y = load_SEAGenerator_test_f2_f4()
 # X, y = load_AgrawalGenerator_test_mode_f2_f9()
 
 def model_test_dissimilarity(random_state, estimator, X_train, y_train, X_test, y_test):
-    # dissimilarity = DissimilarityRNGClassifier(estimator=estimator, random_state=random_state)
-    dissimilarity = KNeighborsClassifier(n_neighbors=1)
+    dissimilarity = DissimilarityRNGClassifier(estimator=estimator, random_state=random_state)
     print(dissimilarity)
     dissimilarity.fit(X_train, y_train)
 
@@ -125,11 +124,9 @@ def experimento_1():
             # 50% treino e 50% para teste
             X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
 
-            print(X_test)
-            
-            # score, cm = model_test_dissimilarity(random_state=i, estimator=DecisionTreeClassifier(random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
-            # results_score.append(score)
-            # results_confusion.append(cm)
+            score, cm = model_test_dissimilarity(random_state=i, estimator=DecisionTreeClassifier(random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
+            results_score.append(score)
+            results_confusion.append(cm)
 
             # score, cm = model_test_dissimilarity(random_state=i, estimator=GaussianNB(), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
             # results_score.append(score)
@@ -143,31 +140,26 @@ def experimento_1():
             # results_score.append(score)
             # results_confusion.append(cm)
 
-            score, cm = model_test_decision_tree(random_state=i, X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            results_score.append(score)
-            results_confusion.append(cm)
+            # score, cm = model_test_decision_tree(random_state=i, X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
+            # results_score.append(score)
+            # results_confusion.append(cm)
 
-            score, cm = model_test_naive_bayes(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            results_score.append(score)
-            results_confusion.append(cm)
+            # score, cm = model_test_naive_bayes(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
+            # results_score.append(score)
+            # results_confusion.append(cm)
 
-            score, cm = model_test_1nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            results_score.append(score)
-            results_confusion.append(cm)
+            # score, cm = model_test_1nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
+            # results_score.append(score)
+            # results_confusion.append(cm)
 
-            score, cm = model_test_3nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            results_score.append(score)
-            results_confusion.append(cm)
+            # score, cm = model_test_3nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
+            # results_score.append(score)
+            # results_confusion.append(cm)
 
     # Salvar depois os resultados em um excel para validar e analisar melhor
-
 
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
 
-def experimento_2():
-    print("Não montado")
-
 #Inicializa os experimento
 experimento_1()
-experimento_2()
