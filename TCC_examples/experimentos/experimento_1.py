@@ -1,12 +1,12 @@
-###### LIB ARFF_CONVERT ######
 import numpy as np
 import sys
-sys.path.insert(0, '/home/pedro/projects/dataset_arff_covert')
-from arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
-from arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
-from arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
-from arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
-##############################
+
+###### LIB ARFF_CONVERT DATASETS ######
+from .dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from .dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from .dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from .dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
+#######################################
 
 # SELEÇÃO DO MODELO
 from sklearn import model_selection
@@ -14,7 +14,7 @@ from sklearn import model_selection
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
-# BASE DE DADOS
+# BASE DE DADOS TESTE DO SCIKIT-LEARN
 from sklearn.datasets import load_iris, load_digits
 # SEPARAÇÃO DO CONJUNTO DE TRAINO E TESTE
 from sklearn.model_selection import train_test_split
@@ -25,138 +25,101 @@ from sklearn.metrics import accuracy_score
 # Classificador usando ESPAÇO DE DISSIMILARIDADE COM SELEÇÃO DOS R ALEATÓRIOS
 from sklearn.dissimilarity import DissimilarityRNGClassifier
 
-# X, y = load_SEAGenerator_test_mode()
-X, y = load_SEAGenerator_test_f2_f4()
-# X, y = load_AgrawalGenerator_test_mode()
-# X, y = load_AgrawalGenerator_test_mode_f2_f9()
+import pandas as pd
+import re
 
-def model_test_dissimilarity(random_state, estimator, X_train, y_train, X_test, y_test):
-    dissimilarity = DissimilarityRNGClassifier(estimator=estimator, random_state=random_state)
-    print(dissimilarity)
-    dissimilarity.fit(X_train, y_train)
-
-    score = model_selection.cross_val_score(dissimilarity, X_test, y_test, cv=10)
-    print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
-
-    ypred=model_selection.cross_val_predict(dissimilarity, X_test, y_test, cv=10)
-
-    # Matriz de confusão
-    cm=confusion_matrix(y_test, ypred)
-    print(cm)
-
-    return score, cm
-
-def model_test_1nn(X_train, y_train, X_test, y_test):
-    knn = KNeighborsClassifier(n_neighbors=1)
-    print(knn)
-    knn.fit(X_train, y_train)
-
-    score = model_selection.cross_val_score(knn, X_test, y_test, cv=10)
-    print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
-
-    ypred=model_selection.cross_val_predict(knn, X_test, y_test, cv=10)
-
-    # Matriz de confusão
-    cm=confusion_matrix(y_test, ypred)
-    print(cm)
-
-    return score, cm
-
-def model_test_3nn(X_train, y_train, X_test, y_test):
-    knn = KNeighborsClassifier(n_neighbors=3)
-    print(knn)
-    knn.fit(X_train, y_train)
-
-    score = model_selection.cross_val_score(knn, X_test, y_test, cv=10)
-    print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
-
-    ypred=model_selection.cross_val_predict(knn, X_test, y_test, cv=10)
-
-    # Matriz de confusão
-    cm=confusion_matrix(y_test, ypred)
-    print(cm)
-
-    return score, cm
-
-def model_test_naive_bayes(X_train, y_train, X_test, y_test):
-    naive_bayes = GaussianNB()
-    print(naive_bayes)
-    naive_bayes.fit(X_train, y_train)
-
-    score = model_selection.cross_val_score(naive_bayes, X_test, y_test, cv=10)
-    print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
-
-    ypred=model_selection.cross_val_predict(naive_bayes, X_test, y_test, cv=10)
-
-    # Matriz de confusão
-    cm=confusion_matrix(y_test, ypred)
-    print(cm)
-
-    return score, cm
-
-def model_test_decision_tree(random_state, X_train, y_train, X_test, y_test):
-    decision_tree = DecisionTreeClassifier(random_state=random_state)
-    print(decision_tree)
-    decision_tree.fit(X_train, y_train)
-
+# Função responsavel por rodar os algoritmos
+def model_test(estimator, X_train, y_train, X_test, y_test):
     
-    score = model_selection.cross_val_score(decision_tree, X_test, y_test, cv=10)
-    print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
+    estimator.fit(X_train, y_train)
 
-    ypred=model_selection.cross_val_predict(decision_tree, X_test, y_test, cv=10)
-
-    # ypred = decision_tree.predict(X_test)
-    # precisao = accuracy_score(y_test, ypred)
-    # print(precisao)
+    ypred = estimator.predict(X_test)
+    tx_acerto = accuracy_score(y_test, ypred)
+    print(tx_acerto)
 
     # Matriz de confusão
     cm=confusion_matrix(y_test, ypred)
     print(cm)
 
-    return score, cm
+    return tx_acerto, cm
 
 def experimento_1():
     try:
-        results_confusion = []
-        results_score     = []
+        # Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
+        range_experimento = [20, 50]
 
-        for i in range(20, 50): # Vamos testar o random_state de 20 a 50
-            # 50% treino e 50% para teste
-            X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
+        # Datasets que iremos utilizar
+        function_datasets_list = [load_SEAGenerator_test_f2_f4]
+        
+        # Montagem da saida
+        results_score = {
+            'RandomState': list(range(range_experimento[0], range_experimento[1])),
+            'Dataset' : list() # Será armazenado o dataset utilizado
+        } # cada uma dessas chaves será a coluna
 
-            score, cm = model_test_dissimilarity(random_state=i, estimator=DecisionTreeClassifier(random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
-            results_score.append(score)
-            results_confusion.append(cm)
+        # Todos os classificadores que estamos utilizando
+        classifiers = ["KNeighborsClassifier(n_neighbors=1)", 
+                         "KNeighborsClassifier(n_neighbors=3)", 
+                         "DecisionTreeClassifier()",
+                         "GaussianNB()",
+                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
+                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
+                         "DissimilarityRNGClassifier(DecisionTreeClassifier())",
+                         "DissimilarityRNGClassifier(GaussianNB())"
+                    ]
 
-            # score, cm = model_test_dissimilarity(random_state=i, estimator=GaussianNB(), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
-            # results_score.append(score)
-            # results_confusion.append(cm)
+        # Cria uma chave com uma lista para cada classificador usado 
+        for clf_name in classifiers:
+            results_score[clf_name] = []
+        
+        # Testa todos os datasets
+        for dataset in function_datasets_list:
+            X, y = dataset()
+            name_function_dataset = dataset.__name__
+            results_score['Dataset'].extend([name_function_dataset] * (range_experimento[1] - range_experimento[0]))
 
-            # score, cm = model_test_dissimilarity(random_state=i, estimator=KNeighborsClassifier(n_neighbors=1), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
-            # results_score.append(score)
-            # results_confusion.append(cm)
+            print(f"Testando o dataset: {name_function_dataset}")
 
-            # score, cm = model_test_dissimilarity(random_state=i, estimator=KNeighborsClassifier(n_neighbors=3), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
-            # results_score.append(score)
-            # results_confusion.append(cm)
+            for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
+                # Classificadores a serem testados
+                estimators= [KNeighborsClassifier(n_neighbors=1), 
+                            KNeighborsClassifier(n_neighbors=3), 
+                            DecisionTreeClassifier(random_state=i), 
+                            GaussianNB()]
+                
+                # 50% treino e 50% para teste
+                X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
 
-            # score, cm = model_test_decision_tree(random_state=i, X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            # results_score.append(score)
-            # results_confusion.append(cm)
+                for estimator in estimators:
+                    tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
 
-            # score, cm = model_test_naive_bayes(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            # results_score.append(score)
-            # results_confusion.append(cm)
+                    # Remove o random_state=<value>
+                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', str(estimator))
+                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+                    
+                    results_score[cleaned_str].append(tx_acerto)
 
-            # score, cm = model_test_1nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            # results_score.append(score)
-            # results_confusion.append(cm)
 
-            # score, cm = model_test_3nn(X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test) # Roda o knn para  mesmma base
-            # results_score.append(score)
-            # results_confusion.append(cm)
+                for estimator in estimators:
+                    tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
+                    
+                    # Remove o random_state=<value>
+                    name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
+                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
+                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+                    
+                    results_score[cleaned_str].append(tx_acerto)
 
-    # Salvar depois os resultados em um excel para validar e analisar melhor
+        # Após o loop, organize e salve os resultados em um arquivo Excel
+        classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
+
+        # Cria o dataframe com os resultados das acurácias
+        df = pd.DataFrame(results_score)
+
+        df.columns = classifiers_names # Muda o nome das colunas para a lista que ja tenhos
+
+        # Salvar depois os resultados em um excel para validar e analisar melhor
+        df.to_csv('results.csv', index=False)
 
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
