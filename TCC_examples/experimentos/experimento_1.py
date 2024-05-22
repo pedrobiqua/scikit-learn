@@ -2,11 +2,16 @@ import numpy as np
 import sys
 
 ###### LIB ARFF_CONVERT DATASETS ######
-from .dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
-from .dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
-from .dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
-from .dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
 #######################################
+
+# Author: Pedro Bianchini de Quadros      <quadros.pedro@pucpr.edu.br>
+#         Gabriel Antonio Gomes de Farias <gomes.farias@pucpr.edu.br>
+# Co-Author: Jean Paul Barddal
+#  ESCOLA POLITÉCNICA - PUCPR - CIÊNCIA DA COMPUTAÇÃO
 
 # SELEÇÃO DO MODELO
 from sklearn import model_selection
