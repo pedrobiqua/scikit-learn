@@ -1,5 +1,6 @@
 # Author: Pedro Bianchini de Quadros <quadros.pedro@pucpr.edu.br>
 #         Gabriel Antonio Gomes de Farias <gomes.farias@pucpr.edu.br>
+# Co-Author: Jean Paul Barddal
 # License: BSD 3 clause
 
 import warnings
