@@ -121,7 +121,7 @@ def experimento_1():
         # Cria o dataframe com os resultados das acurácias
         df = pd.DataFrame(results_score)
 
-        df.columns = classifiers_names # Muda o nome das colunas para a lista que ja tenhos
+        df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
 
         # Salvar depois os resultados em um excel para validar e analisar melhor
         df.to_csv('results.csv', index=False)
