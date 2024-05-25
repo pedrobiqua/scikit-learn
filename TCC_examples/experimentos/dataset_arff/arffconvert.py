@@ -52,7 +52,7 @@ def load_SEAGenerator_test_mode(*, return_X_y=True, frame=False):
 
 def load_SEAGenerator_test_f2_f4(*, return_X_y=True, frame=False):
     # WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.SEAGenerator -f 2 -i 10 -b) -d (generators.SEAGenerator -f 4 -i 5 -b) -p 50000 -w 1 -r 10) -f \\wsl.localhost\Ubuntu\home\pedro\projects\dataset_arff_covert\datasets\arff\SEAGenerator_base_drifit_f2_f4.arff -m 100000
-    path_SEAGenerator = "/home/pedro/projects/scikit-learn/TCC_examples/datasets/arff/SEAGenerator_base_drifit_f2_f4.arff"
+    path_SEAGenerator = "C:/Users/Gabz/Documents/scikit-learn-1/TCC_examples/datasets/arff/SEAGenerator_base_drifit_f2_f4.arff"
     # Carrega arquivo arff
     data, meta = arff.loadarff(f"{path_SEAGenerator}")
     # Faz os tratamentos especificos
