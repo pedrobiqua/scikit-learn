@@ -100,7 +100,7 @@ def load_AgrawalGenerator_test_mode_f2_f9(*, return_X_y=True, frame=False):
 
 def load_AssetNegotiationGenerator_f1_f5(*, return_X_y=True, frame=False):
     # WriteStreamToARFFFile -s (ConceptDriftStream -s generators.AssetNegotiationGenerator -d (generators.AssetNegotiationGenerator -f 5) -p 50000 -w 1 -r 10) -f \\wsl.localhost\Ubuntu\home\pedro\projects\dataset_arff_covert\datasets\arff\AssetNegotiationGenerator_base_drifit_f1_f5.arff -m 100000
-    path = "/home/pedro/projects/scikit-learn/TCC_examples/datasets/arff/AssetNegotiationGenerator_base_drifit_f1_f5.arff"
+    path = "/C:/Users/Gabz/Documents/scikit-learn-1/TCC_examples/datasets/arff/AssetNegotiationGenerator_base_drifit_f1_f5.arff"
     
     # Carrega arquivo arff
     data, meta = arff.loadarff(f"{path}")
