@@ -4,7 +4,10 @@ import sys
 ###### LIB ARFF_CONVERT DATASETS ######
 from dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
 #######################################
 
@@ -29,6 +32,7 @@ from sklearn.metrics import accuracy_score
 
 # Classificador usando ESPAÇO DE DISSIMILARIDADE COM SELEÇÃO DOS R ALEATÓRIOS
 from sklearn.dissimilarity import DissimilarityRNGClassifier
+from sklearn.dissimilarity import DissimilarityIHD
 
 import pandas as pd
 import re
@@ -70,7 +74,8 @@ def experimento_1():
                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
                          "DissimilarityRNGClassifier(DecisionTreeClassifier())",
-                         "DissimilarityRNGClassifier(GaussianNB())"
+                         "DissimilarityRNGClassifier(GaussianNB())",
+                         "DissmilarityIHD(KNeighborsClassifier())"
                     ]
 
         # Cria uma chave com uma lista para cada classificador usado 
@@ -106,10 +111,10 @@ def experimento_1():
 
 
                 for estimator in estimators:
-                    tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
+                    tx_acerto, cm = model_test(estimator=DissimilarityIHD(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
                     
                     # Remove o random_state=<value>
-                    name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
+                    name_estimator = f"DissimilarityIHDClassifier({str(estimator)})"
                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
@@ -130,4 +135,18 @@ def experimento_1():
         print(f"Tecla Crtl + c precionada!")
 
 #Inicializa os experimento
-experimento_1()
+#experimento_1()
+data = load_iris()
+X,y = data.data , data.target
+#X,y = load_AssetNegotiationGenerator_f1_f5()
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5)
+estimator = DissimilarityIHD(KNeighborsClassifier(), random_state=42)
+estimator.fit(X_train, y_train)
+
+ypred = estimator.predict(X_test)
+tx_acerto = accuracy_score(y_test, ypred)
+print(tx_acerto)
+
+# Matriz de confusão
+cm=confusion_matrix(y_test, ypred)
+print(cm)
