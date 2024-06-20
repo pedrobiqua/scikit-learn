@@ -4,6 +4,9 @@ from os import getcwd
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
 import os
 
 # Author: Pedro Bianchini de Quadros      <quadros.pedro@pucpr.edu.br>
@@ -54,7 +57,7 @@ def load_SEAGenerator_test_mode(*, return_X_y=True, frame=False):
 
 def load_SEAGenerator_test_f2_f4(*, return_X_y=True, frame=False):
     # WriteStreamToARFFFile -s (ConceptDriftStream -s (generators.SEAGenerator -f 2 -i 10 -b) -d (generators.SEAGenerator -f 4 -i 5 -b) -p 50000 -w 1 -r 10) -f \\wsl.localhost\Ubuntu\home\pedro\projects\dataset_arff_covert\datasets\arff\SEAGenerator_base_drifit_f2_f4.arff -m 100000
-    path_SEAGenerator = "C:/Users/Gabz/Documents/scikit-learn-1/TCC_examples/datasets/arff/SEAGenerator_base_drifit_f2_f4.arff"
+    path_SEAGenerator = "/home/pedro/projects/scikit-learn/TCC_examples/datasets/arff/SEAGenerator_base_drifit_f2_f4.arff"
     # Carrega arquivo arff
     data, meta = arff.loadarff(f"{path_SEAGenerator}")
     # Faz os tratamentos especificos
@@ -93,6 +96,28 @@ def load_AgrawalGenerator_test_mode_f2_f9(*, return_X_y=True, frame=False):
     X_encoded = pd.DataFrame(encoder.fit_transform(flat_cat).toarray())
     flat_data = pd.concat([flat_num, X_encoded], axis=1).to_numpy()
 
+    return flat_data, target
+
+def load_AssetNegotiationGenerator_f1_f5(*, return_X_y=True, frame=False):
+    # WriteStreamToARFFFile -s (ConceptDriftStream -s generators.AssetNegotiationGenerator -d (generators.AssetNegotiationGenerator -f 5) -p 50000 -w 1 -r 10) -f \\wsl.localhost\Ubuntu\home\pedro\projects\dataset_arff_covert\datasets\arff\AssetNegotiationGenerator_base_drifit_f1_f5.arff -m 100000
+    path = "/home/pedro/projects/scikit-learn/TCC_examples/datasets/arff/AssetNegotiationGenerator_base_drifit_f1_f5.arff"
+    
+    # Carrega arquivo arff
+    data, meta = arff.loadarff(f"{path}")
+    # print(data)
+    # Faz os tratamentos especificos
+    target = np.array(data.tolist(), dtype=object)[:, -1].astype('U6')
+    flat_data = np.array(data.tolist(), dtype=object)[:,:-1]
+
+    encoder   = OneHotEncoder(handle_unknown="ignore")
+    flat_data = pd.DataFrame(flat_data)
+    flat_data = flat_data.convert_dtypes()
+    flat_cat  = flat_data.select_dtypes(exclude="number")
+    flat_num  = flat_data.select_dtypes(include="number")
+    X_encoded = pd.DataFrame(encoder.fit_transform(flat_cat).toarray())
+    flat_data = pd.concat([flat_num, X_encoded], axis=1).to_numpy()
+
+    # Retorna os valores formatados
     return flat_data, target
 
 def load_AssetNegotiationGenerator_f1_f5(*, return_X_y=True, frame=False):

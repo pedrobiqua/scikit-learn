@@ -2,14 +2,13 @@ import numpy as np
 import sys
 
 ###### LIB ARFF_CONVERT DATASETS ######
-from dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
-from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
 #######################################
 
-# Author: Pedro Bianchini de Quadros      <quadros.pedro@pucpr.edu.br>
-#         Gabriel Antonio Gomes de Farias <gomes.farias@pucpr.edu.br>
+# Author: Gabriel Antonio Gomes de Farias <gomes.farias@pucpr.edu.br>
+#         Pedro Bianchini de Quadros      <quadros.pedro@pucpr.edu.br>
 # Co-Author: Jean Paul Barddal
 #  ESCOLA POLITÉCNICA - PUCPR - CIÊNCIA DA COMPUTAÇÃO
 
@@ -54,11 +53,11 @@ def experimento_2_25_25():
         range_experimento = [20, 50]
 
         # Datasets que iremos utilizar
-        function_datasets_list = [load_SEAGenerator_test_f2_f4]
+        function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
         
         # Montagem da saida
         results_score = {
-            'RandomState': list(range(range_experimento[0], range_experimento[1])),
+            'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
             'Dataset' : list() # Será armazenado o dataset utilizado
         } # cada uma dessas chaves será a coluna
 
@@ -87,6 +86,7 @@ def experimento_2_25_25():
 
             for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
                 # Classificadores a serem testados
+                print(f"random_state={i}")
                 estimators= [KNeighborsClassifier(n_neighbors=1), 
                             KNeighborsClassifier(n_neighbors=3), 
                             DecisionTreeClassifier(random_state=i), 
@@ -139,11 +139,11 @@ def experimento_2_25_50():
         range_experimento = [20, 50]
 
         # Datasets que iremos utilizar
-        function_datasets_list = [load_SEAGenerator_test_f2_f4]
+        function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
         
         # Montagem da saida
         results_score = {
-            'RandomState': list(range(range_experimento[0], range_experimento[1])),
+            'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
             'Dataset' : list() # Será armazenado o dataset utilizado
         } # cada uma dessas chaves será a coluna
 
