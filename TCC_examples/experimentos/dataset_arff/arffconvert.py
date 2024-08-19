@@ -1,6 +1,6 @@
 from scipy.io import arff
 import numpy as np
-from os import getcwd
+import os
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
@@ -16,28 +16,14 @@ import os
 
 DATA_MODULE = "datasets"
 
-# Exemplo de como chamar
-def load_SEAGenerator(*, return_X_y=True, frame=False):
+def load_SEAGenerator():
+    """
+    FUNÇÃO TESTE USADA COMO EXEMPLO
+    """
     # Caminho para o arquivo arff
     # path_SEAGenerator = os.path.join(DATA_MODULE, 'arff', 'SEA_base.arff')
-    # TODO: Fazer isso de forma mais inteligente
-    path_SEAGenerator = "/home/pedro/projects/scikit-learn/TCC_examples/datasets/arff/SEA_base.arff"
-    # Carrega arquivo arff
-    data, meta = arff.loadarff(f"{path_SEAGenerator}")
-    # Faz os tratamentos especificos
-    target = np.array(data.tolist(), dtype=object)[:, -1].astype('U6')
-    flat_data = np.array(data.tolist(), dtype=object)[:,:-1]
-
-    # TODO: Montar dataframe, caso precise!
-    if frame:
-        print("Montar o dataframe")
-        return flat_data, target
-    
-    # Devolve X, y | Ou seja data e target
-    if return_X_y:
-        return flat_data, target    
-    
-    # TODO: Depois montar uma classe, inspirada na Bunch do Sckit-learning
+    path_SEAGenerator = "../../datasets/arff/SEA_base_drift_test_1.arff"
+    flat_data, target = format_dataset(path=path_SEAGenerator)
     return flat_data, target
 
 def load_SEAGenerator_test_mode(*, return_X_y=True, frame=False):
@@ -101,6 +87,32 @@ def load_AssetNegotiationGenerator_f1_f5(*, return_X_y=True, frame=False):
     
     # Carrega arquivo arff
     data, meta = arff.loadarff(f"{path}")
+    # print(data)
+    # Faz os tratamentos especificos
+    target = np.array(data.tolist(), dtype=object)[:, -1].astype('U6')
+    flat_data = np.array(data.tolist(), dtype=object)[:,:-1]
+
+    encoder   = OneHotEncoder(handle_unknown="ignore")
+    flat_data = pd.DataFrame(flat_data)
+    flat_data = flat_data.convert_dtypes()
+    flat_cat  = flat_data.select_dtypes(exclude="number")
+    flat_num  = flat_data.select_dtypes(include="number")
+    X_encoded = pd.DataFrame(encoder.fit_transform(flat_cat).toarray())
+    flat_data = pd.concat([flat_num, X_encoded], axis=1).to_numpy()
+
+    # Retorna os valores formatados
+    return flat_data, target
+
+def format_dataset(path):
+    # Caminho relativo das bases
+    folders = path.split("/")
+    base_dir = os.path.dirname(__file__)
+    join_path = os.path.join(base_dir, *folders)
+    absolute_path = os.path.abspath(join_path)
+    print(absolute_path)
+
+    # Carrega arquivo arff
+    data, meta = arff.loadarff(absolute_path)
     # print(data)
     # Faz os tratamentos especificos
     target = np.array(data.tolist(), dtype=object)[:, -1].astype('U6')
