@@ -13,7 +13,7 @@ from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_
 # Classificador usando ESPAÇO DE DISSIMILARIDADE COM SELEÇÃO DOS R ALEATÓRIOS
 from sklearn.dissimilarity import DissimilarityRNGClassifier
 
-from .experimentos.dataset_arff.arffconvert import load_SEAGenerator
+from dataset_arff.arffconvert import load_SEAGenerator
 # data = load_iris()
 # data = load_digits()
 # X, y = data.data, data.target
