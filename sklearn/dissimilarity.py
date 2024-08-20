@@ -7,9 +7,14 @@ import warnings
 from numbers import Integral, Real
 from abc import ABCMeta, abstractmethod
 
+import math
 import numpy as np
+import pandas as pd
 import scipy.sparse as sp
-import imblearn as imb
+#import imblearn as imb
+import heapq
+import deslib as dsl
+from deslib.util.instance_hardness import kdn_score
 
 from .base import (
     BaseEstimator,
@@ -246,8 +251,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
 
         return self
 
-    
-
     def score(self, X, y, sample_weight=None):
         """Return the mean accuracy on the given test data and labels.
 
@@ -283,38 +286,6 @@ class DissimilarityIHD(_BaseDissimilarity):
     A Dissimilarity Classifier model using instance hardeness threshold for selection of the reference (R) subset 
     """
 
-
-    """    
-    Parameters
-    ----------
-    random_state : int, RandomState instance or None, default=None
-        Controls the randomness to generate the R values.
-        Pass an int for reproducible output across multiple function calls.
-        See :term:`Glossary <random_state>`.
-
-
-    Attributes
-    ----------
-    classes_ : ndarray of shape (n_classes,) or list of such arrays
-        Unique class labels observed in `y`. For multi-output classification
-        problems, this attribute is a list of arrays as each output has an
-        independent set of possible classes.
-    . . . (Pegar exemplo do dummy)
-        
-    n_classes_ : int or list of int
-        Number of label for each output.
-    . . . (Pegar exemplo do dummy)
-
-    See Also
-    --------
-    . . . (Pegar exemplo do dummy)
-
-    Examples
-    --------
-    . . . (Pegar exemplo do dummy)
-
-    """
-
     _parameter_constraints: dict = {
         "estimator": [HasMethods(["fit", "predict"]), None],
         # "n_estimators": [Interval(Integral, 1, None, closed="left")],
@@ -337,20 +308,25 @@ class DissimilarityIHD(_BaseDissimilarity):
         self.dissim_matrix_ = None
         self.instances_X_r = None
 
+        # Unique Attributes
+        self.k = None
+
 
     @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y, sample_weight=None):
         self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
         self._strategy = self.strategy # Não sei se ainda vou utilizar isso
 
-        # Classes do problema
+        # 1. Classes do problema
         self.classes_ = np.unique(y)
 
-        # 2. Selecionar o confunto "R"
-        iht = imb.under_sampling.InstanceHardnessThreshold(estimator=KNeighborsClassifier(), random_state=self.random_state)
+        # 2. Calcula dureza das classes
+        s, nx = self._instance_hardness(X,y)
 
-        X_resampled ,y_resampled = iht.fit_resample(X,y)
+        # 3. Reamostragem
+        X_resampled = np.array(heapq.nlargest(len(nx[0]), s))
 
+        # 4. Reamostrage treino
         self.instances_X_r = X_resampled
 
         # Com os R selecionados podemos montar a matriz identidade
@@ -380,6 +356,25 @@ class DissimilarityIHD(_BaseDissimilarity):
         
         dissimilarity_test = self._get_dissim_representation(X)
         return self.estimator.predict(dissimilarity_test)
+    
+    def _instance_hardness(self, X, y):
+        """
+        Author: Gabriel Antonio Gomes de Farias
+
+        Use: 
+            Calculates the hardness of a instance pertaining to a class and returns a array with each sample hardness value.
+
+
+        @param: array X (Array with samples) ; y labels ;  int k ("Safe" value of neighbors to estimate certain region)
+        @return: 2D tuple float score:int neighbor
+        """
+
+        #Calculate instance hardness on the training data
+        # Calculate instance hardness on the training data
+        k = int(math.sqrt(len(X)))
+        s, nx = kdn_score(X,y, k=k)   
+        return s, nx
+        # X_R_subset is now ready for use in further analysis, such as building a dissimilarity matrix
 
     def predict_proba(self, X):
         """
