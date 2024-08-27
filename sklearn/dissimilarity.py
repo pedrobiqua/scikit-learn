@@ -30,6 +30,7 @@ from .utils.validation import (
     check_is_fitted,
 )
 from .neighbors import KNeighborsClassifier
+from .cluster import KMeans
 
 class _BaseDissimilarity(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
     """ Abstract base class for Dissimilarity based estimators"""
@@ -275,3 +276,47 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         if X is None:
             X = np.zeros(shape=(len(y), 1))
         return super().score(X, y, sample_weight)
+
+
+class DissimilarityCentroidClassifier(_BaseDissimilarity):
+
+    _parameter_constraints: dict = {
+        "estimator": [HasMethods(["fit", "predict"]), None],
+        "random_state": ["random_state"],
+    }
+
+    def __init__(self, estimator=None, n_clusters=3, *, random_state=None):
+        # Estimators
+        self.estimator = estimator
+        
+        # Parameters
+        self.random_state = random_state
+
+        # Atributes
+        self.n_clusters = n_clusters
+        self.classes_ = None
+        self.dissim_matrix_ = None
+        self.instances_X_r = None
+    
+    @_fit_context(prefer_skip_nested_validation=True)
+    def fit(self, X, y, sample_weight=None):
+        
+        self._validate_data(X, cast_to_ndarray=False)
+        self.classes_ = np.unique(y)
+        random_state = check_random_state(self.random_state)
+
+        kmeans = KMeans(n_clusters=self.n_clusters, random_state=random_state)
+        kmeans.fit(X)
+        centroids = kmeans.cluster_centers_
+        self.instances_X_r = centroids
+
+        if self.instances_X_r is None:
+            raise ValueError()
+        
+        if self.estimator is None:
+            self.estimator = KNeighborsClassifier()
+        
+        self.dissim_matrix_ = self._get_dissim_representation(X)
+        self.estimator.fit(self.dissim_matrix_, y)
+
+        return self
