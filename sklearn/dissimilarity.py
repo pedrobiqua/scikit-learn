@@ -7,8 +7,14 @@ import warnings
 from numbers import Integral, Real
 from abc import ABCMeta, abstractmethod
 
+import math
 import numpy as np
+import pandas as pd
 import scipy.sparse as sp
+#import imblearn as imb
+import heapq
+import deslib as dsl
+from deslib.util.instance_hardness import kdn_score
 
 from .base import (
     BaseEstimator,
@@ -246,8 +252,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
 
         return self
 
-    
-
     def score(self, X, y, sample_weight=None):
         """Return the mean accuracy on the given test data and labels.
 
@@ -320,3 +324,196 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         self.estimator.fit(self.dissim_matrix_, y)
 
         return self
+
+    
+    
+class DissimilarityIHD(_BaseDissimilarity):
+    """
+    A Dissimilarity Classifier model using instance hardeness threshold for selection of the reference (R) subset 
+    """
+
+    _parameter_constraints: dict = {
+        "estimator": [HasMethods(["fit", "predict"]), None],
+        # "n_estimators": [Interval(Integral, 1, None, closed="left")],
+        "strategy": [
+            StrOptions({"most_frequent", "prior", "stratified", "uniform", "constant"})
+        ],
+        "random_state": ["random_state"],
+    }
+
+    def __init__(self, estimator=None, *, strategy="prior", random_state=None):
+        # Estimators
+        self.estimator = estimator
+
+        # Parameters
+        self.strategy = strategy
+        self.random_state = random_state
+
+        # Atributes
+        self.classes_ = None
+        self.dissim_matrix_ = None
+        self.instances_X_r = None
+
+        # Unique Attributes
+        self.k = None
+
+
+    @_fit_context(prefer_skip_nested_validation=True)
+    def fit(self, X, y, sample_weight=None):
+        self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
+        self._strategy = self.strategy # Não sei se ainda vou utilizar isso
+
+        # 1. Classes do problema
+        self.classes_ = np.unique(y)
+
+        # 2. Calcula dureza das classes
+        s, nx = self._instance_hardness(X,y)
+
+        # 3. Reamostragem
+        X_resampled = np.array(heapq.nlargest(len(nx[0]), s))
+
+        # 4. Reamostrage treino
+        self.instances_X_r = X_resampled
+
+        # Com os R selecionados podemos montar a matriz identidade
+        self.dissim_matrix_ = self._get_dissim_representation(X)
+
+        # Utiliza a matrix de dissimilidade
+        self.estimator.fit(self.dissim_matrix_, y)
+
+        return self
+    
+    def predict(self, X):
+        """Perform classification on test vectors X.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Test data.
+
+        Returns
+        -------
+        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
+            Predicted target values for X.
+        """
+
+        if self.instances_X_r is None:
+            raise ValueError("Missing value R")
+        
+        dissimilarity_test = self._get_dissim_representation(X)
+        return self.estimator.predict(dissimilarity_test)
+    
+    def _instance_hardness(self, X, y):
+        """
+        Author: Gabriel Antonio Gomes de Farias
+
+        Use: 
+            Calculates the hardness of a instance pertaining to a class and returns a array with each sample hardness value.
+
+
+        @param: array X (Array with samples) ; y labels ;  int k ("Safe" value of neighbors to estimate certain region)
+        @return: 2D tuple float score:int neighbor
+        """
+
+        #Calculate instance hardness on the training data
+        # Calculate instance hardness on the training data
+        k = int(math.sqrt(len(X)))
+        s, nx = kdn_score(X,y, k=k)   
+        return s, nx
+        # X_R_subset is now ready for use in further analysis, such as building a dissimilarity matrix
+
+    def predict_proba(self, X):
+        """
+        Return probability estimates for the test vectors X.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Test data.
+
+        Returns
+        -------
+        P : ndarray of shape (n_samples, n_classes) or list of such arrays
+            Returns the probability of the sample for each class in
+            the model, where classes are ordered arithmetically, for each
+            output.
+        """
+        check_is_fitted(self)
+
+        # numpy random_state expects Python int and not long as size argument
+        # under Windows
+        n_samples = _num_samples(X)
+        rs = check_random_state(self.random_state)
+
+        n_classes_ = self.n_classes_
+        classes_ = self.classes_
+        class_prior_ = self.class_prior_
+        constant = self.constant
+        if self.n_outputs_ == 1:
+            # Get same type even for self.n_outputs_ == 1
+            n_classes_ = [n_classes_]
+            classes_ = [classes_]
+            class_prior_ = [class_prior_]
+            constant = [constant]
+
+        P = []
+        for k in range(self.n_outputs_):
+            if self._strategy == "most_frequent":
+                ind = class_prior_[k].argmax()
+                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
+                out[:, ind] = 1.0
+            elif self._strategy == "prior":
+                out = np.ones((n_samples, 1)) * class_prior_[k]
+
+            elif self._strategy == "stratified":
+                out = rs.multinomial(1, class_prior_[k], size=n_samples)
+                out = out.astype(np.float64)
+
+            elif self._strategy == "uniform":
+                out = np.ones((n_samples, n_classes_[k]), dtype=np.float64)
+                out /= n_classes_[k]
+
+            elif self._strategy == "constant":
+                ind = np.where(classes_[k] == constant[k])
+                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
+                out[:, ind] = 1.0
+
+            P.append(out)
+
+        if self.n_outputs_ == 1:
+            P = P[0]
+
+        return P
+
+    def predict_log_proba(self, X):
+        """
+        Return log probability estimates for the test vectors X.
+
+        Parameters
+        ----------
+        X : {array-like, object with finite length or shape}
+            Training data.
+
+        Returns
+        -------
+        P : ndarray of shape (n_samples, n_classes) or list of such arrays
+            Returns the log probability of the sample for each class in
+            the model, where classes are ordered arithmetically for each
+            output.
+        """
+        proba = self.predict_proba(X)
+        if self.n_outputs_ == 1:
+            return np.log(proba)
+        else:
+            return [np.log(p) for p in proba]
+
+    def _more_tags(self):
+        return {
+            "poor_score": True,
+            "no_validation": True,
+            "_xfail_checks": {
+                "check_methods_subset_invariance": "fails for the predict method",
+                "check_methods_sample_order_invariance": "fails for the predict method",
+            },
+        }
+    

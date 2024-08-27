@@ -2,7 +2,12 @@ import numpy as np
 import sys
 
 ###### LIB ARFF_CONVERT DATASETS ######
+#from dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
+#from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
 #######################################
@@ -28,6 +33,7 @@ from sklearn.metrics import accuracy_score
 
 # Classificador usando ESPAÇO DE DISSIMILARIDADE COM SELEÇÃO DOS R ALEATÓRIOS
 from sklearn.dissimilarity import DissimilarityRNGClassifier
+from sklearn.dissimilarity import DissimilarityIHD
 
 import pandas as pd
 import re
@@ -69,7 +75,8 @@ def experimento_1():
                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
                          "DissimilarityRNGClassifier(DecisionTreeClassifier())",
-                         "DissimilarityRNGClassifier(GaussianNB())"
+                         "DissimilarityRNGClassifier(GaussianNB())",
+                         "DissmilarityIHD(KNeighborsClassifier())"
                     ]
 
         # Cria uma chave com uma lista para cada classificador usado 
@@ -106,10 +113,10 @@ def experimento_1():
 
 
                 for estimator in estimators:
-                    tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
+                    tx_acerto, cm = model_test(estimator=DissimilarityIHD(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test, y_test=y_test)
                     
                     # Remove o random_state=<value>
-                    name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
+                    name_estimator = f"DissimilarityIHDClassifier({str(estimator)})"
                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
@@ -129,5 +136,49 @@ def experimento_1():
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
 
-#Inicializa os experimento
-experimento_1()
+#Inicializa os experimento  
+# experimento_1()
+data = load_iris()
+X,y = data.data , data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5)
+
+diss_kdn = DissimilarityIHD(estimator=KNeighborsClassifier(),random_state=42)
+diss_kdn.fit(X_train, y_train)
+diss_kdn.predict(X_test)
+
+score = model_selection.cross_val_score(diss_kdn, X_test, y_test, cv=10)
+print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
+
+ypred=model_selection.cross_val_predict(diss_kdn, X_test, y_test, cv=10)
+# Precisão
+prec=precision_score(y_test, ypred, average='weighted')
+print("Precision:", prec)
+
+# Revocação (Recall)
+recall=recall_score(y_test, ypred, average='weighted')
+print("Revocação:", recall)
+
+# f1 score
+f1 = f1_score(y_test, ypred, average='macro')
+print("f1 score:", f1)
+
+# Matriz de confusão
+cm=confusion_matrix(y_test, ypred)
+print(cm)
+# print("KDN Scores:", estimator[0].flatten())
+# print("Índices dos vizinhos mais próximos:", estimator[1])
+# print(f'Scores {len(estimator[0])}: Vizinhos: {len(estimator[1])}')
+# for i in estimator[0]:
+#     for j in estimator[1]:
+#         print(f'{i}    {j}') 
+#         count += 1
+# print(f'{count}')
+# estimator.fit(X_train, y_train)
+
+# ypred = estimator.predict(X_test)
+# tx_acerto = accuracy_score(y_test, ypred)
+# print(tx_acerto)
+
+# # Matriz de confusão
+# cm=confusion_matrix(y_test, ypred)
+# print(cm)
