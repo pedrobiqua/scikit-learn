@@ -327,7 +327,7 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
 
     
     
-class DissimilarityIHD(_BaseDissimilarity):
+class DissimilarityIHDClassifier(_BaseDissimilarity):
     """
     A Dissimilarity Classifier model using instance hardeness threshold for selection of the reference (R) subset 
     """
@@ -370,6 +370,7 @@ class DissimilarityIHD(_BaseDissimilarity):
         s, nx = self._instance_hardness(X,y)
 
         # 3. Reamostragem
+        # Adicionar aqui a quantidade de R
         X_resampled = np.array(heapq.nlargest(len(nx[0]), s))
 
         # 4. Reamostrage treino
@@ -417,7 +418,7 @@ class DissimilarityIHD(_BaseDissimilarity):
 
         #Calculate instance hardness on the training data
         # Calculate instance hardness on the training data
-        k = int(math.sqrt(len(X)))
+        k = 3
         s, nx = kdn_score(X,y, k=k)   
         return s, nx
         # X_R_subset is now ready for use in further analysis, such as building a dissimilarity matrix
