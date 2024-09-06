@@ -170,7 +170,8 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         list_indexes = []
 
         # N = Quantidade de classes que serão usadas por cada classe
-        n = len(np.unique(y)) * 3
+        # Substituir isso daqui por representative_set_size
+        n = len(np.unique(y)) * 3 # Isso é por classe
 
         # TODO: Rever o código usado
         if(n > n_classes):
