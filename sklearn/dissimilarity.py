@@ -173,7 +173,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         # Substituir isso daqui por representative_set_size
         n = len(np.unique(y)) * 3 # Isso é por classe
 
-        # TODO: Rever o código usado
         if(n > n_classes):
             n_instances = int(n / n_classes)
 
@@ -290,6 +289,24 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         "random_state": ["random_state"],
     }
 
+
+    def _kmeans_per_class(self, X, y):
+        """
+        Separate instances per class and fit KMeans with the selected classes.
+        """
+        centroids_list = []
+        for n_class in self.classes_:
+            instances = X[y == n_class]
+            kmeans = KMeans(n_clusters=self.n_clusters, random_state=self.random_state)
+            kmeans.fit(instances)
+            centroids = kmeans.cluster_centers_
+            centroids_list.append(centroids)
+        centroids_array = np.vstack(centroids_list)
+        
+        return centroids_array
+
+            
+
     def __init__(self, estimator=None, n_clusters=3, *, random_state=None):
         # Estimators
         self.estimator = estimator
@@ -310,10 +327,7 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         self.classes_ = np.unique(y)
         random_state = check_random_state(self.random_state)
 
-        kmeans = KMeans(n_clusters=self.n_clusters, random_state=random_state)
-        kmeans.fit(X)
-        centroids = kmeans.cluster_centers_
-        self.instances_X_r = centroids
+        self.instances_X_r = self._kmeans_per_class(X, y)
 
         if self.instances_X_r is None:
             raise ValueError()
