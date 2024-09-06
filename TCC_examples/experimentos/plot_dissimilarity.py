@@ -25,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, random
 
 # TODO: PERGUNTA: Qual a qauntidade ideal de instancias R para montar o espaço de dissmilaridade?
 # dissimilarity = DissimilarityRNGClassifier(estimator=KNeighborsClassifier(), random_state=60)
-dissimilarity = DissimilarityIHDClassifier(estimator=KNeighborsClassifier(), random_state=42)
+dissimilarity = DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(), random_state=42)
 print(dissimilarity) # Mostra o teste que estamos usando
 dissimilarity.fit(X_train, y_train)
 
