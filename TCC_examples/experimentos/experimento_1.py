@@ -31,6 +31,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.dissimilarity import DissimilarityRNGClassifier
 from sklearn.dissimilarity import DissimilarityIHDClassifier
 from sklearn.dissimilarity import DissimilarityCentroidClassifier
+from sklearn.dissimilarity import DissimilarityIHDClassifier
+from sklearn.dissimilarity import DissimilarityCentroidClassifier
 
 import pandas as pd
 import re

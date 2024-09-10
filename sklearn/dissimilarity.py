@@ -328,7 +328,7 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
 
     
     
-class DissimilarityIHD(_BaseDissimilarity):
+class DissimilarityIHDClassifier(_BaseDissimilarity):
     """
     A Dissimilarity Classifier model using instance hardeness threshold for selection of the reference (R) subset 
     """
