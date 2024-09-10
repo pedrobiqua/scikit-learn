@@ -14,6 +14,7 @@ from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_
 from sklearn.dissimilarity import DissimilarityRNGClassifier
 from sklearn.dissimilarity import DissimilarityIHD
 from sklearn.dissimilarity import DissimilarityCentroidClassifier
+from sklearn.dissimilarity import DissimilarityIHDClassifier
 
 # from dataset_arff.arffconvert import load_SEAGenerator
 # data = load_iris()
