@@ -297,6 +297,7 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         self.random_state = random_state
 
         # Atributes
+        self.k = k
         self.n_clusters = n_clusters
         self.classes_ = None
         self.dissim_matrix_ = None
@@ -341,7 +342,7 @@ class DissimilarityIHD(_BaseDissimilarity):
         "random_state": ["random_state"],
     }
 
-    def __init__(self, estimator=None, *, strategy="prior", random_state=None):
+    def __init__(self, estimator=None, *, strategy="prior", random_state=None, k=None, din_k=True, coef_k=2):
         # Estimators
         self.estimator = estimator
 
@@ -354,32 +355,56 @@ class DissimilarityIHD(_BaseDissimilarity):
         self.dissim_matrix_ = None
         self.instances_X_r = None
 
-        # Unique Attributes
-        self.k = None
+        # Neighbors
+        self.k = k
+        self.din_k = din_k
 
+        # Coeficiente p euristica da escala de vizinhos p/tam de k
+        self.coef_k = coef_k
 
     @_fit_context(prefer_skip_nested_validation=True)
-    def fit(self, X, y, sample_weight=None):
-        self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
-        self._strategy = self.strategy # Não sei se ainda vou utilizar isso
-
+    def fit(self, X, y):
         # 1. Classes do problema
         self.classes_ = np.unique(y)
 
-        # 2. Calcula dureza das classes
-        s, nx = self._instance_hardness(X,y)
+        # 2. Calcula a dureza das instâncias
+        try:
+            s, nx = self._instance_hardness(X, y)
+            if s is None or nx is None:
+                raise ValueError("Error in _instance_hardness: hardness calculation failed.")
+        except Exception as e:
+            print(f"Error in _instance_hardness: {e}")
+            raise
 
-        # 3. Reamostragem
-        X_resampled = np.array(heapq.nlargest(len(nx[0]), s))
+        # 3. Reamostragem com base nos escores de dureza
+        try:
+            top_indices = heapq.nlargest(len(s), range(len(s)), key=lambda i: s[i]) # sugerido usar lambda pra n percorrer tupla inteira
+            X_resampled = X[top_indices]
+            y_resampled = y[top_indices]
+            self.instances_X_r = X_resampled
+            print(f"Resampling successful: X_resampled shape = {X_resampled.shape}, y_resampled shape = {y_resampled.shape}")
+        except Exception as e:
+            print(f"Error in resampling: {e}")
+            raise
 
-        # 4. Reamostrage treino
-        self.instances_X_r = X_resampled
+        # 4. Montar a matriz de dissimilaridade
+        try:
+            self.dissim_matrix_ = self._get_dissim_representation(X_resampled)
+            print(f"Dissimilarity matrix generated: shape = {self.dissim_matrix_.shape}")
+        except Exception as e:
+            print(f"Error in generating dissimilarity matrix: {e}")
+            raise
 
-        # Com os R selecionados podemos montar a matriz identidade
-        self.dissim_matrix_ = self._get_dissim_representation(X)
-
-        # Utiliza a matrix de dissimilidade
-        self.estimator.fit(self.dissim_matrix_, y)
+        # 5. Fit the estimator
+        try:
+            if self.dissim_matrix_ is not None:
+                self.estimator.fit(self.dissim_matrix_, y_resampled)
+                print("Estimator fit successful.")
+            else:
+                raise ValueError("Dissimilarity matrix is None or invalid.")
+        except Exception as e:
+            print(f"Error in fitting the estimator: {e}")
+            raise
 
         return self
     
@@ -415,12 +440,34 @@ class DissimilarityIHD(_BaseDissimilarity):
         @return: 2D tuple float score:int neighbor
         """
 
-        #Calculate instance hardness on the training data
-        # Calculate instance hardness on the training data
-        k = int(math.sqrt(len(X)))
-        s, nx = kdn_score(X,y, k=k)   
-        return s, nx
-        # X_R_subset is now ready for use in further analysis, such as building a dissimilarity matrix
+        n_samples = len(X)
+
+        if self.din_k:
+            # Lógica para selecionar dinamicamente k
+            if n_samples > 5000:
+                self.coef_k = 3
+            elif n_samples > 1000:
+                self.coef_k = 2
+            else:
+                self.coef_k = 1.5
+
+            if n_samples > 1000:
+                self.k = int(math.log(n_samples) * self.coef_k)
+            else:
+                self.k = int(math.sqrt(n_samples) * self.coef_k)
+            print(f"Using dynamic k: {self.k}")
+        else:
+            if self.k is None:
+                raise ValueError("k must be set when din_k is False.")
+            print(f"Using manually set k: {self.k}")
+
+        # Certifique-se de que kdn_score sempre retorna dois valores
+        try:
+            s, nx = kdn_score(X, y, k=self.k)
+            return s, nx
+        except Exception as e:
+            print(f"Error in kdn_score: {e}")
+            return None, None
 
     def predict_proba(self, X):
         """

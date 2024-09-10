@@ -8,6 +8,7 @@ from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a ba
 from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 # Carrega a base de dados que está no formato arff para numpy X e Y
 #from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
+from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 # Carrega a base de dados que está no formato arff para numpy X e Y
 from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 # Carrega a base de dados que está no formato arff para numpy X e Y
 #######################################
@@ -122,27 +123,29 @@ def experimento_1():
                     
                     results_score[cleaned_str].append(tx_acerto)
 
-        # Após o loop, organize e salve os resultados em um arquivo Excel
-        classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
+            # Após o loop, organize e salve os resultados em um arquivo Excel
+            classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
 
-        # Cria o dataframe com os resultados das acurácias
-        df = pd.DataFrame(results_score)
+            # Cria o dataframe com os resultados das acurácias
+            df = pd.DataFrame(results_score)
 
-        df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
+            df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
 
-        # Salvar depois os resultados em um excel para validar e analisar melhor
-        df.to_csv('results_50_50.csv', index=False)
+            # Salvar depois os resultados em um excel para validar e analisar melhor
+            df.to_csv('results_50_50.csv', index=False)
 
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
 
 #Inicializa os experimento  
 # experimento_1()
-data = load_iris()
-X,y = data.data , data.target
+#data, target = load_AgrawalGenerator_test_mode()
+data = load_digits()
+# X,y = data , target
+X,y = data.data,data.target
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5)
 
-diss_kdn = DissimilarityIHD(estimator=KNeighborsClassifier(),random_state=42)
+diss_kdn = DissimilarityIHD(estimator=KNeighborsClassifier(),random_state=42, k=500, din_k=True,coef_k=2)
 diss_kdn.fit(X_train, y_train)
 diss_kdn.predict(X_test)
 
