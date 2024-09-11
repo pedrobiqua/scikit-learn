@@ -148,18 +148,20 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         "random_state": ["random_state"],
     }
 
-    def __init__(self, estimator=None, *, strategy="prior", random_state=None):
+    def __init__(self, estimator=None, r_per_class = 3, *, strategy="prior", random_state=None):
         # Estimators
         self.estimator = estimator
 
         # Parameters
         self.strategy = strategy
         self.random_state = random_state
+        self.r_per_class = r_per_class
 
         # Atributes
         self.classes_ = None
         self.dissim_matrix_ = None
         self.instances_X_r = None
+        self.n = None
 
 
     def _index_random_choice(self, X, y, random_state):
@@ -170,9 +172,8 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         list_indexes = []
 
         # N = Quantidade de classes que serão usadas por cada classe
-        # Substituir isso daqui por representative_set_size
-        n = len(np.unique(y)) * 3 # Isso é por classe
-
+        n = self.n
+        
         if(n > n_classes):
             n_instances = int(n / n_classes)
 
@@ -213,9 +214,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         self : object
             Returns the instance itself.
         """
-        ############################# IMPLEMENTAÇÃO TCC #############################
-        # Etapas
-        # 1. Organizar os parâmetros e validar eles inicialmente:
         """
         # Devolve um random para poder utilizarmos, se for None ele não seta um novo utiliza um aleatório
         random_state = check_random_state(self.random_state) # Exemplo de uso da variavel: random_state.randint(MAX_INT, size=len(self.estimators_))
@@ -227,6 +225,7 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
 
         # Classes do problema
         self.classes_ = np.unique(y)
+        self.n = len(self.classes_) * self.r_per_class
 
         # 2. Selecionar o confunto "R"
         random_state = check_random_state(self.random_state)
@@ -251,35 +250,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         self.estimator.fit(self.dissim_matrix_, y)
 
         return self
-
-    def score(self, X, y, sample_weight=None):
-        """Return the mean accuracy on the given test data and labels.
-
-        In multi-label classification, this is the subset accuracy
-        which is a harsh metric since you require for each sample that
-        each label set be correctly predicted.
-
-        Parameters
-        ----------
-        X : None or array-like of shape (n_samples, n_features)
-            Test samples. Passing None as test samples gives the same result
-            as passing real test samples, since DummyClassifier
-            operates independently of the sampled observations.
-
-        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
-            True labels for X.
-
-        sample_weight : array-like of shape (n_samples,), default=None
-            Sample weights.
-
-        Returns
-        -------
-        score : float
-            Mean accuracy of self.predict(X) w.r.t. y.
-        """
-        if X is None:
-            X = np.zeros(shape=(len(y), 1))
-        return super().score(X, y, sample_weight)
 
 
 class DissimilarityCentroidClassifier(_BaseDissimilarity):
