@@ -168,62 +168,16 @@ def experimento_1():
                              # 'Diss_IHD_KNN_1', 'Diss_IHD_KNN_3', 'Diss_IHD_DT', 'Diss_IHD_GNB'
                              ]
 
-            # Cria o dataframe com os resultados das acurácias
-            df = pd.DataFrame(results_score)
+        # Cria o dataframe com os resultados das acurácias
+        df = pd.DataFrame(results_score)
 
-            df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
+        df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
 
-            # Salvar depois os resultados em um excel para validar e analisar melhor
-            df.to_csv('results_50_50.csv', index=False)
+        # Salvar depois os resultados em um excel para validar e analisar melhor
+        df.to_csv('results_50_50.csv', index=False)
 
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
 
 #Inicializa os experimento  
-# experimento_1()
-#data, target = load_AgrawalGenerator_test_mode()
-data = load_digits()
-# X,y = data , target
-X,y = data.data,data.target
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5)
-
-diss_kdn = DissimilarityIHD(estimator=KNeighborsClassifier(),random_state=42, k=500, din_k=True,coef_k=2)
-diss_kdn.fit(X_train, y_train)
-diss_kdn.predict(X_test)
-
-score = model_selection.cross_val_score(diss_kdn, X_test, y_test, cv=10)
-print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")
-
-ypred=model_selection.cross_val_predict(diss_kdn, X_test, y_test, cv=10)
-# Precisão
-prec=precision_score(y_test, ypred, average='weighted')
-print("Precision:", prec)
-
-# Revocação (Recall)
-recall=recall_score(y_test, ypred, average='weighted')
-print("Revocação:", recall)
-
-# f1 score
-f1 = f1_score(y_test, ypred, average='macro')
-print("f1 score:", f1)
-
-# Matriz de confusão
-cm=confusion_matrix(y_test, ypred)
-print(cm)
-# print("KDN Scores:", estimator[0].flatten())
-# print("Índices dos vizinhos mais próximos:", estimator[1])
-# print(f'Scores {len(estimator[0])}: Vizinhos: {len(estimator[1])}')
-# for i in estimator[0]:
-#     for j in estimator[1]:
-#         print(f'{i}    {j}') 
-#         count += 1
-# print(f'{count}')
-# estimator.fit(X_train, y_train)
-
-# ypred = estimator.predict(X_test)
-# tx_acerto = accuracy_score(y_test, ypred)
-# print(tx_acerto)
-
-# # Matriz de confusão
-# cm=confusion_matrix(y_test, ypred)
-# print(cm)
+experimento_1()

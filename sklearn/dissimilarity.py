@@ -252,35 +252,6 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
 
         return self
 
-    def score(self, X, y, sample_weight=None):
-        """Return the mean accuracy on the given test data and labels.
-
-        In multi-label classification, this is the subset accuracy
-        which is a harsh metric since you require for each sample that
-        each label set be correctly predicted.
-
-        Parameters
-        ----------
-        X : None or array-like of shape (n_samples, n_features)
-            Test samples. Passing None as test samples gives the same result
-            as passing real test samples, since DummyClassifier
-            operates independently of the sampled observations.
-
-        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
-            True labels for X.
-
-        sample_weight : array-like of shape (n_samples,), default=None
-            Sample weights.
-
-        Returns
-        -------
-        score : float
-            Mean accuracy of self.predict(X) w.r.t. y.
-        """
-        if X is None:
-            X = np.zeros(shape=(len(y), 1))
-        return super().score(X, y, sample_weight)
-
 
 class DissimilarityCentroidClassifier(_BaseDissimilarity):
 
@@ -472,7 +443,6 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
         return self
 
 
-
     def predict(self, X):
         """Perform classification on test vectors X.
 
@@ -539,99 +509,3 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
         
         # Retorna os escores de dureza e as informações dos vizinhos
         return s, nx
-
-    def predict_proba(self, X):
-        """
-        Return probability estimates for the test vectors X.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            Test data.
-
-        Returns
-        -------
-        P : ndarray of shape (n_samples, n_classes) or list of such arrays
-            Returns the probability of the sample for each class in
-            the model, where classes are ordered arithmetically, for each
-            output.
-        """
-        check_is_fitted(self)
-
-        # numpy random_state expects Python int and not long as size argument
-        # under Windows
-        n_samples = _num_samples(X)
-        rs = check_random_state(self.random_state)
-
-        n_classes_ = self.n_classes_
-        classes_ = self.classes_
-        class_prior_ = self.class_prior_
-        constant = self.constant
-        if self.n_outputs_ == 1:
-            # Get same type even for self.n_outputs_ == 1
-            n_classes_ = [n_classes_]
-            classes_ = [classes_]
-            class_prior_ = [class_prior_]
-            constant = [constant]
-
-        P = []
-        for k in range(self.n_outputs_):
-            if self._strategy == "most_frequent":
-                ind = class_prior_[k].argmax()
-                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
-                out[:, ind] = 1.0
-            elif self._strategy == "prior":
-                out = np.ones((n_samples, 1)) * class_prior_[k]
-
-            elif self._strategy == "stratified":
-                out = rs.multinomial(1, class_prior_[k], size=n_samples)
-                out = out.astype(np.float64)
-
-            elif self._strategy == "uniform":
-                out = np.ones((n_samples, n_classes_[k]), dtype=np.float64)
-                out /= n_classes_[k]
-
-            elif self._strategy == "constant":
-                ind = np.where(classes_[k] == constant[k])
-                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
-                out[:, ind] = 1.0
-
-            P.append(out)
-
-        if self.n_outputs_ == 1:
-            P = P[0]
-
-        return P
-
-    def predict_log_proba(self, X):
-        """
-        Return log probability estimates for the test vectors X.
-
-        Parameters
-        ----------
-        X : {array-like, object with finite length or shape}
-            Training data.
-
-        Returns
-        -------
-        P : ndarray of shape (n_samples, n_classes) or list of such arrays
-            Returns the log probability of the sample for each class in
-            the model, where classes are ordered arithmetically for each
-            output.
-        """
-        proba = self.predict_proba(X)
-        if self.n_outputs_ == 1:
-            return np.log(proba)
-        else:
-            return [np.log(p) for p in proba]
-
-    def _more_tags(self):
-        return {
-            "poor_score": True,
-            "no_validation": True,
-            "_xfail_checks": {
-                "check_methods_subset_invariance": "fails for the predict method",
-                "check_methods_sample_order_invariance": "fails for the predict method",
-            },
-        }
-    
