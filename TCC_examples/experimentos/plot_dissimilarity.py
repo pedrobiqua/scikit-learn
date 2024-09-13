@@ -20,11 +20,11 @@ from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9
 
  
 X, y = load_AssetNegotiationGenerator_f1_f5() # Usando o arff | ESSE PROCESSO DEMORA UM POUCO, ELE CONVERTE O ARFF PARA UM CONJUNTO X e y, onde o X é as features e o Y é as classes
-X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.7, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
 
 dissimilarity = DissimilarityIHDClassifier(estimator=KNeighborsClassifier(),random_state=42, k=1, din_k=True, coef_k=2)
-print(dissimilarity) # Mostra o teste que estamos usando
-dissimilarity.fit(X_train, y_train)
+
+dissimilarity.fit(X_train, y_train, use_batch=False)
 
 score = model_selection.cross_val_score(dissimilarity, X_test, y_test, cv=10)
 print(f"Acc mean:{score.mean()}\nAcc std:{score.std()}\nAcc per fold:{score}")

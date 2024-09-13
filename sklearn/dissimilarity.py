@@ -411,10 +411,11 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
                     continue  # Pula se não houver instâncias dessa classe
                 
                 # Calcula a dureza das instâncias e os vizinhos para a classe atual
-                s, nx = self._instance_hardness(X_class, y_class)
-                
+                # s, nx = self._instance_hardness(X_class, y_class)
+                s, nx = self._instance_hardness(X, y) # Apenas para teste
+
                 # Seleciona as instâncias mais difíceis (para a classe atual)
-                top_indices = heapq.nlargest(min(len(s), max_r_size // len(self.classes_)), 
+                top_indices = heapq.nlargest(10, 
                                             range(len(s)), key=lambda i: s[i])
                 
                 # Adiciona as instâncias reamostradas e os rótulos
