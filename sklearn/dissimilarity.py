@@ -342,7 +342,7 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
         "random_state": ["random_state"],
     }
 
-    def __init__(self, estimator=None, *, strategy="prior", random_state=None):
+    def __init__(self, estimator=None, *, strategy="prior", random_state=None, k=None, din_k=True, coef_k=2):
         # Estimators
         self.estimator = estimator
 
@@ -355,36 +355,125 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
         self.dissim_matrix_ = None
         self.instances_X_r = None
 
-        # Unique Attributes
-        self.k = None
+        # Neighbors
+        self.k = k
+        self.din_k = din_k
 
+        # Coeficiente p euristica da escala de vizinhos p/tam de k
+        self.coef_k = coef_k
 
-    @_fit_context(prefer_skip_nested_validation=True)
-    def fit(self, X, y, sample_weight=None):
-        self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
-        self._strategy = self.strategy # Não sei se ainda vou utilizar isso
+    @_fit_context(prefer_skip_nested_validation=True)            
+    def fit(self, X, y, sample_weight=None, batch_size=2000, max_r_size=5000, use_batch=True):
+        """
+        Fit the model with an option to use batching or process the entire dataset at once.
 
+        Parameters:
+        - X: Training data
+        - y: Training labels
+        - batch_size: Size of the batches for processing data in chunks (used if use_batch=True).
+        - max_r_size: Maximum number of instances in the reference set R.
+        - use_batch: Boolean flag to enable or disable batching (default: True).
+        """
+    
+        # Valida os dados
+        self._validate_data(X, cast_to_ndarray=False)
+        self._strategy = self.strategy
+        
         # 1. Classes do problema
         self.classes_ = np.unique(y)
+        
+        # 2. Determinar o tamanho de R dinamicamente com base no tamanho do dataset
+        n_samples = len(X)
+        
+        if max_r_size is None:
+            # Dinamicamente ajusta o tamanho de R baseado no tamanho do dataset
+            if n_samples <= 5000:
+                max_r_size = min(n_samples, 800)  # Para datasets pequenos, limite de até 800 instâncias
+            elif n_samples <= 100000:
+                max_r_size = int(math.sqrt(n_samples) * 2)  # Para datasets médios, usa sqrt(n)
+            else:
+                max_r_size = int(math.log(n_samples) * 200)  # Para datasets grandes, usa log(n) * 200
+            
+            print(f"Using dynamic R size: {max_r_size}")
+        
+        # Inicializa uma lista vazia para as instâncias reamostradas
+        X_resampled = []
+        y_resampled = []
+        
+        if use_batch:
+            # --- Process with Batching ---
+            # Processa os dados em lotes (batches)
+            for start in range(0, n_samples, batch_size):
+                end = min(start + batch_size, n_samples)
+                X_batch = X[start:end]
+                y_batch = y[start:end]
+                
+                # Processa cada classe separadamente para calcular a dureza das instâncias
+                for class_label in self.classes_:
+                    # Obtém as amostras para a classe atual no batch atual
+                    class_indices = np.where(y_batch == class_label)[0]
+                    X_class = X_batch[class_indices]
+                    y_class = y_batch[class_indices]
+                    
+                    if len(X_class) == 0:
+                        continue  # Pula se não houver instâncias dessa classe no lote
+                    
+                    # Calcula a dureza das instâncias e os vizinhos para a classe atual
+                    s, nx = self._instance_hardness(X_class, y_class)
+                    
+                    # Seleciona as instâncias mais difíceis (para a classe atual)
+                    top_indices = heapq.nlargest(min(len(s), max_r_size // len(self.classes_)), 
+                                                range(len(s)), key=lambda i: s[i])
+                    
+                    # Adiciona as instâncias reamostradas e os rótulos
+                    X_resampled.append(X_class[top_indices])
+                    y_resampled.append(y_class[top_indices])
+        else:
+            # --- Process Entire Dataset Without Batching ---
+            # Processa cada classe separadamente para calcular a dureza das instâncias sem batching
+            for class_label in self.classes_:
+                # Obtém as amostras para a classe atual
+                class_indices = np.where(y == class_label)[0]
+                X_class = X[class_indices]
+                y_class = y[class_indices]
+                
+                if len(X_class) == 0:
+                    continue  # Pula se não houver instâncias dessa classe
+                
+                # Calcula a dureza das instâncias e os vizinhos para a classe atual
+                # s, nx = self._instance_hardness(X_class, y_class)
+                s, nx = self._instance_hardness(X, y) # Apenas para teste
 
-        # 2. Calcula dureza das classes
-        s, nx = self._instance_hardness(X,y)
-
-        # 3. Reamostragem
-        # Adicionar aqui a quantidade de R
-        X_resampled = np.array(heapq.nlargest(len(nx[0]), s))
-
-        # 4. Reamostrage treino
+                # Seleciona as instâncias mais difíceis (para a classe atual)
+                top_indices = heapq.nlargest(10, 
+                                            range(len(s)), key=lambda i: s[i])
+                
+                # Adiciona as instâncias reamostradas e os rótulos
+                X_resampled.append(X_class[top_indices])
+                y_resampled.append(y_class[top_indices])
+        
+        # Converte as listas para arrays após processar cada classe
+        X_resampled = np.vstack(X_resampled)
+        y_resampled = np.hstack(y_resampled)
+        
+        # Limita o tamanho total de R se necessário
+        if len(X_resampled) > max_r_size:
+            top_indices = np.random.choice(len(X_resampled), max_r_size, replace=False)
+            X_resampled = X_resampled[top_indices]
+            y_resampled = y_resampled[top_indices]
+        
+        # Armazena as instâncias reamostradas como o conjunto de referência R
         self.instances_X_r = X_resampled
 
-        # Com os R selecionados podemos montar a matriz identidade
+        # Monta a matriz de dissimilaridade para todo o conjunto de dados de treinamento
         self.dissim_matrix_ = self._get_dissim_representation(X)
-
-        # Utiliza a matrix de dissimilidade
+        
+        # Ajusta o estimador utilizando a matriz de dissimilaridade
         self.estimator.fit(self.dissim_matrix_, y)
-
+        
         return self
-    
+
+
     def predict(self, X):
         """Perform classification on test vectors X.
 
@@ -413,21 +502,6 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
             Calculates the hardness of a instance pertaining to a class and returns a array with each sample hardness value.
 
 
-        @param: array X (Array with samples) ; y labels ;  int k ("Safe" value of neighbors to estimate certain region)
-        @return: 2D tuple float score:int neighbor
-        """
-
-        #Calculate instance hardness on the training data
-        # Calculate instance hardness on the training data
-        k = 3
-        s, nx = kdn_score(X,y, k=k)   
-        return s, nx
-        # X_R_subset is now ready for use in further analysis, such as building a dissimilarity matrix
-
-    def predict_proba(self, X):
-        """
-        Return probability estimates for the test vectors X.
-
         Parameters
         ----------
         X : array-like of shape (n_samples, n_features)
@@ -435,87 +509,34 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
 
         Returns
         -------
-        P : ndarray of shape (n_samples, n_classes) or list of such arrays
-            Returns the probability of the sample for each class in
-            the model, where classes are ordered arithmetically, for each
-            output.
+        s : instance-hardness score (float)
+        nx : neighbor
         """
-        check_is_fitted(self)
 
-        # numpy random_state expects Python int and not long as size argument
-        # under Windows
-        n_samples = _num_samples(X)
-        rs = check_random_state(self.random_state)
-
-        n_classes_ = self.n_classes_
-        classes_ = self.classes_
-        class_prior_ = self.class_prior_
-        constant = self.constant
-        if self.n_outputs_ == 1:
-            # Get same type even for self.n_outputs_ == 1
-            n_classes_ = [n_classes_]
-            classes_ = [classes_]
-            class_prior_ = [class_prior_]
-            constant = [constant]
-
-        P = []
-        for k in range(self.n_outputs_):
-            if self._strategy == "most_frequent":
-                ind = class_prior_[k].argmax()
-                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
-                out[:, ind] = 1.0
-            elif self._strategy == "prior":
-                out = np.ones((n_samples, 1)) * class_prior_[k]
-
-            elif self._strategy == "stratified":
-                out = rs.multinomial(1, class_prior_[k], size=n_samples)
-                out = out.astype(np.float64)
-
-            elif self._strategy == "uniform":
-                out = np.ones((n_samples, n_classes_[k]), dtype=np.float64)
-                out /= n_classes_[k]
-
-            elif self._strategy == "constant":
-                ind = np.where(classes_[k] == constant[k])
-                out = np.zeros((n_samples, n_classes_[k]), dtype=np.float64)
-                out[:, ind] = 1.0
-
-            P.append(out)
-
-        if self.n_outputs_ == 1:
-            P = P[0]
-
-        return P
-
-    def predict_log_proba(self, X):
-        """
-        Return log probability estimates for the test vectors X.
-
-        Parameters
-        ----------
-        X : {array-like, object with finite length or shape}
-            Training data.
-
-        Returns
-        -------
-        P : ndarray of shape (n_samples, n_classes) or list of such arrays
-            Returns the log probability of the sample for each class in
-            the model, where classes are ordered arithmetically for each
-            output.
-        """
-        proba = self.predict_proba(X)
-        if self.n_outputs_ == 1:
-            return np.log(proba)
-        else:
-            return [np.log(p) for p in proba]
-
-    def _more_tags(self):
-        return {
-            "poor_score": True,
-            "no_validation": True,
-            "_xfail_checks": {
-                "check_methods_subset_invariance": "fails for the predict method",
-                "check_methods_sample_order_invariance": "fails for the predict method",
-            },
-        }
+        n_samples = len(X)
     
+        if self.din_k:
+            # Dinamicamente ajusta k com base no tamanho do dataset
+            if n_samples > 5000:
+                self.coef_k = 3  # Para datasets muito grandes
+            elif n_samples > 1000:
+                self.coef_k = 2  # Para datasets médios
+            else:
+                self.coef_k = 1.5  # Para pequenos datasets
+            
+            # Ajuste dinâmico de k com um limite superior
+            if n_samples > 1000:
+                self.k = min(50, int(math.log(n_samples) * self.coef_k))  # Limita k a 50 no máximo
+            else:
+                self.k = int(math.sqrt(n_samples) * self.coef_k)
+            print(f"Using dynamic k: {self.k}")
+        else:
+            if self.k is None:
+                raise ValueError("k must be set when din_k is False.")
+            print(f"Using manually set k: {self.k}")
+        
+        # Calcula a dureza das instâncias com a pontuação K-Disagreeing Neighbors (KDN)
+        s, nx = kdn_score(X, y, k=self.k)
+        
+        # Retorna os escores de dureza e as informações dos vizinhos
+        return s, nx
