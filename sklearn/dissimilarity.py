@@ -257,6 +257,9 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
     _parameter_constraints: dict = {
         "estimator": [HasMethods(["fit", "predict"]), None],
         "random_state": ["random_state"],
+        "strategy": [
+            StrOptions({"per_class", "all_class"})
+        ],
     }
 
 
@@ -274,15 +277,24 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         centroids_array = np.vstack(centroids_list)
         
         return centroids_array
+    
+    def _kmeans_all_class(self, X):
+        """
+        fit kmeans
+        """
+        kmeans = KMeans(n_clusters=self.n_clusters, random_state=self.random_state)
+        kmeans.fit(X)
+        centroids = kmeans.cluster_centers_
+        return centroids
 
-            
 
-    def __init__(self, estimator=None, n_clusters=3, *, random_state=None):
+    def __init__(self, estimator=None, n_clusters=3, *, random_state=None, strategy="per_class"):
         # Estimators
         self.estimator = estimator
         
         # Parameters
         self.random_state = random_state
+        self.strategy = strategy
 
         # Atributes
         self.n_clusters = n_clusters
@@ -290,6 +302,7 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         self.dissim_matrix_ = None
         self.instances_X_r = None
     
+
     @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y, sample_weight=None):
         
@@ -297,7 +310,10 @@ class DissimilarityCentroidClassifier(_BaseDissimilarity):
         self.classes_ = np.unique(y)
         random_state = check_random_state(self.random_state)
 
-        self.instances_X_r = self._kmeans_per_class(X, y)
+        if self.strategy == "per_class":
+            self.instances_X_r = self._kmeans_per_class(X, y)
+        elif self.strategy == "all_class":
+            self.instances_X_r = self._kmeans_all_class(X)
 
         if self.instances_X_r is None:
             raise ValueError()
@@ -321,7 +337,7 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
         "estimator": [HasMethods(["fit", "predict"]), None],
         # "n_estimators": [Interval(Integral, 1, None, closed="left")],
         "strategy": [
-            StrOptions({"most_frequent", "prior", "stratified", "uniform", "constant"})
+            StrOptions({"per_class", "all_class"})
         ],
         "random_state": ["random_state"],
     }
