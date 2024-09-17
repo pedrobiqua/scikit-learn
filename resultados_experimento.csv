@@ -1,0 +1,2341 @@
+dataset,estimator,random_state,tx_acerto,confusion_matrix
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,20,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,21,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,22,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,23,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,24,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,25,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,26,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,27,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,28,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,29,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,30,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,31,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,32,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,33,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,34,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,35,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,36,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,37,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,38,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,39,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,40,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,41,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,42,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,43,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,44,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,45,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,46,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,47,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,48,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,49,0.51572,"[[ 3636 21331]
+ [ 2883 22150]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,20,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,21,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,22,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,23,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,24,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,25,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,26,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,27,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,28,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,29,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,30,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,31,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,32,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,33,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,34,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,35,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,36,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,37,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,38,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,39,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,40,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,41,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,42,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,43,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,44,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,45,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,46,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,47,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,48,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,49,0.60398,"[[11666 13334]
+ [ 6467 18533]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,20,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,21,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,22,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,23,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,24,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,25,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,26,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,27,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,28,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,29,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,30,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,31,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,32,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,33,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,34,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,35,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,36,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,37,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,38,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,39,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,40,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,41,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,42,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,43,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,44,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,45,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,46,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,47,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,48,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,49,0.7923,"[[18801  6163]
+ [ 4222 20814]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,20,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,21,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,22,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,23,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,24,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,25,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,26,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,27,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,28,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,29,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,30,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,31,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,32,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,33,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,34,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,35,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,36,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,37,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,38,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,39,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,40,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,41,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,42,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,43,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,44,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,45,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,46,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,47,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,48,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AssetNegotiationGenerator_f1_f5,KNeighborsClassifier,49,0.4788,"[[ 1913 23054]
+ [ 3006 22027]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,20,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,21,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,22,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,23,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,24,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,25,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,26,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,27,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,28,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,29,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,30,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,31,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,32,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,33,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,34,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,35,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,36,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,37,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,38,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,39,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,40,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,41,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,42,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,43,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,44,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,45,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,46,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,47,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,48,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_AgrawalGenerator_test_mode_f2_f9,KNeighborsClassifier,49,0.64732,"[[12186 12814]
+ [ 4820 20180]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,20,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,21,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,22,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,23,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,24,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,25,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,26,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,27,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,28,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,29,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,30,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,31,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,32,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,33,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,34,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,35,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,36,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,37,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,38,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,39,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,40,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,41,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,42,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,43,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,44,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,45,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,46,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,47,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,48,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,KNeighborsClassifier,49,0.84184,"[[19870  5094]
+ [ 2814 22222]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,20,0.53108,"[[ 3350 21617]
+ [ 1829 23204]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,21,0.53044,"[[ 3351 21616]
+ [ 1862 23171]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,22,0.53026,"[[ 3351 21616]
+ [ 1871 23162]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,23,0.5306,"[[ 3353 21614]
+ [ 1856 23177]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,24,0.53068,"[[ 3352 21615]
+ [ 1851 23182]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,25,0.53064,"[[ 3350 21617]
+ [ 1851 23182]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,26,0.53096,"[[ 3352 21615]
+ [ 1837 23196]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,27,0.53052,"[[ 3349 21618]
+ [ 1856 23177]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,28,0.53096,"[[ 3352 21615]
+ [ 1837 23196]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,29,0.53076,"[[ 3351 21616]
+ [ 1846 23187]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,30,0.531,"[[ 3350 21617]
+ [ 1833 23200]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,31,0.53086,"[[ 3354 21613]
+ [ 1844 23189]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,32,0.53086,"[[ 3351 21616]
+ [ 1841 23192]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,33,0.53076,"[[ 3353 21614]
+ [ 1848 23185]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,34,0.53042,"[[ 3351 21616]
+ [ 1863 23170]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,35,0.53064,"[[ 3350 21617]
+ [ 1851 23182]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,36,0.53086,"[[ 3352 21615]
+ [ 1842 23191]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,37,0.53078,"[[ 3350 21617]
+ [ 1844 23189]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,38,0.53018,"[[ 3352 21615]
+ [ 1876 23157]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,39,0.53004,"[[ 3352 21615]
+ [ 1883 23150]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,40,0.53004,"[[ 3349 21618]
+ [ 1880 23153]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,41,0.53096,"[[ 3351 21616]
+ [ 1836 23197]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,42,0.53088,"[[ 3351 21616]
+ [ 1840 23193]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,43,0.53066,"[[ 3351 21616]
+ [ 1851 23182]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,44,0.53018,"[[ 3349 21618]
+ [ 1873 23160]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,45,0.53044,"[[ 3352 21615]
+ [ 1863 23170]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,46,0.53018,"[[ 3350 21617]
+ [ 1874 23159]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,47,0.5312,"[[ 3352 21615]
+ [ 1825 23208]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,48,0.53064,"[[ 3354 21613]
+ [ 1855 23178]]"
+load_AssetNegotiationGenerator_f1_f5,DecisionTreeClassifier,49,0.5299,"[[ 3352 21615]
+ [ 1890 23143]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,20,0.59852,"[[10064 14936]
+ [ 5138 19862]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,21,0.59696,"[[10074 14926]
+ [ 5226 19774]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,22,0.59154,"[[10032 14968]
+ [ 5455 19545]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,23,0.59322,"[[10067 14933]
+ [ 5406 19594]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,24,0.59708,"[[10069 14931]
+ [ 5215 19785]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,25,0.59468,"[[10069 14931]
+ [ 5335 19665]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,26,0.59202,"[[10071 14929]
+ [ 5470 19530]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,27,0.59524,"[[10055 14945]
+ [ 5293 19707]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,28,0.59714,"[[10070 14930]
+ [ 5213 19787]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,29,0.60012,"[[10103 14897]
+ [ 5097 19903]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,30,0.59088,"[[10077 14923]
+ [ 5533 19467]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,31,0.59788,"[[10078 14922]
+ [ 5184 19816]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,32,0.59622,"[[10065 14935]
+ [ 5254 19746]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,33,0.59302,"[[10070 14930]
+ [ 5419 19581]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,34,0.59534,"[[10066 14934]
+ [ 5299 19701]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,35,0.5912,"[[10035 14965]
+ [ 5475 19525]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,36,0.59762,"[[10067 14933]
+ [ 5186 19814]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,37,0.59898,"[[10066 14934]
+ [ 5117 19883]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,38,0.58946,"[[10080 14920]
+ [ 5607 19393]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,39,0.59302,"[[10054 14946]
+ [ 5403 19597]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,40,0.59972,"[[10068 14932]
+ [ 5082 19918]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,41,0.5927,"[[10060 14940]
+ [ 5425 19575]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,42,0.59276,"[[10050 14950]
+ [ 5412 19588]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,43,0.59608,"[[10077 14923]
+ [ 5273 19727]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,44,0.59642,"[[10063 14937]
+ [ 5242 19758]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,45,0.59628,"[[10069 14931]
+ [ 5255 19745]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,46,0.5917,"[[10048 14952]
+ [ 5463 19537]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,47,0.59602,"[[10097 14903]
+ [ 5296 19704]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,48,0.59506,"[[10059 14941]
+ [ 5306 19694]]"
+load_AgrawalGenerator_test_mode_f2_f9,DecisionTreeClassifier,49,0.5879,"[[10077 14923]
+ [ 5682 19318]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,20,0.7846,"[[18557  6407]
+ [ 4363 20673]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,21,0.78648,"[[18590  6374]
+ [ 4302 20734]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,22,0.7858,"[[18595  6369]
+ [ 4341 20695]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,23,0.78508,"[[18586  6378]
+ [ 4368 20668]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,24,0.78468,"[[18514  6450]
+ [ 4316 20720]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,25,0.78584,"[[18617  6347]
+ [ 4361 20675]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,26,0.78474,"[[18566  6398]
+ [ 4365 20671]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,27,0.78468,"[[18557  6407]
+ [ 4359 20677]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,28,0.7861,"[[18608  6356]
+ [ 4339 20697]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,29,0.78498,"[[18559  6405]
+ [ 4346 20690]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,30,0.78436,"[[18545  6419]
+ [ 4363 20673]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,31,0.78578,"[[18549  6415]
+ [ 4296 20740]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,32,0.78484,"[[18552  6412]
+ [ 4346 20690]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,33,0.78484,"[[18566  6398]
+ [ 4360 20676]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,34,0.78616,"[[18602  6362]
+ [ 4330 20706]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,35,0.78588,"[[18591  6373]
+ [ 4333 20703]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,36,0.78586,"[[18590  6374]
+ [ 4333 20703]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,37,0.78504,"[[18555  6409]
+ [ 4339 20697]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,38,0.78468,"[[18534  6430]
+ [ 4336 20700]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,39,0.78506,"[[18540  6424]
+ [ 4323 20713]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,40,0.78432,"[[18557  6407]
+ [ 4377 20659]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,41,0.78446,"[[18548  6416]
+ [ 4361 20675]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,42,0.7852,"[[18592  6372]
+ [ 4368 20668]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,43,0.78536,"[[18540  6424]
+ [ 4308 20728]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,44,0.78474,"[[18561  6403]
+ [ 4360 20676]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,45,0.78502,"[[18561  6403]
+ [ 4346 20690]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,46,0.78578,"[[18580  6384]
+ [ 4327 20709]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,47,0.78436,"[[18549  6415]
+ [ 4367 20669]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,48,0.7852,"[[18585  6379]
+ [ 4361 20675]]"
+load_SEAGenerator_test_f2_f4,DecisionTreeClassifier,49,0.78534,"[[18552  6412]
+ [ 4321 20715]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,20,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,21,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,22,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,23,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,24,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,25,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,26,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,27,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,28,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,29,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,30,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,31,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,32,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,33,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,34,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,35,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,36,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,37,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,38,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,39,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,40,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,41,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,42,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,43,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,44,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,45,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,46,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,47,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,48,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AssetNegotiationGenerator_f1_f5,GaussianNB,49,0.47872,"[[   53 24914]
+ [ 1150 23883]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,20,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,21,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,22,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,23,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,24,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,25,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,26,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,27,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,28,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,29,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,30,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,31,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,32,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,33,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,34,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,35,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,36,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,37,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,38,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,39,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,40,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,41,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,42,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,43,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,44,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,45,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,46,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,47,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,48,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_AgrawalGenerator_test_mode_f2_f9,GaussianNB,49,0.73664,"[[13294 11706]
+ [ 1462 23538]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,20,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,21,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,22,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,23,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,24,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,25,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,26,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,27,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,28,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,29,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,30,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,31,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,32,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,33,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,34,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,35,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,36,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,37,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,38,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,39,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,40,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,41,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,42,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,43,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,44,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,45,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,46,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,47,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,48,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_SEAGenerator_test_f2_f4,GaussianNB,49,0.86408,"[[20678  4286]
+ [ 2510 22526]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,20,0.4375,"[[  188 24779]
+ [ 3346 21687]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,21,0.47034,"[[  404 24563]
+ [ 1920 23113]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,22,0.59288,"[[ 8114 16853]
+ [ 3503 21530]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,23,0.46932,"[[   78 24889]
+ [ 1645 23388]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,24,0.4851,"[[ 3464 21503]
+ [ 4242 20791]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,25,0.46102,"[[  427 24540]
+ [ 2409 22624]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,26,0.44556,"[[  468 24499]
+ [ 3223 21810]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,27,0.4836,"[[  965 24002]
+ [ 1818 23215]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,28,0.47164,"[[   82 24885]
+ [ 1533 23500]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,29,0.51914,"[[ 2519 22448]
+ [ 1595 23438]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,30,0.50078,"[[ 3131 21836]
+ [ 3125 21908]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,31,0.54428,"[[ 9749 15218]
+ [ 7568 17465]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,32,0.53104,"[[ 3263 21704]
+ [ 1744 23289]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,33,0.4526,"[[  427 24540]
+ [ 2830 22203]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,34,0.5646,"[[ 5042 19925]
+ [ 1845 23188]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,35,0.44416,"[[  456 24511]
+ [ 3281 21752]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,36,0.49292,"[[ 1853 23114]
+ [ 2240 22793]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,37,0.46918,"[[  770 24197]
+ [ 2344 22689]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,38,0.52794,"[[ 3331 21636]
+ [ 1967 23066]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,39,0.50242,"[[ 1921 23046]
+ [ 1833 23200]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,40,0.4615,"[[  444 24523]
+ [ 2402 22631]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,41,0.4757,"[[  943 24024]
+ [ 2191 22842]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,42,0.51326,"[[ 3434 21533]
+ [ 2804 22229]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,43,0.4638,"[[  104 24863]
+ [ 1947 23086]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,44,0.46634,"[[ 1056 23911]
+ [ 2772 22261]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,45,0.47066,"[[  717 24250]
+ [ 2217 22816]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,46,0.49908,"[[ 1549 23418]
+ [ 1628 23405]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,47,0.4606,"[[  401 24566]
+ [ 2404 22629]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,48,0.53274,"[[ 5252 19715]
+ [ 3648 21385]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,49,0.47604,"[[  390 24577]
+ [ 1621 23412]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,20,0.60212,"[[11679 13321]
+ [ 6573 18427]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,21,0.60118,"[[11667 13333]
+ [ 6608 18392]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,22,0.60126,"[[11762 13238]
+ [ 6699 18301]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,23,0.61224,"[[11793 13207]
+ [ 6181 18819]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,24,0.5957,"[[11718 13282]
+ [ 6933 18067]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,25,0.59932,"[[11781 13219]
+ [ 6815 18185]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,26,0.59476,"[[11669 13331]
+ [ 6931 18069]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,27,0.60016,"[[11812 13188]
+ [ 6804 18196]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,28,0.60432,"[[11758 13242]
+ [ 6542 18458]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,29,0.59704,"[[11829 13171]
+ [ 6977 18023]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,30,0.5938,"[[11717 13283]
+ [ 7027 17973]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,31,0.59174,"[[11692 13308]
+ [ 7105 17895]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,32,0.60416,"[[11744 13256]
+ [ 6536 18464]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,33,0.58508,"[[11685 13315]
+ [ 7431 17569]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,34,0.604,"[[11657 13343]
+ [ 6457 18543]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,35,0.6041,"[[11701 13299]
+ [ 6496 18504]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,36,0.57772,"[[11756 13244]
+ [ 7870 17130]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,37,0.60308,"[[11850 13150]
+ [ 6696 18304]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,38,0.57762,"[[11720 13280]
+ [ 7839 17161]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,39,0.5797,"[[11855 13145]
+ [ 7870 17130]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,40,0.5906,"[[11800 13200]
+ [ 7270 17730]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,41,0.56744,"[[11798 13202]
+ [ 8426 16574]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,42,0.59684,"[[11701 13299]
+ [ 6859 18141]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,43,0.6071,"[[11749 13251]
+ [ 6394 18606]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,44,0.60136,"[[11801 13199]
+ [ 6733 18267]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,45,0.59714,"[[11704 13296]
+ [ 6847 18153]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,46,0.58478,"[[11757 13243]
+ [ 7518 17482]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,47,0.58096,"[[11729 13271]
+ [ 7681 17319]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,48,0.60418,"[[11711 13289]
+ [ 6502 18498]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,49,0.58486,"[[11738 13262]
+ [ 7495 17505]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,20,0.79192,"[[18798  6166]
+ [ 4238 20798]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,21,0.79356,"[[18814  6150]
+ [ 4172 20864]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,22,0.79254,"[[18797  6167]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,23,0.79408,"[[18840  6124]
+ [ 4172 20864]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,24,0.79334,"[[18780  6184]
+ [ 4149 20887]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,25,0.79322,"[[18796  6168]
+ [ 4171 20865]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,26,0.79298,"[[18838  6126]
+ [ 4225 20811]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,27,0.7913,"[[18730  6234]
+ [ 4201 20835]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,28,0.79262,"[[18806  6158]
+ [ 4211 20825]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,29,0.79292,"[[18815  6149]
+ [ 4205 20831]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,30,0.79196,"[[18767  6197]
+ [ 4205 20831]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,31,0.79142,"[[18749  6215]
+ [ 4214 20822]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,32,0.79284,"[[18813  6151]
+ [ 4207 20829]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,33,0.79206,"[[18828  6136]
+ [ 4261 20775]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,34,0.7917,"[[18781  6183]
+ [ 4232 20804]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,35,0.79216,"[[18827  6137]
+ [ 4255 20781]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,36,0.79306,"[[18873  6091]
+ [ 4256 20780]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,37,0.7929,"[[18855  6109]
+ [ 4246 20790]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,38,0.79288,"[[18809  6155]
+ [ 4201 20835]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,39,0.79114,"[[18784  6180]
+ [ 4263 20773]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,40,0.7944,"[[18928  6036]
+ [ 4244 20792]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,41,0.7939,"[[18822  6142]
+ [ 4163 20873]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,42,0.79418,"[[18862  6102]
+ [ 4189 20847]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,43,0.79208,"[[18766  6198]
+ [ 4198 20838]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,44,0.79278,"[[18787  6177]
+ [ 4184 20852]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,45,0.79208,"[[18779  6185]
+ [ 4211 20825]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,46,0.79202,"[[18737  6227]
+ [ 4172 20864]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,47,0.79406,"[[18889  6075]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,48,0.79172,"[[18771  6193]
+ [ 4221 20815]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,49,0.79232,"[[18777  6187]
+ [ 4197 20839]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,20,0.49508,"[[ 1554 23413]
+ [ 1833 23200]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,21,0.48156,"[[   60 24907]
+ [ 1015 24018]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,22,0.47708,"[[  398 24569]
+ [ 1577 23456]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,23,0.48018,"[[   76 24891]
+ [ 1100 23933]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,24,0.46908,"[[  376 24591]
+ [ 1955 23078]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,25,0.47386,"[[  393 24574]
+ [ 1733 23300]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,26,0.61036,"[[ 9239 15728]
+ [ 3754 21279]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,27,0.4804,"[[   60 24907]
+ [ 1073 23960]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,28,0.51194,"[[ 2211 22756]
+ [ 1647 23386]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,29,0.52514,"[[ 2493 22474]
+ [ 1269 23764]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,30,0.45772,"[[  101 24866]
+ [ 2248 22785]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,31,0.4187,"[[  222 24745]
+ [ 4320 20713]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,32,0.48618,"[[   55 24912]
+ [  779 24254]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,33,0.46154,"[[  702 24265]
+ [ 2658 22375]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,34,0.49046,"[[  353 24614]
+ [  863 24170]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,35,0.45186,"[[  121 24846]
+ [ 2561 22472]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,36,0.4765,"[[  350 24617]
+ [ 1558 23475]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,37,0.48534,"[[  350 24617]
+ [ 1116 23917]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,38,0.49072,"[[  311 24656]
+ [  808 24225]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,39,0.48176,"[[   60 24907]
+ [ 1005 24028]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,40,0.48742,"[[  344 24623]
+ [ 1006 24027]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,41,0.47614,"[[   71 24896]
+ [ 1297 23736]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,42,0.49608,"[[ 2017 22950]
+ [ 2246 22787]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,43,0.47916,"[[   62 24905]
+ [ 1137 23896]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,44,0.4637,"[[  104 24863]
+ [ 1952 23081]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,45,0.47148,"[[   89 24878]
+ [ 1548 23485]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,46,0.48576,"[[   39 24928]
+ [  784 24249]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,47,0.48214,"[[  389 24578]
+ [ 1315 23718]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,48,0.4493,"[[  141 24826]
+ [ 2709 22324]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,49,0.49058,"[[  350 24617]
+ [  854 24179]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,20,0.6408,"[[12120 12880]
+ [ 5080 19920]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,21,0.63696,"[[12138 12862]
+ [ 5290 19710]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,22,0.63166,"[[12104 12896]
+ [ 5521 19479]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,23,0.64762,"[[12217 12783]
+ [ 4836 20164]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,24,0.63024,"[[12092 12908]
+ [ 5580 19420]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,25,0.6392,"[[12198 12802]
+ [ 5238 19762]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,26,0.63376,"[[12151 12849]
+ [ 5463 19537]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,27,0.62606,"[[12157 12843]
+ [ 5854 19146]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,28,0.6379,"[[12245 12755]
+ [ 5350 19650]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,29,0.63302,"[[12231 12769]
+ [ 5580 19420]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,30,0.63988,"[[12176 12824]
+ [ 5182 19818]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,31,0.63006,"[[12087 12913]
+ [ 5584 19416]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,32,0.64704,"[[12230 12770]
+ [ 4878 20122]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,33,0.6183,"[[12058 12942]
+ [ 6143 18857]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,34,0.63798,"[[12047 12953]
+ [ 5148 19852]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,35,0.64232,"[[12074 12926]
+ [ 4958 20042]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,36,0.60994,"[[12203 12797]
+ [ 6706 18294]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,37,0.64356,"[[12088 12912]
+ [ 4910 20090]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,38,0.60012,"[[12152 12848]
+ [ 7146 17854]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,39,0.61318,"[[12094 12906]
+ [ 6435 18565]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,40,0.62486,"[[12240 12760]
+ [ 5997 19003]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,41,0.58898,"[[12220 12780]
+ [ 7771 17229]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,42,0.6343,"[[12085 12915]
+ [ 5370 19630]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,43,0.63702,"[[12154 12846]
+ [ 5303 19697]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,44,0.63448,"[[12213 12787]
+ [ 5489 19511]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,45,0.63606,"[[12103 12897]
+ [ 5300 19700]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,46,0.62206,"[[12151 12849]
+ [ 6048 18952]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,47,0.61364,"[[12182 12818]
+ [ 6500 18500]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,48,0.63894,"[[12149 12851]
+ [ 5202 19798]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,49,0.6161,"[[12030 12970]
+ [ 6225 18775]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,20,0.84226,"[[19898  5066]
+ [ 2821 22215]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,21,0.84216,"[[19891  5073]
+ [ 2819 22217]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,22,0.84366,"[[19961  5003]
+ [ 2814 22222]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,23,0.84222,"[[19991  4973]
+ [ 2916 22120]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,24,0.84234,"[[19904  5060]
+ [ 2823 22213]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,25,0.84314,"[[19919  5045]
+ [ 2798 22238]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,26,0.8416,"[[19909  5055]
+ [ 2865 22171]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,27,0.84152,"[[19825  5139]
+ [ 2785 22251]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,28,0.84204,"[[19869  5095]
+ [ 2803 22233]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,29,0.84206,"[[19878  5086]
+ [ 2811 22225]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,30,0.84154,"[[19822  5142]
+ [ 2781 22255]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,31,0.8418,"[[19881  5083]
+ [ 2827 22209]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,32,0.84278,"[[19913  5051]
+ [ 2810 22226]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,33,0.84186,"[[19926  5038]
+ [ 2869 22167]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,34,0.8412,"[[19854  5110]
+ [ 2830 22206]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,35,0.84196,"[[19942  5022]
+ [ 2880 22156]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,36,0.84374,"[[19966  4998]
+ [ 2815 22221]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,37,0.84334,"[[19941  5023]
+ [ 2810 22226]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,38,0.8422,"[[19928  5036]
+ [ 2854 22182]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,39,0.84218,"[[19941  5023]
+ [ 2868 22168]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,40,0.84332,"[[20041  4923]
+ [ 2911 22125]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,41,0.8434,"[[19940  5024]
+ [ 2806 22230]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,42,0.84142,"[[19857  5107]
+ [ 2822 22214]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,43,0.84202,"[[19927  5037]
+ [ 2862 22174]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,44,0.84214,"[[19880  5084]
+ [ 2809 22227]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,45,0.8421,"[[19909  5055]
+ [ 2840 22196]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,46,0.84276,"[[19899  5065]
+ [ 2797 22239]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,47,0.8435,"[[19964  5000]
+ [ 2825 22211]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,48,0.84172,"[[19889  5075]
+ [ 2839 22197]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,49,0.84218,"[[19883  5081]
+ [ 2810 22226]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,20,0.48808,"[[ 1881 23086]
+ [ 2510 22523]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,21,0.48328,"[[   53 24914]
+ [  922 24111]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,22,0.63526,"[[ 9259 15708]
+ [ 2529 22504]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,23,0.48546,"[[   52 24915]
+ [  812 24221]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,24,0.46836,"[[  375 24592]
+ [ 1990 23043]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,25,0.4808,"[[  381 24586]
+ [ 1374 23659]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,26,0.46772,"[[  101 24866]
+ [ 1748 23285]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,27,0.48134,"[[   54 24913]
+ [ 1020 24013]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,28,0.51174,"[[ 2214 22753]
+ [ 1660 23373]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,29,0.48608,"[[   46 24921]
+ [  775 24258]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,30,0.46632,"[[  405 24562]
+ [ 2122 22911]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,31,0.42168,"[[ 2462 22505]
+ [ 6411 18622]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,32,0.48868,"[[   46 24921]
+ [  645 24388]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,33,0.45918,"[[  106 24861]
+ [ 2180 22853]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,34,0.4996,"[[  652 24315]
+ [  705 24328]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,35,0.47082,"[[  386 24581]
+ [ 1878 23155]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,36,0.47686,"[[   62 24905]
+ [ 1252 23781]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,37,0.49058,"[[  333 24634]
+ [  837 24196]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,38,0.48998,"[[  316 24651]
+ [  850 24183]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,39,0.48274,"[[   59 24908]
+ [  955 24078]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,40,0.4819,"[[   54 24913]
+ [  992 24041]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,41,0.47844,"[[   61 24906]
+ [ 1172 23861]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,42,0.5049,"[[ 2268 22699]
+ [ 2056 22977]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,43,0.47772,"[[   70 24897]
+ [ 1217 23816]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,44,0.46218,"[[  120 24847]
+ [ 2044 22989]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,45,0.474,"[[   85 24882]
+ [ 1418 23615]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,46,0.48724,"[[   41 24926]
+ [  712 24321]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,47,0.48158,"[[  389 24578]
+ [ 1343 23690]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,48,0.4553,"[[  132 24835]
+ [ 2400 22633]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,49,0.48714,"[[   41 24926]
+ [  717 24316]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,20,0.5726,"[[11643 13357]
+ [ 8013 16987]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,21,0.58614,"[[11644 13356]
+ [ 7337 17663]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,22,0.5753,"[[11501 13499]
+ [ 7736 17264]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,23,0.58376,"[[11700 13300]
+ [ 7512 17488]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,24,0.57394,"[[11502 13498]
+ [ 7805 17195]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,25,0.57412,"[[11723 13277]
+ [ 8017 16983]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,26,0.57226,"[[11630 13370]
+ [ 8017 16983]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,27,0.5711,"[[11633 13367]
+ [ 8078 16922]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,28,0.5749,"[[11505 13495]
+ [ 7760 17240]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,29,0.5656,"[[11764 13236]
+ [ 8484 16516]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,30,0.57072,"[[11626 13374]
+ [ 8090 16910]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,31,0.56956,"[[11575 13425]
+ [ 8097 16903]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,32,0.592,"[[11717 13283]
+ [ 7117 17883]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,33,0.55896,"[[11430 13570]
+ [ 8482 16518]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,34,0.58378,"[[11714 13286]
+ [ 7525 17475]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,35,0.56772,"[[11628 13372]
+ [ 8242 16758]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,36,0.57352,"[[11754 13246]
+ [ 8078 16922]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,37,0.5809,"[[11755 13245]
+ [ 7710 17290]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,38,0.5636,"[[11695 13305]
+ [ 8515 16485]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,39,0.5628,"[[11615 13385]
+ [ 8475 16525]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,40,0.55996,"[[11532 13468]
+ [ 8534 16466]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,41,0.53934,"[[11818 13182]
+ [ 9851 15149]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,42,0.57542,"[[11659 13341]
+ [ 7888 17112]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,43,0.5821,"[[11628 13372]
+ [ 7523 17477]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,44,0.57828,"[[11737 13263]
+ [ 7823 17177]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,45,0.58508,"[[11574 13426]
+ [ 7320 17680]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,46,0.56404,"[[11543 13457]
+ [ 8341 16659]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,47,0.5741,"[[11698 13302]
+ [ 7993 17007]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,48,0.59154,"[[11707 13293]
+ [ 7130 17870]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,49,0.55556,"[[11752 13248]
+ [ 8974 16026]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,20,0.78662,"[[18686  6278]
+ [ 4391 20645]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,21,0.78202,"[[18539  6425]
+ [ 4474 20562]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,22,0.78932,"[[18780  6184]
+ [ 4350 20686]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,23,0.78346,"[[18608  6356]
+ [ 4471 20565]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,24,0.78158,"[[18518  6446]
+ [ 4475 20561]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,25,0.78246,"[[18570  6394]
+ [ 4483 20553]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,26,0.78444,"[[18604  6360]
+ [ 4418 20618]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,27,0.7833,"[[18642  6322]
+ [ 4513 20523]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,28,0.78628,"[[18545  6419]
+ [ 4267 20769]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,29,0.7852,"[[18726  6238]
+ [ 4502 20534]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,30,0.78386,"[[18538  6426]
+ [ 4381 20655]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,31,0.78494,"[[18698  6266]
+ [ 4487 20549]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,32,0.78494,"[[18608  6356]
+ [ 4397 20639]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,33,0.78136,"[[18576  6388]
+ [ 4544 20492]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,34,0.78328,"[[18572  6392]
+ [ 4444 20592]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,35,0.78658,"[[18613  6351]
+ [ 4320 20716]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,36,0.78434,"[[18633  6331]
+ [ 4452 20584]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,37,0.78232,"[[18616  6348]
+ [ 4536 20500]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,38,0.78174,"[[18514  6450]
+ [ 4463 20573]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,39,0.7788,"[[18447  6517]
+ [ 4543 20493]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,40,0.78478,"[[18648  6316]
+ [ 4445 20591]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,41,0.7809,"[[18478  6486]
+ [ 4469 20567]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,42,0.78664,"[[18625  6339]
+ [ 4329 20707]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,43,0.78358,"[[18587  6377]
+ [ 4444 20592]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,44,0.78396,"[[18584  6380]
+ [ 4422 20614]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,45,0.78412,"[[18641  6323]
+ [ 4471 20565]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,46,0.78546,"[[18645  6319]
+ [ 4408 20628]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,47,0.78658,"[[18745  6219]
+ [ 4452 20584]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,48,0.7844,"[[18606  6358]
+ [ 4422 20614]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,49,0.7841,"[[18622  6342]
+ [ 4453 20583]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,20,0.5304,"[[ 4309 20658]
+ [ 2822 22211]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,21,0.4507,"[[  701 24266]
+ [ 3199 21834]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,22,0.48012,"[[ 1360 23607]
+ [ 2387 22646]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,23,0.4458,"[[  130 24837]
+ [ 2873 22160]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,24,0.45552,"[[  107 24860]
+ [ 2364 22669]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,25,0.45446,"[[  441 24526]
+ [ 2751 22282]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,26,0.46732,"[[  971 23996]
+ [ 2638 22395]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,27,0.44938,"[[  136 24831]
+ [ 2700 22333]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,28,0.4545,"[[  433 24534]
+ [ 2741 22292]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,29,0.45584,"[[  117 24850]
+ [ 2358 22675]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,30,0.4748,"[[ 1635 23332]
+ [ 2928 22105]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,31,0.4261,"[[  187 24780]
+ [ 3915 21118]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,32,0.46416,"[[  695 24272]
+ [ 2520 22513]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,33,0.47056,"[[ 1289 23678]
+ [ 2794 22239]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,34,0.505,"[[ 2789 22178]
+ [ 2572 22461]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,35,0.48872,"[[ 2258 22709]
+ [ 2855 22178]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,36,0.44188,"[[  148 24819]
+ [ 3087 21946]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,37,0.49072,"[[ 2154 22813]
+ [ 2651 22382]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,38,0.463,"[[  668 24299]
+ [ 2551 22482]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,39,0.46112,"[[  416 24551]
+ [ 2393 22640]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,40,0.47216,"[[ 1300 23667]
+ [ 2725 22308]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,41,0.43486,"[[  162 24805]
+ [ 3452 21581]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,42,0.50338,"[[ 2507 22460]
+ [ 2371 22662]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,43,0.46708,"[[  713 24254]
+ [ 2392 22641]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,44,0.4438,"[[  136 24831]
+ [ 2979 22054]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,45,0.47028,"[[  702 24265]
+ [ 2221 22812]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,46,0.46296,"[[  756 24211]
+ [ 2641 22392]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,47,0.47122,"[[ 1294 23673]
+ [ 2766 22267]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,48,0.46606,"[[ 1096 23871]
+ [ 2826 22207]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityRNGClassifier,49,0.46468,"[[  709 24258]
+ [ 2508 22525]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,20,0.47502,"[[12813 12187]
+ [14062 10938]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,21,0.43686,"[[10887 14113]
+ [14044 10956]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,22,0.41412,"[[11733 13267]
+ [16027  8973]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,23,0.41442,"[[11138 13862]
+ [15417  9583]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,24,0.37868,"[[10517 14483]
+ [16583  8417]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,25,0.44996,"[[12473 12527]
+ [14975 10025]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,26,0.50612,"[[14076 10924]
+ [13770 11230]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,27,0.46952,"[[12525 12475]
+ [14049 10951]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,28,0.41834,"[[10253 14747]
+ [14336 10664]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,29,0.4948,"[[11165 13835]
+ [11425 13575]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,30,0.42182,"[[11165 13835]
+ [15074  9926]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,31,0.48338,"[[11904 13096]
+ [12735 12265]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,32,0.44094,"[[10391 14609]
+ [13344 11656]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,33,0.46628,"[[12195 12805]
+ [13881 11119]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,34,0.37354,"[[13288 11712]
+ [19611  5389]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,35,0.45406,"[[10990 14010]
+ [13287 11713]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,36,0.39052,"[[11279 13721]
+ [16753  8247]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,37,0.46706,"[[13959 11041]
+ [15606  9394]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,38,0.42956,"[[14609 10391]
+ [18131  6869]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,39,0.39534,"[[14206 10794]
+ [19439  5561]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,40,0.4596,"[[10943 14057]
+ [12963 12037]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,41,0.46402,"[[11972 13028]
+ [13771 11229]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,42,0.4794,"[[11396 13604]
+ [12426 12574]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,43,0.48374,"[[10994 14006]
+ [11807 13193]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,44,0.3801,"[[12703 12297]
+ [18698  6302]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,45,0.43228,"[[10666 14334]
+ [14052 10948]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,46,0.36378,"[[10000 15000]
+ [16811  8189]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,47,0.35722,"[[13125 11875]
+ [20264  4736]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,48,0.47484,"[[10925 14075]
+ [12183 12817]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityRNGClassifier,49,0.44936,"[[12323 12677]
+ [14855 10145]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,20,0.74908,"[[19169  5795]
+ [ 6751 18285]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,21,0.7933,"[[19334  5630]
+ [ 4705 20331]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,22,0.72848,"[[17523  7441]
+ [ 6135 18901]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,23,0.66766,"[[16705  8259]
+ [ 8358 16678]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,24,0.82388,"[[19779  5185]
+ [ 3621 21415]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,25,0.79616,"[[18522  6442]
+ [ 3750 21286]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,26,0.76592,"[[18709  6255]
+ [ 5449 19587]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,27,0.8321,"[[19758  5206]
+ [ 3189 21847]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,28,0.7914,"[[19637  5327]
+ [ 5103 19933]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,29,0.81706,"[[19544  5420]
+ [ 3727 21309]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,30,0.81574,"[[19152  5812]
+ [ 3401 21635]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,31,0.86654,"[[21841  3123]
+ [ 3550 21486]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,32,0.79652,"[[18720  6244]
+ [ 3930 21106]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,33,0.67642,"[[17549  7415]
+ [ 8764 16272]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,34,0.83192,"[[20624  4340]
+ [ 4064 20972]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,35,0.80384,"[[19632  5332]
+ [ 4476 20560]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,36,0.76224,"[[19486  5478]
+ [ 6410 18626]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,37,0.79874,"[[19832  5132]
+ [ 4931 20105]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,38,0.82646,"[[20525  4439]
+ [ 4238 20798]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,39,0.7722,"[[18943  6021]
+ [ 5369 19667]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,40,0.76578,"[[19349  5615]
+ [ 6096 18940]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,41,0.76434,"[[18977  5987]
+ [ 5796 19240]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,42,0.83506,"[[20091  4873]
+ [ 3374 21662]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,43,0.76352,"[[19669  5295]
+ [ 6529 18507]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,44,0.81782,"[[19298  5666]
+ [ 3443 21593]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,45,0.81914,"[[19718  5246]
+ [ 3797 21239]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,46,0.84012,"[[19895  5069]
+ [ 2925 22111]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,47,0.75982,"[[17026  7938]
+ [ 4071 20965]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,48,0.82552,"[[19526  5438]
+ [ 3286 21750]]"
+load_SEAGenerator_test_f2_f4,DissimilarityRNGClassifier,49,0.83266,"[[19368  5596]
+ [ 2771 22265]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,20,0.54874,"[[ 4167 20800]
+ [ 1763 23270]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,21,0.55482,"[[ 4451 20516]
+ [ 1743 23290]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,22,0.56272,"[[ 4801 20166]
+ [ 1698 23335]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,23,0.5392,"[[ 3590 21377]
+ [ 1663 23370]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,24,0.56612,"[[ 5043 19924]
+ [ 1770 23263]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,25,0.53288,"[[ 3297 21670]
+ [ 1686 23347]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,26,0.52852,"[[ 3042 21925]
+ [ 1649 23384]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,27,0.52762,"[[ 3008 21959]
+ [ 1660 23373]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,28,0.52834,"[[ 3025 21942]
+ [ 1641 23392]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,29,0.53832,"[[ 3601 21366]
+ [ 1718 23315]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,30,0.5502,"[[ 4202 20765]
+ [ 1725 23308]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,31,0.53398,"[[ 3313 21654]
+ [ 1647 23386]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,32,0.5497,"[[ 4198 20769]
+ [ 1746 23287]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,33,0.5566,"[[ 4501 20466]
+ [ 1704 23329]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,34,0.54496,"[[ 3892 21075]
+ [ 1677 23356]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,35,0.52814,"[[ 3008 21959]
+ [ 1634 23399]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,36,0.53388,"[[ 3327 21640]
+ [ 1666 23367]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,37,0.53204,"[[ 3261 21706]
+ [ 1692 23341]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,38,0.52864,"[[ 2999 21968]
+ [ 1600 23433]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,39,0.56076,"[[ 4763 20204]
+ [ 1758 23275]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,40,0.55176,"[[ 4244 20723]
+ [ 1689 23344]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,41,0.54264,"[[ 3865 21102]
+ [ 1766 23267]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,42,0.55706,"[[ 4541 20426]
+ [ 1721 23312]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,43,0.53914,"[[ 3602 21365]
+ [ 1678 23355]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,44,0.53414,"[[ 3292 21675]
+ [ 1618 23415]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,45,0.54376,"[[ 3860 21107]
+ [ 1705 23328]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,46,0.53456,"[[ 3320 21647]
+ [ 1625 23408]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,47,0.57414,"[[ 5399 19568]
+ [ 1725 23308]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,48,0.52784,"[[ 2996 21971]
+ [ 1637 23396]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,49,0.57484,"[[ 5479 19488]
+ [ 1770 23263]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,20,0.54286,"[[11580 13420]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,21,0.54284,"[[11580 13420]
+ [ 9438 15562]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,22,0.54304,"[[11587 13413]
+ [ 9435 15565]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,23,0.53626,"[[11704 13296]
+ [ 9891 15109]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,24,0.54278,"[[11581 13419]
+ [ 9442 15558]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,25,0.543,"[[11587 13413]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,26,0.543,"[[11584 13416]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,27,0.543,"[[11584 13416]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,28,0.54296,"[[11585 13415]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,29,0.54304,"[[11584 13416]
+ [ 9432 15568]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,30,0.54276,"[[11579 13421]
+ [ 9441 15559]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,31,0.54306,"[[11587 13413]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,32,0.54286,"[[11582 13418]
+ [ 9439 15561]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,33,0.54312,"[[11584 13416]
+ [ 9428 15572]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,34,0.54302,"[[11585 13415]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,35,0.54286,"[[11580 13420]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,36,0.54306,"[[11587 13413]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,37,0.54292,"[[11583 13417]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,38,0.543,"[[11586 13414]
+ [ 9436 15564]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,39,0.54302,"[[11585 13415]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,40,0.54304,"[[11587 13413]
+ [ 9435 15565]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,41,0.54276,"[[11579 13421]
+ [ 9441 15559]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,42,0.54278,"[[11581 13419]
+ [ 9442 15558]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,43,0.54282,"[[11578 13422]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,44,0.54306,"[[11587 13413]
+ [ 9434 15566]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,45,0.543,"[[11587 13413]
+ [ 9437 15563]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,46,0.54286,"[[11582 13418]
+ [ 9439 15561]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,47,0.54284,"[[11584 13416]
+ [ 9442 15558]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,48,0.54302,"[[11582 13418]
+ [ 9431 15569]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,49,0.54284,"[[11584 13416]
+ [ 9442 15558]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,20,0.79236,"[[18780  6184]
+ [ 4198 20838]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,21,0.79214,"[[18791  6173]
+ [ 4220 20816]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,22,0.7925,"[[18789  6175]
+ [ 4200 20836]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,23,0.79274,"[[18807  6157]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,24,0.79276,"[[18806  6158]
+ [ 4204 20832]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,25,0.79268,"[[18813  6151]
+ [ 4215 20821]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,26,0.7925,"[[18805  6159]
+ [ 4216 20820]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,27,0.79268,"[[18804  6160]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,28,0.79254,"[[18808  6156]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,29,0.79278,"[[18815  6149]
+ [ 4212 20824]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,30,0.79276,"[[18806  6158]
+ [ 4204 20832]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,31,0.79268,"[[18820  6144]
+ [ 4222 20814]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,32,0.79214,"[[18777  6187]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,33,0.79242,"[[18802  6162]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,34,0.79192,"[[18775  6189]
+ [ 4215 20821]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,35,0.7925,"[[18787  6177]
+ [ 4198 20838]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,36,0.79252,"[[18806  6158]
+ [ 4216 20820]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,37,0.79266,"[[18802  6162]
+ [ 4205 20831]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,38,0.79214,"[[18779  6185]
+ [ 4208 20828]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,39,0.79262,"[[18811  6153]
+ [ 4216 20820]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,40,0.79254,"[[18792  6172]
+ [ 4201 20835]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,41,0.7927,"[[18805  6159]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,42,0.79268,"[[18817  6147]
+ [ 4219 20817]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,43,0.79264,"[[18814  6150]
+ [ 4218 20818]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,44,0.79268,"[[18800  6164]
+ [ 4202 20834]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,45,0.79264,"[[18799  6165]
+ [ 4203 20833]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,46,0.79248,"[[18806  6158]
+ [ 4218 20818]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,47,0.7927,"[[18805  6159]
+ [ 4206 20830]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,48,0.7923,"[[18795  6169]
+ [ 4216 20820]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,49,0.79264,"[[18802  6162]
+ [ 4206 20830]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,20,0.5013,"[[  625 24342]
+ [  593 24440]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,21,0.50112,"[[  618 24349]
+ [  595 24438]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,22,0.51292,"[[ 1280 23687]
+ [  667 24366]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,23,0.51784,"[[ 1526 23441]
+ [  667 24366]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,24,0.50044,"[[  623 24344]
+ [  634 24399]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,25,0.51704,"[[ 1511 23456]
+ [  692 24341]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,26,0.50118,"[[  601 24366]
+ [  575 24458]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,27,0.50092,"[[  594 24373]
+ [  581 24452]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,28,0.49472,"[[  315 24652]
+ [  612 24421]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,29,0.52372,"[[ 1843 23124]
+ [  690 24343]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,30,0.50072,"[[  614 24353]
+ [  611 24422]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,31,0.50582,"[[  869 24098]
+ [  611 24422]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,32,0.5067,"[[  921 24046]
+ [  619 24414]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,33,0.50102,"[[  630 24337]
+ [  612 24421]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,34,0.50076,"[[  618 24349]
+ [  613 24420]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,35,0.5061,"[[  863 24104]
+ [  591 24442]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,36,0.50682,"[[  923 24044]
+ [  615 24418]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,37,0.53466,"[[ 2401 22566]
+ [  701 24332]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,38,0.50036,"[[  594 24373]
+ [  609 24424]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,39,0.51206,"[[ 1220 23747]
+ [  650 24383]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,40,0.50146,"[[  642 24325]
+ [  602 24431]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,41,0.5178,"[[ 1529 23438]
+ [  672 24361]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,42,0.51212,"[[ 1254 23713]
+ [  681 24352]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,43,0.50742,"[[  921 24046]
+ [  583 24450]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,44,0.52216,"[[ 1803 23164]
+ [  728 24305]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,45,0.50094,"[[  619 24348]
+ [  605 24428]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,46,0.49522,"[[  313 24654]
+ [  585 24448]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,47,0.5127,"[[ 1242 23725]
+ [  640 24393]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,48,0.49504,"[[  315 24652]
+ [  596 24437]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,49,0.5069,"[[  921 24046]
+ [  609 24424]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,20,0.57146,"[[11903 13097]
+ [ 8330 16670]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,21,0.57142,"[[11903 13097]
+ [ 8332 16668]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,22,0.5713,"[[11901 13099]
+ [ 8336 16664]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,23,0.53912,"[[12062 12938]
+ [10106 14894]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,24,0.57136,"[[11902 13098]
+ [ 8334 16666]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,25,0.57118,"[[11897 13103]
+ [ 8338 16662]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,26,0.57146,"[[11902 13098]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,27,0.57146,"[[11902 13098]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,28,0.57118,"[[11898 13102]
+ [ 8339 16661]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,29,0.57142,"[[11900 13100]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,30,0.5714,"[[11901 13099]
+ [ 8331 16669]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,31,0.57124,"[[11901 13099]
+ [ 8339 16661]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,32,0.57142,"[[11903 13097]
+ [ 8332 16668]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,33,0.5712,"[[11898 13102]
+ [ 8338 16662]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,34,0.57148,"[[11903 13097]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,35,0.57146,"[[11903 13097]
+ [ 8330 16670]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,36,0.57124,"[[11901 13099]
+ [ 8339 16661]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,37,0.57138,"[[11903 13097]
+ [ 8334 16666]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,38,0.57126,"[[11898 13102]
+ [ 8335 16665]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,39,0.57148,"[[11903 13097]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,40,0.5713,"[[11901 13099]
+ [ 8336 16664]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,41,0.5714,"[[11901 13099]
+ [ 8331 16669]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,42,0.57142,"[[11901 13099]
+ [ 8330 16670]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,43,0.5714,"[[11901 13099]
+ [ 8331 16669]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,44,0.57124,"[[11901 13099]
+ [ 8339 16661]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,45,0.57122,"[[11898 13102]
+ [ 8337 16663]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,46,0.57142,"[[11903 13097]
+ [ 8332 16668]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,47,0.57144,"[[11901 13099]
+ [ 8329 16671]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,48,0.57144,"[[11900 13100]
+ [ 8328 16672]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,49,0.57144,"[[11901 13099]
+ [ 8329 16671]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,20,0.84232,"[[19892  5072]
+ [ 2812 22224]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,21,0.84242,"[[19891  5073]
+ [ 2806 22230]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,22,0.84302,"[[19911  5053]
+ [ 2796 22240]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,23,0.84302,"[[19910  5054]
+ [ 2795 22241]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,24,0.843,"[[19909  5055]
+ [ 2795 22241]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,25,0.84256,"[[19888  5076]
+ [ 2796 22240]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,26,0.8422,"[[19875  5089]
+ [ 2801 22235]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,27,0.8424,"[[19895  5069]
+ [ 2811 22225]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,28,0.84216,"[[19873  5091]
+ [ 2801 22235]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,29,0.84258,"[[19887  5077]
+ [ 2794 22242]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,30,0.84302,"[[19910  5054]
+ [ 2795 22241]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,31,0.8423,"[[19884  5080]
+ [ 2805 22231]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,32,0.84258,"[[19900  5064]
+ [ 2807 22229]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,33,0.84212,"[[19871  5093]
+ [ 2801 22235]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,34,0.8434,"[[19914  5050]
+ [ 2780 22256]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,35,0.843,"[[19912  5052]
+ [ 2798 22238]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,36,0.84216,"[[19873  5091]
+ [ 2801 22235]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,37,0.84288,"[[19903  5061]
+ [ 2795 22241]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,38,0.84264,"[[19896  5068]
+ [ 2800 22236]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,39,0.8426,"[[19888  5076]
+ [ 2794 22242]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,40,0.84296,"[[19910  5054]
+ [ 2798 22238]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,41,0.84304,"[[19912  5052]
+ [ 2796 22240]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,42,0.84254,"[[19888  5076]
+ [ 2797 22239]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,43,0.84246,"[[19884  5080]
+ [ 2797 22239]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,44,0.8431,"[[19909  5055]
+ [ 2790 22246]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,45,0.84266,"[[19899  5065]
+ [ 2802 22234]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,46,0.84214,"[[19869  5095]
+ [ 2798 22238]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,47,0.84302,"[[19910  5054]
+ [ 2795 22241]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,48,0.84236,"[[19889  5075]
+ [ 2807 22229]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,49,0.84238,"[[19895  5069]
+ [ 2812 22224]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,20,0.5341,"[[ 3611 21356]
+ [ 1939 23094]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,21,0.53834,"[[ 3919 21048]
+ [ 2035 22998]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,22,0.54006,"[[ 3982 20985]
+ [ 2012 23021]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,23,0.53946,"[[ 3890 21077]
+ [ 1950 23083]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,24,0.53412,"[[ 3633 21334]
+ [ 1960 23073]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,25,0.55,"[[ 4500 20467]
+ [ 2033 23000]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,26,0.54556,"[[ 4292 20675]
+ [ 2047 22986]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,27,0.56718,"[[ 5376 19591]
+ [ 2050 22983]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,28,0.5639,"[[ 5257 19710]
+ [ 2095 22938]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,29,0.53374,"[[ 3608 21359]
+ [ 1954 23079]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,30,0.52982,"[[ 3375 21592]
+ [ 1917 23116]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,31,0.52282,"[[ 3055 21912]
+ [ 1947 23086]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,32,0.52848,"[[ 3351 21616]
+ [ 1960 23073]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,33,0.53294,"[[ 3602 21365]
+ [ 1988 23045]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,34,0.5229,"[[ 3060 21907]
+ [ 1948 23085]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,35,0.55448,"[[ 4760 20207]
+ [ 2069 22964]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,36,0.5344,"[[ 3683 21284]
+ [ 1996 23037]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,37,0.5502,"[[ 4549 20418]
+ [ 2072 22961]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,38,0.54596,"[[ 4225 20742]
+ [ 1960 23073]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,39,0.53928,"[[ 3950 21017]
+ [ 2019 23014]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,40,0.54542,"[[ 4235 20732]
+ [ 1997 23036]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,41,0.52874,"[[ 3351 21616]
+ [ 1947 23086]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,42,0.52768,"[[ 3366 21601]
+ [ 2015 23018]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,43,0.5746,"[[ 5754 19213]
+ [ 2057 22976]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,44,0.52876,"[[ 3334 21633]
+ [ 1929 23104]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,45,0.53998,"[[ 3937 21030]
+ [ 1971 23062]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,46,0.53456,"[[ 3630 21337]
+ [ 1935 23098]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,47,0.55812,"[[ 4916 20051]
+ [ 2043 22990]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,48,0.54076,"[[ 3946 21021]
+ [ 1941 23092]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,49,0.5621,"[[ 5147 19820]
+ [ 2075 22958]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,20,0.525,"[[11669 13331]
+ [10419 14581]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,21,0.5266,"[[11717 13283]
+ [10387 14613]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,22,0.52832,"[[11723 13277]
+ [10307 14693]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,23,0.50146,"[[11552 13448]
+ [11479 13521]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,24,0.52604,"[[11651 13349]
+ [10349 14651]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,25,0.53122,"[[11685 13315]
+ [10124 14876]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,26,0.53078,"[[11823 13177]
+ [10284 14716]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,27,0.52972,"[[11773 13227]
+ [10287 14713]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,28,0.5268,"[[11634 13366]
+ [10294 14706]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,29,0.5259,"[[11613 13387]
+ [10318 14682]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,30,0.5238,"[[11662 13338]
+ [10472 14528]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,31,0.53068,"[[11643 13357]
+ [10109 14891]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,32,0.52486,"[[11646 13354]
+ [10403 14597]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,33,0.52448,"[[11712 13288]
+ [10488 14512]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,34,0.52706,"[[11699 13301]
+ [10346 14654]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,35,0.52206,"[[11668 13332]
+ [10565 14435]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,36,0.5302,"[[11660 13340]
+ [10150 14850]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,37,0.52752,"[[11560 13440]
+ [10184 14816]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,38,0.52628,"[[11641 13359]
+ [10327 14673]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,39,0.5283,"[[11759 13241]
+ [10344 14656]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,40,0.52592,"[[11658 13342]
+ [10362 14638]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,41,0.52832,"[[11553 13447]
+ [10137 14863]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,42,0.52628,"[[11679 13321]
+ [10365 14635]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,43,0.53156,"[[11685 13315]
+ [10107 14893]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,44,0.5305,"[[11726 13274]
+ [10201 14799]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,45,0.52552,"[[11631 13369]
+ [10355 14645]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,46,0.52876,"[[11649 13351]
+ [10211 14789]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,47,0.5297,"[[11672 13328]
+ [10187 14813]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,48,0.52554,"[[11682 13318]
+ [10405 14595]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,49,0.5269,"[[11697 13303]
+ [10352 14648]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,20,0.7861,"[[18653  6311]
+ [ 4384 20652]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,21,0.78426,"[[18607  6357]
+ [ 4430 20606]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,22,0.78436,"[[18617  6347]
+ [ 4435 20601]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,23,0.78104,"[[18538  6426]
+ [ 4522 20514]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,24,0.78152,"[[18522  6442]
+ [ 4482 20554]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,25,0.78154,"[[18504  6460]
+ [ 4463 20573]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,26,0.78342,"[[18529  6435]
+ [ 4394 20642]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,27,0.7864,"[[18682  6282]
+ [ 4398 20638]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,28,0.78498,"[[18558  6406]
+ [ 4345 20691]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,29,0.78228,"[[18575  6389]
+ [ 4497 20539]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,30,0.78192,"[[18535  6429]
+ [ 4475 20561]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,31,0.7852,"[[18558  6406]
+ [ 4334 20702]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,32,0.7827,"[[18555  6409]
+ [ 4456 20580]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,33,0.78308,"[[18571  6393]
+ [ 4453 20583]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,34,0.784,"[[18574  6390]
+ [ 4410 20626]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,35,0.78246,"[[18518  6446]
+ [ 4431 20605]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,36,0.78418,"[[18589  6375]
+ [ 4416 20620]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,37,0.78514,"[[18697  6267]
+ [ 4476 20560]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,38,0.78172,"[[18514  6450]
+ [ 4464 20572]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,39,0.78156,"[[18496  6468]
+ [ 4454 20582]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,40,0.78372,"[[18577  6387]
+ [ 4427 20609]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,41,0.78356,"[[18603  6361]
+ [ 4461 20575]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,42,0.7837,"[[18685  6279]
+ [ 4536 20500]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,43,0.78516,"[[18651  6313]
+ [ 4429 20607]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,44,0.78472,"[[18538  6426]
+ [ 4338 20698]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,45,0.78542,"[[18699  6265]
+ [ 4464 20572]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,46,0.78464,"[[18603  6361]
+ [ 4407 20629]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,47,0.77954,"[[18401  6563]
+ [ 4460 20576]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,48,0.78512,"[[18683  6281]
+ [ 4463 20573]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,49,0.7854,"[[18675  6289]
+ [ 4441 20595]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,20,0.45946,"[[  104 24863]
+ [ 2164 22869]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,21,0.45344,"[[  123 24844]
+ [ 2484 22549]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,22,0.47244,"[[   73 24894]
+ [ 1484 23549]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,23,0.47762,"[[   66 24901]
+ [ 1218 23815]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,24,0.4684,"[[   92 24875]
+ [ 1705 23328]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,25,0.5258,"[[ 3053 21914]
+ [ 1796 23237]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,26,0.46982,"[[   86 24881]
+ [ 1628 23405]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,27,0.47954,"[[   69 24898]
+ [ 1125 23908]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,28,0.46838,"[[   83 24884]
+ [ 1697 23336]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,29,0.47232,"[[   74 24893]
+ [ 1491 23542]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,30,0.46972,"[[   86 24881]
+ [ 1633 23400]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,31,0.46838,"[[   83 24884]
+ [ 1697 23336]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,32,0.46694,"[[   88 24879]
+ [ 1774 23259]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,33,0.46972,"[[   86 24881]
+ [ 1633 23400]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,34,0.47596,"[[   77 24890]
+ [ 1312 23721]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,35,0.47954,"[[   69 24898]
+ [ 1125 23908]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,36,0.48332,"[[   51 24916]
+ [  918 24115]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,37,0.4771,"[[   68 24899]
+ [ 1246 23787]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,38,0.472,"[[   72 24895]
+ [ 1505 23528]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,39,0.47226,"[[   74 24893]
+ [ 1494 23539]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,40,0.46972,"[[   86 24881]
+ [ 1633 23400]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,41,0.47232,"[[   74 24893]
+ [ 1491 23542]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,42,0.4684,"[[   92 24875]
+ [ 1705 23328]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,43,0.5258,"[[ 3053 21914]
+ [ 1796 23237]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,44,0.46838,"[[   83 24884]
+ [ 1697 23336]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,45,0.5258,"[[ 3053 21914]
+ [ 1796 23237]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,46,0.48518,"[[   48 24919]
+ [  822 24211]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,47,0.4684,"[[   92 24875]
+ [ 1705 23328]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,48,0.46972,"[[   86 24881]
+ [ 1633 23400]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityCentroidClassifier,49,0.52702,"[[ 2742 22225]
+ [ 1424 23609]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,20,0.52642,"[[ 9025 15975]
+ [ 7704 17296]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,21,0.5264,"[[ 9025 15975]
+ [ 7705 17295]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,22,0.52672,"[[ 9028 15972]
+ [ 7692 17308]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,23,0.46426,"[[10921 14079]
+ [12708 12292]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,24,0.52632,"[[ 9026 15974]
+ [ 7710 17290]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,25,0.52668,"[[ 9031 15969]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,26,0.5265,"[[ 9029 15971]
+ [ 7704 17296]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,27,0.5265,"[[ 9029 15971]
+ [ 7704 17296]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,28,0.5267,"[[ 9032 15968]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,29,0.52624,"[[ 9022 15978]
+ [ 7710 17290]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,30,0.52628,"[[ 9022 15978]
+ [ 7708 17292]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,31,0.52674,"[[ 9029 15971]
+ [ 7692 17308]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,32,0.52654,"[[ 9029 15971]
+ [ 7702 17298]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,33,0.52662,"[[ 9029 15971]
+ [ 7698 17302]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,34,0.52664,"[[ 9029 15971]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,35,0.52642,"[[ 9025 15975]
+ [ 7704 17296]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,36,0.52674,"[[ 9029 15971]
+ [ 7692 17308]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,37,0.52658,"[[ 9029 15971]
+ [ 7700 17300]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,38,0.52672,"[[ 9033 15967]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,39,0.52664,"[[ 9029 15971]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,40,0.52672,"[[ 9028 15972]
+ [ 7692 17308]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,41,0.52628,"[[ 9022 15978]
+ [ 7708 17292]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,42,0.52628,"[[ 9025 15975]
+ [ 7711 17289]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,43,0.5261,"[[ 9018 15982]
+ [ 7713 17287]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,44,0.52674,"[[ 9029 15971]
+ [ 7692 17308]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,45,0.52672,"[[ 9033 15967]
+ [ 7697 17303]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,46,0.52654,"[[ 9029 15971]
+ [ 7702 17298]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,47,0.52626,"[[ 9025 15975]
+ [ 7712 17288]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,48,0.52624,"[[ 9022 15978]
+ [ 7710 17290]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityCentroidClassifier,49,0.52626,"[[ 9025 15975]
+ [ 7712 17288]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,20,0.85318,"[[20160  4804]
+ [ 2537 22499]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,21,0.85368,"[[20247  4717]
+ [ 2599 22437]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,22,0.85374,"[[20312  4652]
+ [ 2661 22375]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,23,0.8538,"[[20304  4660]
+ [ 2650 22386]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,24,0.85372,"[[20303  4661]
+ [ 2653 22383]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,25,0.8365,"[[19805  5159]
+ [ 3016 22020]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,26,0.8352,"[[19779  5185]
+ [ 3055 21981]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,27,0.85366,"[[20245  4719]
+ [ 2598 22438]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,28,0.8356,"[[19779  5185]
+ [ 3035 22001]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,29,0.8365,"[[19811  5153]
+ [ 3022 22014]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,30,0.85374,"[[20303  4661]
+ [ 2652 22384]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,31,0.83526,"[[19759  5205]
+ [ 3032 22004]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,32,0.85306,"[[20149  4815]
+ [ 2532 22504]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,33,0.83524,"[[19777  5187]
+ [ 3051 21985]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,34,0.83122,"[[19693  5271]
+ [ 3168 21868]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,35,0.85382,"[[20306  4658]
+ [ 2651 22385]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,36,0.83526,"[[19781  5183]
+ [ 3054 21982]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,37,0.82816,"[[19524  5440]
+ [ 3152 21884]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,38,0.85328,"[[20165  4799]
+ [ 2537 22499]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,39,0.8352,"[[19819  5145]
+ [ 3095 21941]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,40,0.85366,"[[20327  4637]
+ [ 2680 22356]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,41,0.85378,"[[20300  4664]
+ [ 2647 22389]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,42,0.83644,"[[19805  5159]
+ [ 3019 22017]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,43,0.83624,"[[19822  5142]
+ [ 3046 21990]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,44,0.85362,"[[20314  4650]
+ [ 2669 22367]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,45,0.82832,"[[19535  5429]
+ [ 3155 21881]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,46,0.83484,"[[19777  5187]
+ [ 3071 21965]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,47,0.8538,"[[20303  4661]
+ [ 2649 22387]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,48,0.8539,"[[20267  4697]
+ [ 2608 22428]]"
+load_SEAGenerator_test_f2_f4,DissimilarityCentroidClassifier,49,0.85376,"[[20243  4721]
+ [ 2591 22445]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,20,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,21,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,22,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,23,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,24,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,25,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,26,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,27,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,28,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,29,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,30,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,31,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,32,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,33,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,34,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,35,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,36,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,37,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,38,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,39,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,40,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,41,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,42,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,43,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,44,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,45,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,46,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,47,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,48,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AssetNegotiationGenerator_f1_f5,DissimilarityIHDClassifier,49,0.5564,"[[ 4514 20453]
+ [ 1727 23306]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,20,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,21,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,22,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,23,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,24,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,25,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,26,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,27,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,28,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,29,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,30,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,31,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,32,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,33,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,34,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,35,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,36,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,37,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,38,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,39,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,40,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,41,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,42,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,43,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,44,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,45,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,46,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,47,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,48,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_AgrawalGenerator_test_mode_f2_f9,DissimilarityIHDClassifier,49,0.60978,"[[11667 13333]
+ [ 6178 18822]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,20,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,21,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,22,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,23,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,24,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,25,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,26,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,27,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,28,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,29,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,30,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,31,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,32,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,33,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,34,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,35,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,36,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,37,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,38,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,39,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,40,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,41,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,42,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,43,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,44,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,45,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,46,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,47,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,48,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
+load_SEAGenerator_test_f2_f4,DissimilarityIHDClassifier,49,0.79264,"[[18813  6151]
+ [ 4217 20819]]"
