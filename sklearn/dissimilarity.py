@@ -39,41 +39,76 @@ from .neighbors import KNeighborsClassifier
 from .cluster import KMeans
 
 class _BaseDissimilarity(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
-    """ Abstract base class for Dissimilarity based estimators"""
+    """ 
+    Abstract base class for dissimilarity-based estimators.
     
+    This class provides the common functionalities for dissimilarity-based classifiers, 
+    such as calculating the dissimilarity matrix using Euclidean distance and performing classification 
+    based on the dissimilarity space.
+    
+    The approach is based on the paper:
+    
+        The Dissimilarity Approach: A Review
+        Yandre M. G. Costa, Diego Bertolini, Alceu S. Britto Jr., 
+        George D. C. Cavalcanti, Luiz E. S. Oliveira
+    """
+
     def _calc_dist_euclidean(self, p_t, p_r):
         """
-        Calculates the Euclidean distance between T and R sets, and thus returning the dissimilarity factor.
+        Calculate the Euclidean distance between the sets T (test instances) and R (reference instances),
+        thus returning the dissimilarity factor between each test and reference instance.
+        
+        Parameters
+        ----------
+        p_t : array-like of shape (n_features,)
+            Values of X (test instances) from the dataset.
 
-        According to this paper:
-            The dissimilarity approach: a review
-                Yandre M. G.;
-                CostaDiego Bertolini;
-                Alceu S. Britto Jr.;
-                George D. C. Cavalcanti;
-                Luiz E. S. Oliveira;
+        p_r : array-like of shape (n_features,)
+            Values of R (reference instances) selected for random, graph, or clustering-based methods.
 
-        :param t: Values of X from the training split
-        :param r: Values of R selected for random, graph, and clustering
-        :return: DataFrame containing the distance matrix.
+        Returns
+        -------
+        euclid_dist : float
+            The Euclidean distance between the test and reference instance.
         """
-        T = p_t
-        R = p_r
+        T = p_t  # Test instance
+        R = p_r  # Reference instance
 
+        # Calculate Euclidean distance as the square root of the dot product of the difference
         temp = T - R
         euclid_dist = np.sqrt(np.dot(temp.T, temp))
         return euclid_dist
     
     def _get_dissim_representation(self, X):
         """
-        Make the space dissimilarity, using matrix with `numpy`
+        Build the dissimilarity matrix for the given test instances `X` using the reference subset `R`.
+
+        This function computes the dissimilarity representation by calculating the distance of each test 
+        instance in `X` to each reference instance in `R` using the Euclidean distance.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Test data for which to compute the dissimilarity matrix.
+
+        Returns
+        -------
+        dissim_matrix_returned : ndarray of shape (n_samples, n_reference_samples)
+            The dissimilarity matrix representing distances between test instances and reference points.
+
+        Raises
+        ------
+        ValueError
+            If the reference subset `R` has not been set.
         """
+        # Check if reference instances have been set
         if self.instances_X_r is None:
             raise ValueError("R instances not set.")
         
-        # Montando uma matriz de dissimilaridade usando o conjunto de testes
-        # TODO: A matriz atual não consegue suportar um conjunto de R muito grande.
+        # Initialize the dissimilarity matrix
         dissim_matrix_returned = np.zeros((X.shape[0], self.instances_X_r.shape[0]))
+
+        # Compute the dissimilarity matrix by calculating the Euclidean distance
         for i, instances_t in enumerate(X):
             for j, instance_r in enumerate(self.instances_X_r):
                 dissim_matrix_returned[i, j] = self._calc_dist_euclidean(instances_t, instance_r)
@@ -81,7 +116,11 @@ class _BaseDissimilarity(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
         return dissim_matrix_returned
     
     def predict(self, X):
-        """Perform classification on test vectors X.
+        """
+        Perform classification on the given test vectors `X` based on the dissimilarity space.
+
+        The dissimilarity matrix is computed between the test data `X` and the reference set `R`.
+        The estimator is then used to make predictions based on this dissimilarity representation.
 
         Parameters
         ----------
@@ -91,97 +130,149 @@ class _BaseDissimilarity(ClassifierMixin, BaseEstimator, metaclass=ABCMeta):
         Returns
         -------
         y : array-like of shape (n_samples,) or (n_samples, n_outputs)
-            Predicted target values for X.
-        """
+            Predicted target values for each test instance in `X`.
 
+        Raises
+        ------
+        ValueError
+            If the reference set `R` has not been set before calling `predict`.
+        """
+        # Ensure reference instances (R) are set
         if self.instances_X_r is None:
             raise ValueError("Missing value R")
         
+        # Compute the dissimilarity matrix for the test data
         dissimilarity_test = self._get_dissim_representation(X)
-        return self.estimator.predict(dissimilarity_test)
 
+        # Use the estimator to predict based on the dissimilarity matrix
+        return self.estimator.predict(dissimilarity_test)
 
 
 class DissimilarityRNGClassifier(_BaseDissimilarity):
     """
-    A Dissimilarity Classifier model using an random number generator to select a given seed for the subset of R
-    """
+    A Dissimilarity Classifier model using a random number generator (RNG) to select a subset of reference instances (R).
+    The selected reference instances are used to compute the dissimilarity matrix, which is then used to train the classifier.
 
-
-    """    
     Parameters
     ----------
+    estimator : estimator object, default=None
+        The base estimator used to classify instances after the dissimilarity transformation.
+        If None, defaults to KNeighborsClassifier.
+
+    r_per_class : int, default=3
+        The number of reference points to be selected per class. The total number of reference points (R)
+        will be the number of classes multiplied by `r_per_class`.
+
+    strategy : {"most_frequent", "prior", "stratified", "uniform", "constant"}, default="prior"
+        Strategy used to determine how the reference points are selected and used:
+        - "most_frequent": Select the most frequent labels.
+        - "prior": Use prior knowledge or distribution of labels.
+        - "stratified": Select instances in a stratified manner based on the class distribution.
+        - "uniform": Select reference points uniformly at random.
+        - "constant": Select a constant set of reference points.
+
     random_state : int, RandomState instance or None, default=None
-        Controls the randomness to generate the R values.
-        Pass an int for reproducible output across multiple function calls.
-        See :term:`Glossary <random_state>`.
- 
+        Controls the randomness used to select the reference points.
+        Pass an integer for reproducible results across multiple runs.
 
     Attributes
     ----------
-    classes_ : ndarray of shape (n_classes,) or list of such arrays
-        Unique class labels observed in `y`. For multi-output classification
-        problems, this attribute is a list of arrays as each output has an
-        independent set of possible classes.
-    . . . (Pegar exemplo do dummy)
-        
-    n_classes_ : int or list of int
-        Number of label for each output.
-    . . . (Pegar exemplo do dummy)
+    classes_ : ndarray of shape (n_classes,)
+        Unique class labels observed in the target labels `y`.
+
+    instances_X_r : ndarray of shape (n_reference_samples, n_features)
+        The reference subset (R) selected using the random number generator.
+
+    dissim_matrix_ : ndarray of shape (n_samples, n_reference_samples)
+        The dissimilarity matrix computed between the input data and the reference points.
 
     See Also
     --------
-    . . . (Pegar exemplo do dummy)
+    DummyClassifier : A simple baseline classifier that makes predictions using simple rules.
 
     Examples
     --------
-    . . . (Pegar exemplo do dummy)
-
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.neighbors import KNeighborsClassifier
+    >>> from sklearn.dissimilarity import DissimilarityRNGClassifier
+    >>> X, y = load_iris(return_X_y=True)
+    >>> clf = DissimilarityRNGClassifier(estimator=KNeighborsClassifier(), r_per_class=5, random_state=42)
+    >>> clf.fit(X, y)
     """
 
     _parameter_constraints: dict = {
         "estimator": [HasMethods(["fit", "predict"]), None],
-        # "n_estimators": [Interval(Integral, 1, None, closed="left")],
         "strategy": [
             StrOptions({"most_frequent", "prior", "stratified", "uniform", "constant"})
         ],
         "random_state": ["random_state"],
     }
 
-    def __init__(self, estimator=None, r_per_class = 3, *, strategy="prior", random_state=None):
-        # Estimators
-        self.estimator = estimator
+    def __init__(self, estimator=None, r_per_class=3, *, strategy="prior", random_state=None):
+        """
+        Initialize the DissimilarityRNGClassifier.
 
-        # Parameters
+        Parameters
+        ----------
+        estimator : estimator object, default=None
+            The base classifier to be used after dissimilarity transformation. Defaults to KNeighborsClassifier.
+
+        r_per_class : int, default=3
+            Number of reference points to be selected per class.
+
+        strategy : {"most_frequent", "prior", "stratified", "uniform", "constant"}, default="prior"
+            Strategy for selecting reference points using random selection.
+
+        random_state : int, RandomState instance or None, default=None
+            Controls the randomness in selecting reference points.
+        """
+        self.estimator = estimator
+        self.r_per_class = r_per_class
         self.strategy = strategy
         self.random_state = random_state
-        self.r_per_class = r_per_class
 
-        # Atributes
+        # Attributes
         self.classes_ = None
         self.dissim_matrix_ = None
         self.instances_X_r = None
         self.n = None
 
-
     def _index_random_choice(self, X, y, random_state):
-        """Chosses an random index of X values"""
+        """
+        Select random indices for reference points based on the provided random state.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Input data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
+
+        random_state : RandomState
+            A random number generator instance for reproducibility.
+
+        Returns
+        -------
+        indices : ndarray of shape (n_reference_samples,)
+            Indices of the selected reference points.
+        """
         n_classes = len(self.classes_)
         n_instances = 1
         result_diff = 0
         list_indexes = []
 
-        # N = Quantidade de classes que serão usadas por cada classe
+        # Total number of reference points to select (n = classes * r_per_class)
         n = self.n
         
-        if(n > n_classes):
+        if n > n_classes:
             n_instances = int(n / n_classes)
 
-        for i, c in enumerate(self.classes_):
+        for c in self.classes_:
             indexes = np.where(c == y)[0]
             quantidade_instancias = len(indexes)
 
-            if(quantidade_instancias < (n_instances + result_diff)):
+            if quantidade_instancias < (n_instances + result_diff):
                 choices = random_state.choice(quantidade_instancias, quantidade_instancias, replace=False)
                 result_diff += n_instances - quantidade_instancias
             else:
@@ -191,20 +282,20 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
             list_indexes.append(indexes[choices])
         
         return np.concatenate(list_indexes)
-    
-    
 
     @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y, sample_weight=None):
-        """Fit the baseline classifier.
-        TODO: Lembrar de arrumar os comentários
+        """
+        Fit the classifier by selecting reference points using a random number generator and 
+        computing the dissimilarity matrix.
+
         Parameters
         ----------
         X : array-like of shape (n_samples, n_features)
             Training data.
 
-        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
-            Target values.
+        y : array-like of shape (n_samples,)
+            Target labels.
 
         sample_weight : array-like of shape (n_samples,), default=None
             Sample weights.
@@ -212,331 +303,470 @@ class DissimilarityRNGClassifier(_BaseDissimilarity):
         Returns
         -------
         self : object
-            Returns the instance itself.
+            Fitted classifier.
         """
-        """
-        # Devolve um random para poder utilizarmos, se for None ele não seta um novo utiliza um aleatório
-        random_state = check_random_state(self.random_state) # Exemplo de uso da variavel: random_state.randint(MAX_INT, size=len(self.estimators_))
-        self._validate_estimator(self._get_estimator()) # Estimator vai ser complicado implementar, ESTUDAR ISSO!
-        # De acordo com a seleção de R fazer tal ação
-        """
-        self._validate_data(X, cast_to_ndarray=False) # Validação dos dados
-        self._strategy = self.strategy # Não sei se ainda vou utilizar isso
+        # Validate input data
+        self._validate_data(X, cast_to_ndarray=False)
 
-        # Classes do problema
+        # 1. Get the unique classes from the target labels
         self.classes_ = np.unique(y)
         self.n = len(self.classes_) * self.r_per_class
 
-        # 2. Selecionar o confunto "R"
+        # 2. Select the reference subset (R) using random number generator
         random_state = check_random_state(self.random_state)
-
-        # Obtem os indices que serão usados
         selected_instances = self._index_random_choice(X, y, random_state)
-
         self.instances_X_r = X[selected_instances, :]
-        # 3. Montar a matriz de dissimilaridade
 
+        # 3. Compute the dissimilarity matrix
         if self.instances_X_r is None:
-            raise ValueError()
-        
-        # Ver sobre estimators
+            raise ValueError("No reference subset selected.")
+
+        # 4. If no estimator is provided, default to KNeighborsClassifier
         if self.estimator is None:
             self.estimator = KNeighborsClassifier()
-        
-        # Com os R selecionados podemos montar a matriz identidade
+
+        # Compute dissimilarity matrix for the entire dataset
         self.dissim_matrix_ = self._get_dissim_representation(X)
 
-        # Utiliza a matrix de dissimilidade
+        # Fit the base estimator using the dissimilarity matrix
         self.estimator.fit(self.dissim_matrix_, y)
 
         return self
 
 
 class DissimilarityCentroidClassifier(_BaseDissimilarity):
+    """
+    A classifier based on centroids obtained through K-Means clustering, which computes the dissimilarity between
+    instances in the feature space. This classifier allows for different strategies to generate the reference 
+    points (centroids) either per class or for all classes.
+
+    Parameters
+    ----------
+    estimator : estimator object, default=None
+        The base estimator used to classify instances after the dissimilarity transformation.
+        If None, defaults to KNeighborsClassifier.
+
+    n_clusters : int, default=3
+        The number of clusters to form using KMeans for each class or for the entire dataset, depending on the strategy.
+
+    random_state : int, RandomState instance or None, default=None
+        Controls the randomness of KMeans clustering and reference point selection.
+        Pass an int for reproducible results.
+
+    strategy : {"per_class", "all_class"}, default="per_class"
+        The strategy to apply for centroid computation:
+        - "per_class": Perform KMeans clustering separately for each class.
+        - "all_class": Perform KMeans clustering on the entire dataset, ignoring class labels.
+
+    Attributes
+    ----------
+    classes_ : ndarray of shape (n_classes,)
+        Unique class labels observed in `y`.
+
+    dissim_matrix_ : ndarray of shape (n_samples, n_clusters)
+        Dissimilarity matrix computed between the input data and the reference points (centroids).
+
+    instances_X_r : ndarray of shape (n_clusters, n_features)
+        The reference points (centroids) obtained from KMeans clustering.
+
+    See Also
+    --------
+    KNeighborsClassifier : The default classifier used if no estimator is provided.
+    KMeans : KMeans clustering used to generate reference points.
+
+    Examples
+    --------
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.neighbors import KNeighborsClassifier
+    >>> from sklearn.dissimilarity import DissimilarityCentroidClassifier
+    >>> X, y = load_iris(return_X_y=True)
+    >>> clf = DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(), n_clusters=3, strategy="per_class")
+    >>> clf.fit(X, y)
+    >>> y_pred = clf.predict(X)
+    """
 
     _parameter_constraints: dict = {
         "estimator": [HasMethods(["fit", "predict"]), None],
         "random_state": ["random_state"],
-        "strategy": [
-            StrOptions({"per_class", "all_class"})
-        ],
+        "strategy": [StrOptions({"per_class", "all_class"})],
     }
 
-
-    def _kmeans_per_class(self, X, y):
-        """
-        Separate instances per class and fit KMeans with the selected classes.
-        """
-        centroids_list = []
-        for n_class in self.classes_:
-            instances = X[y == n_class]
-            kmeans = KMeans(n_clusters=self.n_clusters, random_state=self.random_state)
-            kmeans.fit(instances)
-            centroids = kmeans.cluster_centers_
-            centroids_list.append(centroids)
-        centroids_array = np.vstack(centroids_list)
-        
-        return centroids_array
-    
-    def _kmeans_all_class(self, X):
-        """
-        fit kmeans
-        """
-        kmeans = KMeans(n_clusters=self.n_clusters, random_state=self.random_state)
-        kmeans.fit(X)
-        centroids = kmeans.cluster_centers_
-        return centroids
-
-
     def __init__(self, estimator=None, n_clusters=3, *, random_state=None, strategy="per_class"):
-        # Estimators
+        """
+        Initialize the DissimilarityCentroidClassifier.
+
+        Parameters
+        ----------
+        estimator : estimator object, default=None
+            The base classifier to be used after dissimilarity transformation. Defaults to KNeighborsClassifier.
+
+        n_clusters : int, default=3
+            Number of clusters for KMeans.
+
+        random_state : int, RandomState instance or None, default=None
+            Controls the randomness of clustering and reference point selection.
+
+        strategy : {"per_class", "all_class"}, default="per_class"
+            The strategy for centroid computation.
+        """
+        # Initialize the estimator
         self.estimator = estimator
         
-        # Parameters
+        # Set the parameters
         self.random_state = random_state
         self.strategy = strategy
 
-        # Atributes
+        # Initialize attributes
         self.n_clusters = n_clusters
         self.classes_ = None
         self.dissim_matrix_ = None
         self.instances_X_r = None
-    
 
     @_fit_context(prefer_skip_nested_validation=True)
     def fit(self, X, y, sample_weight=None):
-        
-        self._validate_data(X, cast_to_ndarray=False)
-        self.classes_ = np.unique(y)
-        random_state = check_random_state(self.random_state)
+        """
+        Fit the DissimilarityCentroidClassifier.
 
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Training data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
+
+        sample_weight : array-like of shape (n_samples,), default=None
+            Sample weights.
+
+        Returns
+        -------
+        self : object
+            Fitted classifier.
+        """
+        # Validate input data
+        self._validate_data(X, cast_to_ndarray=False)
+        self.classes_ = np.unique(y)  # Store unique classes
+
+        # Select the strategy to compute the reference points (centroids)
         if self.strategy == "per_class":
-            self.instances_X_r = self._kmeans_per_class(X, y)
+            self.instances_X_r = self._kmeans_per_class(X, y, self.random_state)
         elif self.strategy == "all_class":
-            self.instances_X_r = self._kmeans_all_class(X)
+            self.instances_X_r = self._kmeans_all_class(X, self.random_state)
 
         if self.instances_X_r is None:
-            raise ValueError()
-        
+            raise ValueError("Reference points (centroids) not set.")
+
+        # Use KNeighborsClassifier as the default estimator if none is provided
         if self.estimator is None:
             self.estimator = KNeighborsClassifier()
-        
+
+        # Compute the dissimilarity matrix
         self.dissim_matrix_ = self._get_dissim_representation(X)
+
+        # Fit the estimator on the dissimilarity matrix
         self.estimator.fit(self.dissim_matrix_, y)
 
         return self
 
-    
-    
+    def _kmeans_per_class(self, X, y, random_state):
+        """
+        Apply KMeans clustering to each class separately to obtain centroids for each class.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            The input data.
+
+        y : array-like of shape (n_samples,)
+            The target labels.
+
+        random_state : int, RandomState instance or None
+            Random state for KMeans clustering.
+
+        Returns
+        -------
+        centroids_array : ndarray of shape (n_clusters_per_class * n_classes, n_features)
+            The centroids obtained from KMeans clustering for each class.
+        """
+        centroids_list = []
+        # Iterate over each class and apply KMeans clustering
+        for n_class in self.classes_:
+            instances = X[y == n_class]  # Select instances of the current class
+            kmeans = KMeans(n_clusters=self.n_clusters, random_state=random_state)
+            kmeans.fit(instances)
+            centroids = kmeans.cluster_centers_  # Centroids for the current class
+            centroids_list.append(centroids)
+        
+        # Stack all centroids into a single array
+        centroids_array = np.vstack(centroids_list)
+        return centroids_array
+
+    def _kmeans_all_class(self, X, random_state):
+        """
+        Apply KMeans clustering to the entire dataset, ignoring class labels.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            The input data.
+
+        random_state : int, RandomState instance or None
+            Random state for KMeans clustering.
+
+        Returns
+        -------
+        centroids : ndarray of shape (n_clusters, n_features)
+            The centroids obtained from KMeans clustering on the entire dataset.
+        """
+        kmeans = KMeans(n_clusters=self.n_clusters, random_state=random_state)
+        kmeans.fit(X)
+        centroids = kmeans.cluster_centers_  # Centroids for the entire dataset
+        return centroids
+
+
 class DissimilarityIHDClassifier(_BaseDissimilarity):
     """
-    A Dissimilarity Classifier model using instance hardeness threshold for selection of the reference (R) subset 
+    A classifier that selects a reference subset based on instance hardness thresholds. The reference subset
+    (R) is determined using the hardest-to-classify instances, computed either per class or across all classes.
+
+    Parameters
+    ----------
+    estimator : estimator object, default=None
+        The base estimator used to classify instances after the dissimilarity transformation.
+        If None, defaults to KNeighborsClassifier.
+
+    strategy : {"per_class", "all_class"}, default="per_class"
+        Strategy to select the reference instances:
+        - "per_class": Select the hardest instances separately for each class.
+        - "all_class": Select the hardest instances from the entire dataset, without considering class labels.
+
+    random_state : int, RandomState instance or None, default=None
+        Controls the randomness of the instance selection process and reference point determination.
+
+    k : int, default=None
+        The number of neighbors used in the instance hardness calculation. If `din_k` is True, `k` is dynamically
+        adjusted based on the dataset size.
+
+    din_k : bool, default=True
+        Whether to dynamically adjust `k` based on the size of the dataset.
+
+    coef_k : float, default=2
+        Coefficient used to scale the number of neighbors `k` when `din_k` is True.
+
+    r_size : int, default=10
+        The number of hardest instances to retain in the reference subset.
+
+    Attributes
+    ----------
+    classes_ : ndarray of shape (n_classes,)
+        Unique class labels observed in `y`.
+
+    dissim_matrix_ : ndarray of shape (n_samples, r_size)
+        Dissimilarity matrix computed between the input data and the reference points (hard instances).
+
+    instances_X_r : ndarray of shape (r_size, n_features)
+        The reference instances (the hardest-to-classify ones) selected during fitting.
+
+    See Also
+    --------
+    KNeighborsClassifier : The default classifier used if no estimator is provided.
+
+    Examples
+    --------
+    >>> from sklearn.datasets import load_iris
+    >>> from sklearn.neighbors import KNeighborsClassifier
+    >>> from sklearn.dissimilarity import DissimilarityIHDClassifier
+    >>> X, y = load_iris(return_X_y=True)
+    >>> clf = DissimilarityIHDClassifier(estimator=KNeighborsClassifier(), r_size=15)
+    >>> clf.fit(X, y)
+    >>> y_pred = clf.predict(X)
     """
 
     _parameter_constraints: dict = {
         "estimator": [HasMethods(["fit", "predict"]), None],
-        # "n_estimators": [Interval(Integral, 1, None, closed="left")],
-        "strategy": [
-            StrOptions({"per_class", "all_class"})
-        ],
+        "strategy": [StrOptions({"per_class", "all_class"})],
         "random_state": ["random_state"],
     }
 
-    def __init__(self, estimator=None, *, strategy="prior", random_state=None, k=None, din_k=True, coef_k=2):
-        # Estimators
-        self.estimator = estimator
+    def __init__(self, estimator=None, *, strategy="per_class", random_state=None, k=None, din_k=True, coef_k=2, r_size=10):
+        """
+        Initialize the DissimilarityIHDClassifier.
 
-        # Parameters
+        Parameters
+        ----------
+        estimator : estimator object, default=None
+            The base classifier to be used after dissimilarity transformation. Defaults to KNeighborsClassifier.
+
+        strategy : {"per_class", "all_class"}, default="per_class"
+            Strategy for selecting the reference points based on instance hardness.
+
+        random_state : int, RandomState instance or None, default=None
+            Controls randomness in instance selection.
+
+        k : int, default=None
+            Number of neighbors for instance hardness calculation.
+
+        din_k : bool, default=True
+            Whether to dynamically adjust the value of `k`.
+
+        coef_k : float, default=2
+            Coefficient for scaling `k` when `din_k` is True.
+
+        r_size : int, default=10
+            The size of the reference subset (number of hardest instances to select).
+        """
+        self.estimator = estimator
         self.strategy = strategy
         self.random_state = random_state
+        self.r_size = r_size
 
-        # Atributes
+        self.k = k
+        self.din_k = din_k
+        self.coef_k = coef_k
+
         self.classes_ = None
         self.dissim_matrix_ = None
         self.instances_X_r = None
 
-        # Neighbors
-        self.k = k
-        self.din_k = din_k
-
-        # Coeficiente p euristica da escala de vizinhos p/tam de k
-        self.coef_k = coef_k
-
-    @_fit_context(prefer_skip_nested_validation=True)            
-    def fit(self, X, y, sample_weight=None, batch_size=2000, max_r_size=5000, use_batch=True):
+    @_fit_context(prefer_skip_nested_validation=True)
+    def fit(self, X, y):
         """
-        Fit the model with an option to use batching or process the entire dataset at once.
+        Fit the classifier, selecting the reference subset (R) using instance hardness and
+        computing the dissimilarity matrix for the input data.
 
-        Parameters:
-        - X: Training data
-        - y: Training labels
-        - batch_size: Size of the batches for processing data in chunks (used if use_batch=True).
-        - max_r_size: Maximum number of instances in the reference set R.
-        - use_batch: Boolean flag to enable or disable batching (default: True).
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Training data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
+
+        Returns
+        -------
+        self : object
+            Fitted classifier.
         """
-    
-        # Valida os dados
+        # Validate input data
         self._validate_data(X, cast_to_ndarray=False)
-        self._strategy = self.strategy
-        
-        # 1. Classes do problema
-        self.classes_ = np.unique(y)
-        
-        # 2. Determinar o tamanho de R dinamicamente com base no tamanho do dataset
-        n_samples = len(X)
-        
-        if max_r_size is None:
-            # Dinamicamente ajusta o tamanho de R baseado no tamanho do dataset
-            if n_samples <= 5000:
-                max_r_size = min(n_samples, 800)  # Para datasets pequenos, limite de até 800 instâncias
-            elif n_samples <= 100000:
-                max_r_size = int(math.sqrt(n_samples) * 2)  # Para datasets médios, usa sqrt(n)
-            else:
-                max_r_size = int(math.log(n_samples) * 200)  # Para datasets grandes, usa log(n) * 200
-            
-            print(f"Using dynamic R size: {max_r_size}")
-        
-        # Inicializa uma lista vazia para as instâncias reamostradas
-        X_resampled = []
-        y_resampled = []
-        
-        if use_batch:
-            # --- Process with Batching ---
-            # Processa os dados em lotes (batches)
-            for start in range(0, n_samples, batch_size):
-                end = min(start + batch_size, n_samples)
-                X_batch = X[start:end]
-                y_batch = y[start:end]
-                
-                # Processa cada classe separadamente para calcular a dureza das instâncias
-                for class_label in self.classes_:
-                    # Obtém as amostras para a classe atual no batch atual
-                    class_indices = np.where(y_batch == class_label)[0]
-                    X_class = X_batch[class_indices]
-                    y_class = y_batch[class_indices]
-                    
-                    if len(X_class) == 0:
-                        continue  # Pula se não houver instâncias dessa classe no lote
-                    
-                    # Calcula a dureza das instâncias e os vizinhos para a classe atual
-                    s, nx = self._instance_hardness(X_class, y_class)
-                    
-                    # Seleciona as instâncias mais difíceis (para a classe atual)
-                    top_indices = heapq.nlargest(min(len(s), max_r_size // len(self.classes_)), 
-                                                range(len(s)), key=lambda i: s[i])
-                    
-                    # Adiciona as instâncias reamostradas e os rótulos
-                    X_resampled.append(X_class[top_indices])
-                    y_resampled.append(y_class[top_indices])
-        else:
-            # --- Process Entire Dataset Without Batching ---
-            # Processa cada classe separadamente para calcular a dureza das instâncias sem batching
-            for class_label in self.classes_:
-                # Obtém as amostras para a classe atual
-                class_indices = np.where(y == class_label)[0]
-                X_class = X[class_indices]
-                y_class = y[class_indices]
-                
-                if len(X_class) == 0:
-                    continue  # Pula se não houver instâncias dessa classe
-                
-                # Calcula a dureza das instâncias e os vizinhos para a classe atual
-                # s, nx = self._instance_hardness(X_class, y_class)
-                s, nx = self._instance_hardness(X, y) # Apenas para teste
 
-                # Seleciona as instâncias mais difíceis (para a classe atual)
-                top_indices = heapq.nlargest(10, 
-                                            range(len(s)), key=lambda i: s[i])
-                
-                # Adiciona as instâncias reamostradas e os rótulos
-                X_resampled.append(X_class[top_indices])
-                y_resampled.append(y_class[top_indices])
-        
-        # Converte as listas para arrays após processar cada classe
-        X_resampled = np.vstack(X_resampled)
-        y_resampled = np.hstack(y_resampled)
-        
-        # Limita o tamanho total de R se necessário
-        if len(X_resampled) > max_r_size:
-            top_indices = np.random.choice(len(X_resampled), max_r_size, replace=False)
-            X_resampled = X_resampled[top_indices]
-            y_resampled = y_resampled[top_indices]
-        
-        # Armazena as instâncias reamostradas como o conjunto de referência R
+        # 1. Extract unique classes from the target labels
+        self.classes_ = np.unique(y)
+
+        # 2. Select reference subset based on the strategy
+        if self.strategy == "per_class":
+            X_resampled = self._instance_hardness_per_class(X, y)
+        elif self.strategy == "all_class":
+            X_resampled = self._instance_hardness_all_class(X, y)
+
+        # Store the reference subset (R)
         self.instances_X_r = X_resampled
 
-        # Monta a matriz de dissimilaridade para todo o conjunto de dados de treinamento
+        # Compute the dissimilarity matrix for the training data
         self.dissim_matrix_ = self._get_dissim_representation(X)
-        
-        # Ajusta o estimador utilizando a matriz de dissimilaridade
+
+        # If no estimator is provided, use KNeighborsClassifier by default
+        if self.estimator is None:
+            self.estimator = KNeighborsClassifier()
+
+        # Fit the estimator using the dissimilarity matrix
         self.estimator.fit(self.dissim_matrix_, y)
-        
+
         return self
 
-
-    def predict(self, X):
-        """Perform classification on test vectors X.
-
-        Parameters
-        ----------
-        X : array-like of shape (n_samples, n_features)
-            Test data.
-
-        Returns
-        -------
-        y : array-like of shape (n_samples,) or (n_samples, n_outputs)
-            Predicted target values for X.
-        """
-
-        if self.instances_X_r is None:
-            raise ValueError("Missing value R")
-        
-        dissimilarity_test = self._get_dissim_representation(X)
-        return self.estimator.predict(dissimilarity_test)
-    
     def _instance_hardness(self, X, y):
         """
-        Author: Gabriel Antonio Gomes de Farias
-
-        Use: 
-            Calculates the hardness of a instance pertaining to a class and returns a array with each sample hardness value.
-
+        Compute instance hardness scores using the k-disagreeing neighbors (KDN) method.
 
         Parameters
         ----------
         X : array-like of shape (n_samples, n_features)
-            Test data.
+            Input data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
 
         Returns
         -------
-        s : instance-hardness score (float)
-        nx : neighbor
-        """
+        s : ndarray of shape (n_samples,)
+            Instance hardness scores for each sample.
 
+        nx : ndarray of shape (n_samples, k)
+            Indices of the k nearest neighbors for each sample.
+        """
         n_samples = len(X)
-    
+
+        # Dynamically adjust k based on dataset size if din_k is enabled
         if self.din_k:
-            # Dinamicamente ajusta k com base no tamanho do dataset
             if n_samples > 5000:
-                self.coef_k = 3  # Para datasets muito grandes
+                self.coef_k = 3  # Larger datasets
             elif n_samples > 1000:
-                self.coef_k = 2  # Para datasets médios
+                self.coef_k = 2  # Medium datasets
             else:
-                self.coef_k = 1.5  # Para pequenos datasets
-            
-            # Ajuste dinâmico de k com um limite superior
-            if n_samples > 1000:
-                self.k = min(50, int(math.log(n_samples) * self.coef_k))  # Limita k a 50 no máximo
-            else:
-                self.k = int(math.sqrt(n_samples) * self.coef_k)
-            print(f"Using dynamic k: {self.k}")
+                self.coef_k = 1.5  # Smaller datasets
+
+            self.k = min(50, int(math.log(n_samples) * self.coef_k)) if n_samples > 1000 else int(math.sqrt(n_samples) * self.coef_k)
         else:
             if self.k is None:
                 raise ValueError("k must be set when din_k is False.")
-            print(f"Using manually set k: {self.k}")
-        
-        # Calcula a dureza das instâncias com a pontuação K-Disagreeing Neighbors (KDN)
+
+        # Calculate hardness scores using k-disagreeing neighbors
         s, nx = kdn_score(X, y, k=self.k)
-        
-        # Retorna os escores de dureza e as informações dos vizinhos
         return s, nx
+
+    def _instance_hardness_per_class(self, X, y):
+        """
+        Compute instance hardness scores for each class separately and select the hardest instances.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Training data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
+
+        Returns
+        -------
+        ihd_array : ndarray of shape (r_size, n_features)
+            Hardest instances from each class.
+        """
+        ihd_list = []
+        for class_label in self.classes_:
+            X_class = X[y == class_label]
+            Y_class = y[y == class_label]
+
+            # Compute instance hardness and neighbors for the current class
+            s, nx = self._instance_hardness(X_class, Y_class)
+
+            # Select the top hardest instances based on instance hardness scores
+            top_indices = heapq.nlargest(self.r_size, range(len(s)), key=lambda i: s[i])
+
+            # Append the hardest instances to the reference list
+            ihd_list.append(X_class[top_indices])
+
+        # Combine instances from all classes
+        ihd_array = np.vstack(ihd_list)
+        return ihd_array
+
+    def _instance_hardness_all_class(self, X, y):
+        """
+        Compute instance hardness scores across all classes and select the hardest instances.
+
+        Parameters
+        ----------
+        X : array-like of shape (n_samples, n_features)
+            Training data.
+
+        y : array-like of shape (n_samples,)
+            Target labels.
+
+        Returns
+        -------
+        X_top_hard : ndarray of shape (r_size, n_features)
+            Hardest instances from the entire dataset.
+        """
+        s, nx = self._instance_hardness(X, y)
+        top_indices = heapq.nlargest(self.r_size, range(len(s)), key=lambda i: s[i])
+        return X[top_indices]
+

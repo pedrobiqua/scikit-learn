@@ -3,9 +3,9 @@ import sys
 
 ###### LIB ARFF_CONVERT DATASETS ######
 #from dataset_arff.arffconvert import load_SEAGenerator_test_mode # Carrega a base de dados que está no formato arff para numpy X e Y 
-from .dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 
-from .dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 
-from .dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 
+from dataset_arff.arffconvert import load_SEAGenerator_test_f2_f4 
+from dataset_arff.arffconvert import load_AssetNegotiationGenerator_f1_f5 
+from dataset_arff.arffconvert import load_AgrawalGenerator_test_mode_f2_f9 
 #######################################
 
 # Author: Pedro Bianchini de Quadros      <quadros.pedro@pucpr.edu.br>
@@ -36,6 +36,16 @@ from sklearn.dissimilarity import DissimilarityCentroidClassifier
 
 import pandas as pd
 import re
+
+# Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
+range_experimento = [20, 50]
+
+# Datasets que iremos utilizar
+function_datasets_list = [
+    load_AssetNegotiationGenerator_f1_f5, 
+    load_AgrawalGenerator_test_mode_f2_f9,
+    load_SEAGenerator_test_f2_f4
+]
 
 # Função responsavel por rodar os algoritmos
 def model_test(estimator, X_train, y_train, X_test, y_test):
@@ -179,5 +189,78 @@ def experimento_1():
     except KeyboardInterrupt:
         print(f"Tecla Crtl + c precionada!")
 
-#Inicializa os experimento  
-experimento_1()
+#Inicializa os experimento
+# experimento_1()
+
+# Lista para armazenar os resultados
+resultados = []
+
+def run_experiment_1():
+    estimators = [
+        KNeighborsClassifier(n_neighbors=1),
+        KNeighborsClassifier(n_neighbors=3),
+        DecisionTreeClassifier(),
+        GaussianNB(),
+
+        DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=1), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=3), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=DecisionTreeClassifier(), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=GaussianNB(), r_per_class=3),
+
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy="per_class"),
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy="per_class"),
+        DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy="per_class"),
+        DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy="per_class"),
+
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
+        DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
+        DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
+    ]
+
+    for estimator in estimators:
+        experiment_kernel(estimator=estimator)
+
+
+def experiment_kernel(estimator):
+    for dataset in function_datasets_list:
+        X, y = dataset()  # Carrega o dataset
+        name_function_dataset = dataset.__name__
+        print(f"Testing dataset: {name_function_dataset}")
+
+        # Separa em treino e teste
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
+
+        # Testando random_state de 20 a 50
+        for i in range(range_experimento[0], range_experimento[1]):
+            print(f"Using random_state={i}")
+
+            # Verifica se precisa colocar random state dentro de algum estimator
+            if 'estimator' in estimator.get_params():
+                if hasattr(estimator.estimator, 'random_state'):
+                    estimator.estimator.set_params(random_state=i)
+
+            # Se o classificador tiver random_state, adicionar o valor
+            if hasattr(estimator, 'random_state'):
+                estimator.set_params(random_state=i)
+
+            # Testar o modelo
+            tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
+            
+            # Armazenar o resultado
+            resultados.append({
+                'dataset': name_function_dataset,
+                'estimator': type(estimator).__name__,
+                'random_state': i,
+                'tx_acerto': tx_acerto,
+                'confusion_matrix': cm
+            })
+            print(f"Taxa de acerto: {tx_acerto}")
+
+    # Após finalizar todos os experimentos, salvar em um arquivo ou exibir
+    df_resultados = pd.DataFrame(resultados)
+    df_resultados.to_csv('resultados_experimento.csv', index=False)
+    print("Resultados salvos no arquivo 'resultados_experimento.csv'.")
+
+# TODO: Ver junto com o gag, sobre esse novo formato :)
+run_experiment_1()
