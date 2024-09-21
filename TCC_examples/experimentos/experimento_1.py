@@ -192,8 +192,8 @@ def experimento_1():
 #Inicializa os experimento
 # experimento_1()
 
-# Lista para armazenar os resultados
-resultados = []
+# List to store the results
+results = []
 
 def run_experiment_1():
     estimators = [
@@ -224,14 +224,14 @@ def run_experiment_1():
 
 def experiment_kernel(estimator):
     for dataset in function_datasets_list:
-        X, y = dataset()  # Carrega o dataset
+        X, y = dataset()  # Load the dataset
         name_function_dataset = dataset.__name__
         print(f"Testing dataset: {name_function_dataset}")
 
-        # Separa em treino e teste
+        # Split into training and testing sets
         X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5, test_size=0.5, shuffle=False)
 
-        # Testando random_state de 20 a 50
+        # Testing random_state from 20 to 50
         for i in range(range_experimento[0], range_experimento[1]):
             print(f"Using random_state={i}")
 
@@ -240,27 +240,27 @@ def experiment_kernel(estimator):
                 if hasattr(estimator.estimator, 'random_state'):
                     estimator.estimator.set_params(random_state=i)
 
-            # Se o classificador tiver random_state, adicionar o valor
+            # If the classifier has random_state, set the value
             if hasattr(estimator, 'random_state'):
                 estimator.set_params(random_state=i)
 
-            # Testar o modelo
-            tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
+            # Test the model
+            accuracy, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
             
             # Armazenar o resultado
             resultados.append({
                 'dataset': name_function_dataset,
                 'estimator': type(estimator).__name__,
                 'random_state': i,
-                'tx_acerto': tx_acerto,
+                'accuracy': accuracy,
                 'confusion_matrix': cm
             })
-            print(f"Taxa de acerto: {tx_acerto}")
+            print(f"Accuracy: {accuracy}")
 
-    # Após finalizar todos os experimentos, salvar em um arquivo ou exibir
-    df_resultados = pd.DataFrame(resultados)
-    df_resultados.to_csv('resultados_experimento.csv', index=False)
-    print("Resultados salvos no arquivo 'resultados_experimento.csv'.")
+    # After completing all experiments, save to a file or display
+    df_results = pd.DataFrame(results)
+    df_results.to_csv('experiment_results.csv', index=False)
+    print("Results saved to 'experiment_results.csv'.")
 
-# TODO: Ver junto com o gag, sobre esse novo formato :)
+# TODO: Discuss with gag about this new format :)
 run_experiment_1()
