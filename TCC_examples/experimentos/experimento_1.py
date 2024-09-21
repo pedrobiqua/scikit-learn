@@ -235,10 +235,15 @@ def experiment_kernel(estimator):
         for i in range(range_experimento[0], range_experimento[1]):
             print(f"Using random_state={i}")
 
-            # Verifica se precisa colocar random state dentro de algum estimator
+            # Check if random_state needs to be set for any estimator
+            # Add the estimator's name to the variable
+            str_estimator = ""
             if 'estimator' in estimator.get_params():
+                str_estimator = str(estimator.estimator)
                 if hasattr(estimator.estimator, 'random_state'):
                     estimator.estimator.set_params(random_state=i)
+            else:
+                str_estimator = "Empty estimator"
 
             # If the classifier has random_state, set the value
             if hasattr(estimator, 'random_state'):
@@ -247,10 +252,11 @@ def experiment_kernel(estimator):
             # Test the model
             accuracy, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test)
             
-            # Armazenar o resultado
-            resultados.append({
+            # Store the result
+            results.append({
                 'dataset': name_function_dataset,
-                'estimator': type(estimator).__name__,
+                'classifier': type(estimator).__name__,
+                'estimator': str_estimator,
                 'random_state': i,
                 'accuracy': accuracy,
                 'confusion_matrix': cm
