@@ -196,6 +196,9 @@ def experimento_1():
 results = []
 
 def run_experiment_1():
+
+    strategy = "all_class" # "per_class"
+
     estimators = [
         KNeighborsClassifier(n_neighbors=1),
         KNeighborsClassifier(n_neighbors=3),
@@ -207,22 +210,22 @@ def run_experiment_1():
         DissimilarityRNGClassifier(estimator=DecisionTreeClassifier(), r_per_class=3),
         DissimilarityRNGClassifier(estimator=GaussianNB(), r_per_class=3),
 
-        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy="per_class"),
-        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy="per_class"),
-        DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy="per_class"),
-        DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy="per_class"),
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy=strategy),
 
-        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
-        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
-        DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
-        DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy="per_class"),
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
     ]
 
     for estimator in estimators:
-        experiment_kernel(estimator=estimator)
+        experiment_kernel(estimator=estimator, strategy_name=strategy)
 
 
-def experiment_kernel(estimator):
+def experiment_kernel(estimator, strategy_name):
     for dataset in function_datasets_list:
         X, y = dataset()  # Load the dataset
         name_function_dataset = dataset.__name__
@@ -259,14 +262,15 @@ def experiment_kernel(estimator):
                 'estimator': str_estimator,
                 'random_state': i,
                 'accuracy': accuracy,
-                'confusion_matrix': cm
+                'confusion_matrix': cm,
+                'strategy': strategy_name                
             })
             print(f"Accuracy: {accuracy}")
 
     # After completing all experiments, save to a file or display
     df_results = pd.DataFrame(results)
-    df_results.to_csv('experiment_results.csv', index=False)
-    print("Results saved to 'experiment_results.csv'.")
+    df_results.to_csv(f'experiment_results_{strategy_name}.csv', index=False)
+    print(f"Results saved to 'experiment_results_{strategy_name}.csv'.")
 
 # TODO: Discuss with gag about this new format :)
 run_experiment_1()
