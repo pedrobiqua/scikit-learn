@@ -28,6 +28,8 @@ from sklearn.metrics import accuracy_score
 
 # Classificador usando ESPAÇO DE DISSIMILARIDADE COM SELEÇÃO DOS R ALEATÓRIOS
 from sklearn.dissimilarity import DissimilarityRNGClassifier
+from sklearn.dissimilarity import DissimilarityCentroidClassifier
+from sklearn.dissimilarity import DissimilarityIHDClassifier
 
 import pandas as pd
 import re
@@ -47,177 +49,290 @@ def model_test(estimator, X_train, y_train, X_test, y_test):
 
     return tx_acerto, cm
 
-def experimento_2_25_25():
-    try:
-        # Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
-        range_experimento = [20, 50]
+# def experimento_2_25_25():
+#     try:
+#         # Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
+#         range_experimento = [20, 50]
 
-        # Datasets que iremos utilizar
-        function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
+#         # Datasets que iremos utilizar
+#         function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
         
-        # Montagem da saida
-        results_score = {
-            'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
-            'Dataset' : list() # Será armazenado o dataset utilizado
-        } # cada uma dessas chaves será a coluna
+#         # Montagem da saida
+#         results_score = {
+#             'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
+#             'Dataset' : list() # Será armazenado o dataset utilizado
+#         } # cada uma dessas chaves será a coluna
 
-        # Todos os classificadores que estamos utilizando
-        classifiers = ["KNeighborsClassifier(n_neighbors=1)", 
-                         "KNeighborsClassifier(n_neighbors=3)", 
-                         "DecisionTreeClassifier()",
-                         "GaussianNB()",
-                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
-                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
-                         "DissimilarityRNGClassifier(DecisionTreeClassifier())",
-                         "DissimilarityRNGClassifier(GaussianNB())"
-                    ]
+#         # Todos os classificadores que estamos utilizando
+#         classifiers = ["KNeighborsClassifier(n_neighbors=1)", 
+#                          "KNeighborsClassifier(n_neighbors=3)", 
+#                          "DecisionTreeClassifier()",
+#                          "GaussianNB()",
+#                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
+#                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
+#                          "DissimilarityRNGClassifier(DecisionTreeClassifier())",
+#                          "DissimilarityRNGClassifier(GaussianNB())"
+#                     ]
 
-        # Cria uma chave com uma lista para cada classificador usado 
-        for clf_name in classifiers:
-            results_score[clf_name] = []
+#         # Cria uma chave com uma lista para cada classificador usado 
+#         for clf_name in classifiers:
+#             results_score[clf_name] = []
         
-        # Testa todos os datasets
-        for dataset in function_datasets_list:
-            X, y = dataset()
-            name_function_dataset = dataset.__name__
-            results_score['Dataset'].extend([name_function_dataset] * (range_experimento[1] - range_experimento[0]))
+#         # Testa todos os datasets
+#         for dataset in function_datasets_list:
+#             X, y = dataset()
+#             name_function_dataset = dataset.__name__
+#             results_score['Dataset'].extend([name_function_dataset] * (range_experimento[1] - range_experimento[0]))
 
-            print(f"Testando o dataset: {name_function_dataset}")
+#             print(f"Testando o dataset: {name_function_dataset}")
 
-            for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
-                # Classificadores a serem testados
-                print(f"random_state={i}")
-                estimators= [KNeighborsClassifier(n_neighbors=1), 
-                            KNeighborsClassifier(n_neighbors=3), 
-                            DecisionTreeClassifier(random_state=i), 
-                            GaussianNB()]
+#             for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
+#                 # Classificadores a serem testados
+#                 print(f"random_state={i}")
+#                 estimators= [KNeighborsClassifier(n_neighbors=1), 
+#                             KNeighborsClassifier(n_neighbors=3), 
+#                             DecisionTreeClassifier(random_state=i), 
+#                             GaussianNB()]
                 
-                # 25% treino e 75% para teste (25% dps do treino para teste, e restante 50% para teste)
-                X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.25, test_size=0.75, shuffle=False)
+#                 # 25% treino e 75% para teste (25% dps do treino para teste, e restante 50% para teste)
+#                 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.25, test_size=0.75, shuffle=False)
 
-                X_test1, X_test2, y_test1, y_test2 = train_test_split(X_test, y_test, test_size=2/3, shuffle=False)
+#                 X_test1, X_test2, y_test1, y_test2 = train_test_split(X_test, y_test, test_size=2/3, shuffle=False)
 
-                print(f"25% Treino / 25 % Teste")
-                for estimator in estimators:
+#                 print(f"25% Treino / 25 % Teste")
+#                 for estimator in estimators:
                     
-                    tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train,X_test=X_test1, y_test=y_test1)
+#                     tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train,X_test=X_test1, y_test=y_test1)
 
-                    # Remove o random_state=<value>
-                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', str(estimator))
-                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+#                     # Remove o random_state=<value>
+#                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', str(estimator))
+#                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
-                    results_score[cleaned_str].append(tx_acerto)
+#                     results_score[cleaned_str].append(tx_acerto)
 
 
-                for estimator in estimators:
-                    tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test1, y_test=y_test1)
+#                 for estimator in estimators:
+#                     tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test1, y_test=y_test1)
                     
-                    # Remove o random_state=<value>
-                    name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
-                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
-                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+#                     # Remove o random_state=<value>
+#                     name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
+#                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
+#                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
-                    results_score[cleaned_str].append(tx_acerto)
+#                     results_score[cleaned_str].append(tx_acerto)
 
-        # Após o loop, organize e salve os resultados em um arquivo Excel
-        classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
+#         # Após o loop, organize e salve os resultados em um arquivo Excel
+#         classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
 
-        # Cria o dataframe com os resultados das acurácias
-        df = pd.DataFrame(results_score)
+#         # Cria o dataframe com os resultados das acurácias
+#         df = pd.DataFrame(results_score)
 
-        df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
+#         df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
 
-        # Salvar depois os resultados em um excel para validar e analisar melhor
-        df.to_csv('results_25_25.csv', index=False)
+#         # Salvar depois os resultados em um excel para validar e analisar melhor
+#         df.to_csv('results_25_25.csv', index=False)
 
-    except KeyboardInterrupt:
-        print(f"Tecla Crtl + c precionada!")
+#     except KeyboardInterrupt:
+#         print(f"Tecla Crtl + c precionada!")
 
-def experimento_2_25_50():
-    try:
-        # Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
-        range_experimento = [20, 50]
+# def experimento_2_25_50():
+#     try:
+#         # Vamos testar o experimento 30 vezes, usando seeds de 20 a 50
+#         range_experimento = [20, 50]
 
-        # Datasets que iremos utilizar
-        function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
+#         # Datasets que iremos utilizar
+#         function_datasets_list = [load_AssetNegotiationGenerator_f1_f5, load_AgrawalGenerator_test_mode_f2_f9, load_SEAGenerator_test_f2_f4]
         
-        # Montagem da saida
-        results_score = {
-            'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
-            'Dataset' : list() # Será armazenado o dataset utilizado
-        } # cada uma dessas chaves será a coluna
+#         # Montagem da saida
+#         results_score = {
+#             'RandomState': list(range(range_experimento[0], range_experimento[1])) * len(function_datasets_list),
+#             'Dataset' : list() # Será armazenado o dataset utilizado
+#         } # cada uma dessas chaves será a coluna
 
-        # Todos os classificadores que estamos utilizando
-        classifiers = ["KNeighborsClassifier(n_neighbors=1)", 
-                         "KNeighborsClassifier(n_neighbors=3)", 
-                         "DecisionTreeClassifier()",
-                         "GaussianNB()",
-                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
-                         "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
-                         "DissimilarityRNGClassifier(DecisionTreeClassifier())",
-                         "DissimilarityRNGClassifier(GaussianNB())"
-                    ]
+#         # Todos os classificadores que estamos utilizando
+#         classifiers = ["KNeighborsClassifier(n_neighbors=1)", 
+#                          "KNeighborsClassifier(n_neighbors=3)", 
+#                          "DecisionTreeClassifier()",
+#                          "GaussianNB()",
+#                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=1))",
+#                          "DissimilarityRNGClassifier(KNeighborsClassifier(n_neighbors=3))",
+#                          "DissimilarityRNGClassifier(DecisionTreeClassifier())",
+#                          "DissimilarityRNGClassifier(GaussianNB())"
+#                     ]
 
-        # Cria uma chave com uma lista para cada classificador usado 
-        for clf_name in classifiers:
-            results_score[clf_name] = []
+#         # Cria uma chave com uma lista para cada classificador usado 
+#         for clf_name in classifiers:
+#             results_score[clf_name] = []
         
-        # Testa todos os datasets
-        for dataset in function_datasets_list:
-            X, y = dataset()
-            name_function_dataset = dataset.__name__
-            results_score['Dataset'].extend([name_function_dataset] * (range_experimento[1] - range_experimento[0]))
+#         # Testa todos os datasets
+#         for dataset in function_datasets_list:
+#             X, y = dataset()
+#             name_function_dataset = dataset.__name__
+#             results_score['Dataset'].extend([name_function_dataset] * (range_experimento[1] - range_experimento[0]))
 
-            print(f"Testando o dataset: {name_function_dataset}")
+#             print(f"Testando o dataset: {name_function_dataset}")
 
-            for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
-                # Classificadores a serem testados
-                estimators= [KNeighborsClassifier(n_neighbors=1), 
-                            KNeighborsClassifier(n_neighbors=3), 
-                            DecisionTreeClassifier(random_state=i), 
-                            GaussianNB()]
+#             for i in range(range_experimento[0], range_experimento[1]): # Vamos testar o random_state de 20 a 50
+#                 # Classificadores a serem testados
+#                 estimators= [KNeighborsClassifier(n_neighbors=1), 
+#                             KNeighborsClassifier(n_neighbors=3), 
+#                             DecisionTreeClassifier(random_state=i), 
+#                             GaussianNB()]
                 
-                # 25% treino e 75% para teste (25% dps do treino para teste, e restante 50% para teste)
-                X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.25, test_size=0.75, shuffle=False)
+#                 # 25% treino e 75% para teste (25% dps do treino para teste, e restante 50% para teste)
+#                 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.25, test_size=0.75, shuffle=False)
 
-                X_test1, X_test2, y_test1, y_test2 = train_test_split(X_test, y_test, test_size=2/3, shuffle=False)
+#                 X_test1, X_test2, y_test1, y_test2 = train_test_split(X_test, y_test, test_size=2/3, shuffle=False)
 
-                print(f"25% Treino / 50 % Teste")
-                for estimator in estimators:
+#                 print(f"25% Treino / 50 % Teste")
+#                 for estimator in estimators:
                     
-                    tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train,X_test=X_test2, y_test=y_test2)
+#                     tx_acerto, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train,X_test=X_test2, y_test=y_test2)
 
-                    # Remove o random_state=<value>
-                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', str(estimator))
-                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+#                     # Remove o random_state=<value>
+#                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', str(estimator))
+#                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
-                    results_score[cleaned_str].append(tx_acerto)
+#                     results_score[cleaned_str].append(tx_acerto)
 
 
-                for estimator in estimators:
-                    tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test2, y_test=y_test2)
+#                 for estimator in estimators:
+#                     tx_acerto, cm = model_test(estimator=DissimilarityRNGClassifier(estimator=estimator, random_state=i), X_train=X_train, y_train=y_train,X_test=X_test2, y_test=y_test2)
                     
-                    # Remove o random_state=<value>
-                    name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
-                    cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
-                    cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
+#                     # Remove o random_state=<value>
+#                     name_estimator = f"DissimilarityRNGClassifier({str(estimator)})"
+#                     cleaned_str = re.sub(r'random_state\s*=\s*\d+\s*,?', '', name_estimator)
+#                     cleaned_str = re.sub(r',\s*\)', ')', cleaned_str)
                     
-                    results_score[cleaned_str].append(tx_acerto)
+#                     results_score[cleaned_str].append(tx_acerto)
 
-        # Após o loop, organize e salve os resultados em um arquivo Excel
-        classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
+#         # Após o loop, organize e salve os resultados em um arquivo Excel
+#         classifiers_names = ['RDN_STATE', 'DATASET', 'KNN_1', 'KNN_3', 'DT', 'GNB', 'Diss_RNG_KNN_1', 'Diss_RNG_KNN_3', 'Diss_RNG_DT', 'Diss_RNG_GNB']
 
-        # Cria o dataframe com os resultados das acurácias
-        df = pd.DataFrame(results_score)
+#         # Cria o dataframe com os resultados das acurácias
+#         df = pd.DataFrame(results_score)
 
-        df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
+#         df.columns = classifiers_names # Muda o nome das colunas para a lista que já temos
 
-        # Salvar depois os resultados em um excel para validar e analisar melhor
-        df.to_csv('results_25_50.csv', index=False)
+#         # Salvar depois os resultados em um excel para validar e analisar melhor
+#         df.to_csv('results_25_50.csv', index=False)
 
-    except KeyboardInterrupt:
-        print(f"Tecla Crtl + c precionada!")
+#     except KeyboardInterrupt:
+#         print(f"Tecla Crtl + c precionada!")
 
-#Inicializa os experimento
-experimento_2_25_25()
-experimento_2_25_50()
+# #Inicializa os experimento
+# experimento_2_25_25()
+# experimento_2_25_50()
+
+
+range_experimento = [20, 50]
+
+# Datasets que iremos utilizar
+function_datasets_list = [
+    load_AssetNegotiationGenerator_f1_f5, 
+    load_AgrawalGenerator_test_mode_f2_f9,
+    load_SEAGenerator_test_f2_f4
+]
+
+# List to store the results
+results = []
+
+def run_experiment_2():
+
+    strategy = "all_class" # "per_class"
+
+    estimators = [
+        KNeighborsClassifier(n_neighbors=1),
+        KNeighborsClassifier(n_neighbors=3),
+        DecisionTreeClassifier(),
+        GaussianNB(),
+
+        # DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=1), r_per_class=3),
+        # DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=3), r_per_class=3),
+        # DissimilarityRNGClassifier(estimator=DecisionTreeClassifier(), r_per_class=3),
+        # DissimilarityRNGClassifier(estimator=GaussianNB(), r_per_class=3),
+
+        # DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy=strategy),
+        # DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy=strategy),
+        # DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy=strategy),
+        # DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy=strategy),
+
+        # DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        # DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        # DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        # DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+    ]
+
+    for estimator in estimators:
+        # AVISO: O DATASET_OPTION = 0 É PARA A SEPARAÇÃO 25_25
+        experiment_kernel(estimator=estimator, strategy_name=strategy, data_set_option=0) # 25_25
+    
+    for estimator in estimators:
+        # AVISO: O DATASET_OPTION = 1 É PARA A SEPARAÇÃO 25_50
+        experiment_kernel(estimator=estimator, strategy_name=strategy, data_set_option=1) # 25_50
+
+
+def experiment_kernel(estimator, strategy_name, data_set_option=0):
+    
+    dataset_split_mode = True
+    if data_set_option == 0:
+        dataset_split_mode = True # 25_25
+    elif data_set_option == 1:
+        dataset_split_mode = False # 25_50
+    else:
+        raise ValueError()
+    
+    for dataset in function_datasets_list:
+        X, y = dataset()  # Load the dataset
+        name_function_dataset = dataset.__name__
+        print(f"Testing dataset: {name_function_dataset}")
+
+        # Split into training and testing sets
+        # 25% treino e 75% para teste (25% dps do treino para teste, e restante 50% para teste)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.25, test_size=0.75, shuffle=False)
+        X_test1, X_test2, y_test1, y_test2 = train_test_split(X_test, y_test, test_size=2/3, shuffle=False)
+
+
+        # Testing random_state from 20 to 50
+        for i in range(range_experimento[0], range_experimento[1]):
+            print(f"Using random_state={i}")
+
+            # Check if random_state needs to be set for any estimator
+            # Add the estimator's name to the variable
+            str_estimator = ""
+            if 'estimator' in estimator.get_params():
+                str_estimator = str(estimator.estimator)
+                if hasattr(estimator.estimator, 'random_state'):
+                    estimator.estimator.set_params(random_state=i)
+            else:
+                str_estimator = "Empty estimator"
+
+            # If the classifier has random_state, set the value
+            if hasattr(estimator, 'random_state'):
+                estimator.set_params(random_state=i)
+
+            # Test the model
+            if dataset_split_mode:
+                accuracy, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test1, y_test=y_test1) # 25_25
+            else:
+                accuracy, cm = model_test(estimator=estimator, X_train=X_train, y_train=y_train, X_test=X_test2, y_test=y_test2) # 25_50
+            
+            # Store the result
+            results.append({
+                'dataset': name_function_dataset,
+                'classifier': type(estimator).__name__,
+                'estimator': str_estimator,
+                'random_state': i,
+                'accuracy': accuracy,
+                'confusion_matrix': cm,
+                'strategy': strategy_name                
+            })
+            print(f"Accuracy: {accuracy}")
+
+    # After completing all experiments, save to a file or display
+    df_results = pd.DataFrame(results)
+    df_results.to_csv(f'experiment_results_{strategy_name}_{data_set_option}.csv', index=False)
+    print(f"Results saved to 'experiment_results_{strategy_name}_{data_set_option}.csv'.")
+
+# TODO: Discuss with gag about this new format :)
+run_experiment_2()
