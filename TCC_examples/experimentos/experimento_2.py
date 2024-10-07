@@ -247,20 +247,20 @@ def run_experiment_2():
         DecisionTreeClassifier(),
         GaussianNB(),
 
-        # DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=1), r_per_class=3),
-        # DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=3), r_per_class=3),
-        # DissimilarityRNGClassifier(estimator=DecisionTreeClassifier(), r_per_class=3),
-        # DissimilarityRNGClassifier(estimator=GaussianNB(), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=1), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=KNeighborsClassifier(n_neighbors=3), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=DecisionTreeClassifier(), r_per_class=3),
+        DissimilarityRNGClassifier(estimator=GaussianNB(), r_per_class=3),
 
-        # DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy=strategy),
-        # DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy=strategy),
-        # DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy=strategy),
-        # DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=1), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=KNeighborsClassifier(n_neighbors=3), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=DecisionTreeClassifier(), n_clusters=3, strategy=strategy),
+        DissimilarityCentroidClassifier(estimator=GaussianNB(), n_clusters=3, strategy=strategy),
 
-        # DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
-        # DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
-        # DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
-        # DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=1), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=KNeighborsClassifier(n_neighbors=3), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=DecisionTreeClassifier(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
+        DissimilarityIHDClassifier(estimator=GaussianNB(), coef_k=1, din_k=True, k=1, r_size=10, strategy=strategy),
     ]
 
     for estimator in estimators:
@@ -274,6 +274,11 @@ def run_experiment_2():
 
 def experiment_kernel(estimator, strategy_name, data_set_option=0):
     
+    if 'estimator' in estimator.get_params():
+        str_classifier = type(estimator).__name__ # Não inclui os parametros
+    else:
+        str_classifier = str(estimator) # Inclui os parametros
+
     dataset_split_mode = True
     if data_set_option == 0:
         dataset_split_mode = True # 25_25
@@ -320,7 +325,7 @@ def experiment_kernel(estimator, strategy_name, data_set_option=0):
             # Store the result
             results.append({
                 'dataset': name_function_dataset,
-                'classifier': type(estimator).__name__,
+                'classifier': str_classifier,
                 'estimator': str_estimator,
                 'random_state': i,
                 'accuracy': accuracy,

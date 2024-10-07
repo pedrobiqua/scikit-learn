@@ -226,6 +226,12 @@ def run_experiment_1():
 
 
 def experiment_kernel(estimator, strategy_name):
+    # Nomeia o classificador, essa validação é para saber se precisa ou não incluir os parametros
+    if 'estimator' in estimator.get_params():
+        str_classifier = type(estimator).__name__ # Não inclui os parametros
+    else:
+        str_classifier = str(estimator) # Inclui os parametros
+
     for dataset in function_datasets_list:
         X, y = dataset()  # Load the dataset
         name_function_dataset = dataset.__name__
@@ -258,11 +264,10 @@ def experiment_kernel(estimator, strategy_name):
             # Store the result
             results.append({
                 'dataset': name_function_dataset,
-                'classifier': type(estimator).__name__,
+                'classifier': str_classifier,
                 'estimator': str_estimator,
                 'random_state': i,
                 'accuracy': accuracy,
-                'confusion_matrix': cm,
                 'strategy': strategy_name                
             })
             print(f"Accuracy: {accuracy}")
