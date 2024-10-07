@@ -732,18 +732,14 @@ class DissimilarityIHDClassifier(_BaseDissimilarity):
             Hardest instances from each class.
         """
         ihd_list = []
-        for class_label in self.classes_:
-            X_class = X[y == class_label]
-            Y_class = y[y == class_label]
+        s, nx = self._instance_hardness(X, y)
 
-            # Compute instance hardness and neighbors for the current class
-            s, nx = self._instance_hardness(X_class, Y_class)
-
-            # Select the top hardest instances based on instance hardness scores
-            top_indices = heapq.nlargest(self.r_size, range(len(s)), key=lambda i: s[i])
-
-            # Append the hardest instances to the reference list
-            ihd_list.append(X_class[top_indices])
+        for class_ in self.classes_:
+            aux_s = s[y == class_]
+            class_index = [i for i, label in enumerate(y) if label == class_]
+            top_indices = heapq.nlargest(self.r_size, range(len(aux_s)), key=lambda i: aux_s[i])
+            top_indices = [class_index[i] for i in top_indices]
+            ihd_list.append(X[top_indices])
 
         # Combine instances from all classes
         ihd_array = np.vstack(ihd_list)
