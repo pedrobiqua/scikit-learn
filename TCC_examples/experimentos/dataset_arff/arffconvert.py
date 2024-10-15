@@ -65,7 +65,7 @@ def format_dataset(path):
     base_dir = os.path.dirname(__file__)
     join_path = os.path.join(base_dir, *folders)
     absolute_path = os.path.abspath(join_path)
-    print(absolute_path)
+    # print(absolute_path)
 
     # Carrega arquivo arff
     data, meta = arff.loadarff(absolute_path)
